@@ -16,13 +16,19 @@ export default function FairCutSlide() {
           Unlock the Legacy Value of Your Creations
         </p>
 
-        <Link 
-          to="/faircut"
-          className="group inline-flex items-center gap-3 bg-gray-900 dark:bg-white text-white dark:text-gray-900 text-lg font-semibold py-4 px-10 rounded-lg transition-all duration-200 hover:scale-105 shadow-lg hover:shadow-xl"
-        >
-          <span>Learn More</span>
-          <ArrowRight className="transition-transform group-hover:translate-x-1" size={20} />
-        </Link>
+        <div className="flex justify-center">
+          <Link 
+            to="/faircut"
+            className="group inline-flex items-center gap-3 bg-gradient-to-r from-amber-600 to-orange-600 text-white text-lg font-semibold py-4 px-10 rounded-lg transition-all duration-200 hover:scale-105 shadow-lg hover:shadow-xl"
+          >
+            <span>Explore FairCut</span>
+            <ArrowRight className="transition-transform group-hover:translate-x-1" size={20} />
+          </Link>
+        </div>
+        
+        <p className="text-sm text-gray-500 dark:text-gray-400 mt-6">
+          Discover how FairCut unlocks the legacy value of your creations
+        </p>
       </div>
     </section>
   );
