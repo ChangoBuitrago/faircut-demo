@@ -325,7 +325,7 @@ export default function FaircutLandingPage() {
         {/* --- PARTNERSHIP AGREEMENT SECTION --- */}
         <section className="h-screen snap-start snap-always flex flex-col items-center justify-center py-20 bg-white dark:bg-black px-6">
             <div className="w-full max-w-5xl mx-auto text-center">
-                <h2 className="text-4xl md:text-6xl font-black text-gray-900 dark:text-white mb-4 tracking-tighter">A Risk-Free Partnership</h2>
+                <h2 className="text-4xl md:text-6xl font-black text-gray-900 dark:text-white mb-4 tracking-tighter">Risk-Free Terms</h2>
                 <p className="max-w-3xl mx-auto text-lg text-gray-600 dark:text-gray-300 mb-12">We believe in perfect alignment. We only succeed when you do.</p>
                 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
@@ -357,7 +357,7 @@ export default function FaircutLandingPage() {
         {/* --- BENEFITS SECTION --- */}
         <section className="h-screen snap-start snap-always flex flex-col items-center justify-center py-20 bg-white dark:bg-black px-6">
           <div className="w-full max-w-5xl mx-auto text-center">
-            <h2 className="text-4xl md:text-6xl font-black text-gray-900 dark:text-white mb-6 tracking-tighter">A Partnership with Purpose</h2>
+            <h2 className="text-4xl md:text-6xl font-black text-gray-900 dark:text-white mb-6 tracking-tighter">Strengthening Your Brand</h2>
             <p className="text-lg md:text-xl text-gray-700 dark:text-slate-100/80 leading-relaxed mb-12 max-w-3xl mx-auto">
               Strengthen your brand and forge a true community.
             </p>
