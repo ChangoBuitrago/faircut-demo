@@ -1,27 +1,20 @@
 # Faircut Landing Page
 
-A scrolling storytelling experience showcasing how Faircut enables brands to earn royalties on secondary market sales through a simple Shopify plugin.
+A modern, interactive landing page showcasing how Faircut enables brands to earn royalties on secondary market sales through digital certificates and blockchain technology.
 
 ## 🎯 What is This?
 
-A **scroll-based narrative** in 14 sections that takes viewers through the complete Jonas and Emma story - from Jonas installing Faircut on Shopify, to Emma buying and reselling a jacket, to Jonas earning $60 a year later.
+A **scroll-based interactive experience** with 6 main sections that demonstrates Faircut's value proposition through storytelling, interactive calculators, and clear benefits.
 
-**The Story:**
-1. Meet Jonas (NOMAD founder on Shopify)
-2. Jonas installs Faircut plugin
-3. Configures 10% royalty on his jacket collection
-4. Collection sells out
-5. Emma in Tokyo buys jacket #234/500
-6. One year passes
-7. Emma lists for resale ($1,200)
-8. Designer in LA purchases
-9. Automatic royalty splits: $60 to Jonas, $60 to Faircut
-10. Jonas discovers $60 in his account
-11. "Money from the ether"
-12. Powered by Shopify
-13. Call to action
+**The Experience:**
+1. **Hero Section** - Problem statement and value proposition
+2. **Solution Section** - How Faircut works with digital certificates
+3. **Calculator Section** - Interactive revenue calculator
+4. **Partnership Terms** - Risk-free terms and 50/50 split
+5. **Benefits Section** - Perpetual royalties, authenticity, community
+6. **Call to Action** - Request exclusive access
 
-**Duration:** 3-5 minutes of scrolling
+**Duration:** 2-3 minutes of scrolling
 
 Perfect for:
 - 🎤 Brand pitches and investor presentations
@@ -44,31 +37,32 @@ npm run dev
 
 ## 🎨 Design Features
 
-- **Split-Screen Storytelling** - 14 full-viewport sections with dual narrative
-  - **Left side:** Marketing narrative (emotional, story-driven)
-  - **Right side:** Technical details ("Under the Hood")
-- **Two-Part Experience:**
-  - Part 1: Summary landing (FAIRCUT + Jonas/Emma story + scroll indicator)
-  - Part 2: Full narrative (scroll through 13 sections)
-- **Minimal & Elegant** - Clean, professional aesthetic
-- **Inter Font** - Modern typography throughout
-- **Smooth Scrolling** - Native CSS smooth scroll
-- **Alternating Backgrounds** - White/Gray alternating sections
-- **Vertical Divider** - Border separating marketing from technical
-- **Shopify Integration** - Emphasized throughout both narratives
-- **Dark Mode** - Full dark mode support
-- **Key Moments:**
-  - Tokyo → LA visual (emojis + arrow)
-  - $60 reveal (large, bold, green)
-  - Money flow diagram (royalty split)
-  - Configuration panel (product settings)
-- **Technical Details Include:**
-  - Shopify OAuth & webhooks
-  - ERC-721 on Polygon
-  - Stripe Connect payouts
-  - Magic.link wallet abstraction
-  - Smart contract logic
-  - IPFS metadata storage
+- **Interactive Scroll Experience** - 6 full-viewport sections with smooth navigation
+  - **Mouse wheel navigation** - Scroll through sections with mouse wheel
+  - **Keyboard navigation** - Arrow keys, Page Up/Down, Home/End support
+  - **Section indicators** - Visual dots showing current position
+- **Modern Landing Page Design:**
+  - Hero section with gradient text effects
+  - Interactive revenue calculator with sliders
+  - Clean card-based layout for benefits
+  - Professional typography and spacing
+- **Interactive Elements:**
+  - **Revenue Calculator** - Real-time calculation with sliders
+  - **Smooth Animations** - Framer Motion for enhanced UX
+  - **Responsive Design** - Mobile-first approach
+- **Dark Mode Support** - Full dark/light theme toggle
+- **Key Features:**
+  - Problem/solution narrative flow
+  - Interactive revenue calculator
+  - Partnership terms visualization
+  - Benefits showcase with icons
+  - Clear call-to-action
+- **Technical Implementation:**
+  - React 19 with modern hooks
+  - Tailwind CSS for styling
+  - Intersection Observer for scroll detection
+  - Custom slider components
+  - Responsive grid layouts
 
 ## 📁 Project Structure
 
@@ -76,43 +70,108 @@ npm run dev
 faircut-demo/
 ├── src/
 │   ├── pages/
-│   │   └── Landing.jsx              # Main landing page
-│   ├── App.jsx                      # App entry
-│   └── index.css                    # Styles with Inter font
-├── index.html
+│   │   ├── FaircutLandingPage.jsx   # Main landing page component
+│   │   └── Landing.jsx              # Alternative landing page
+│   ├── components/
+│   │   ├── BusinessSlides.jsx       # Business-focused slides
+│   │   ├── DarkModeToggle.jsx      # Dark mode toggle component
+│   │   ├── FairCutSlide.jsx        # FairCut-specific slide
+│   │   └── StorySlides.jsx         # Story-focused slides
+│   ├── contexts/
+│   │   └── DarkModeContext.jsx     # Dark mode context provider
+│   ├── App.jsx                      # App entry point
+│   ├── App.css                      # App-specific styles
+│   ├── main.jsx                     # React entry point
+│   └── index.css                    # Global styles with Inter font
+├── public/
+│   └── vite.svg                     # Vite logo
+├── index.html                       # HTML entry point
+├── package.json                     # Dependencies and scripts
+├── tailwind.config.js               # Tailwind configuration
+├── vite.config.js                   # Vite configuration
+├── postcss.config.js                # PostCSS configuration
+├── eslint.config.js                 # ESLint configuration
 └── README.md
 ```
 
 ## 🎨 Tech Stack
 
-- **Frontend**: React 18 + Vite
+- **Frontend**: React 19 + Vite
 - **Styling**: Tailwind CSS
 - **Typography**: Inter font (Google Fonts)
 - **Icons**: Lucide React
+- **Animation**: Framer Motion
+- **Charts**: Chart.js
+- **Routing**: React Router DOM
+- **Build Tool**: Vite
+- **Linting**: ESLint
 
-## 🎨 Design Elements
+## 🎨 Interactive Features
 
-- **Background**: Subtle grid pattern with radial gradient glow
-- **Typography**: Inter font with tight tracking on heading
-- **Color Palette**: Grays with blue and green accents
-- **Layout**: Centered, maximum 5xl width container
-- **Cards**: Three perspective cards (Jonas, Marketplace, Emma)
+- **Scroll Navigation**: Mouse wheel, keyboard arrows, and section indicators
+- **Revenue Calculator**: Interactive sliders for price, markup, and volume
+- **Real-time Updates**: Live calculation of potential annual revenue
+- **Responsive Design**: Mobile-first approach with breakpoint optimization
+- **Dark Mode**: Toggle between light and dark themes
+- **Smooth Animations**: Framer Motion for enhanced user experience
+- **Accessibility**: Keyboard navigation and screen reader support
 
-## 🚀 Deployment
+## 🚀 Development & Deployment
+
+### Development Commands
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+
+# Run linting
+npm run lint
+```
 
 ### Deploy to Vercel
 
 ```bash
+# Install Vercel CLI globally
 npm install -g vercel
+
+# Deploy to Vercel
 vercel
+
+# For production deployment
+vercel --prod
+```
+
+### Deploy to Netlify
+
+```bash
+# Build the project
+npm run build
+
+# Deploy to Netlify (drag and drop /dist folder)
+# Or use Netlify CLI:
+npm install -g netlify-cli
+netlify deploy --prod --dir=dist
 ```
 
 ### Build for Production
 
 ```bash
 npm run build
-# Output in /dist folder
+# Output in /dist folder - ready for deployment
 ```
+
+### Environment Variables
+
+No environment variables required for basic functionality. The landing page is fully client-side.
 
 ---
 
