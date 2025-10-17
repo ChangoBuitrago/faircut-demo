@@ -417,7 +417,7 @@ export default function FaircutLandingPage() {
         <section className="h-screen snap-start snap-always flex flex-col items-center justify-center py-20 bg-white dark:bg-black px-6">
           <div className="w-full max-w-5xl mx-auto text-center">
             <h2 className="text-4xl md:text-6xl font-black text-gray-900 dark:text-white mb-6 tracking-tighter">
-              Ready to Get<br/>Your Fair Cut?
+              Ready to Get Your Fair Cut?
             </h2>
             
             <p className="text-lg md:text-xl text-gray-700 dark:text-slate-100/80 leading-relaxed mb-12 max-w-3xl mx-auto">
