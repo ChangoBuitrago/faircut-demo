@@ -194,7 +194,7 @@ export default function FaircutLandingPage() {
         {/* --- SOLUTION SECTION --- */}
         <section className="h-screen snap-start snap-always flex flex-col items-center justify-center py-20 px-6 bg-white dark:bg-black">
           <div className="w-full max-w-5xl mx-auto text-center">
-            <h2 className="text-4xl md:text-6xl font-black text-gray-900 dark:text-white mb-6 tracking-tighter">The FairCut Solution</h2>
+            <h2 className="text-4xl md:text-6xl font-black text-gray-900 dark:text-white mb-6 tracking-tighter">Unlock Royalties from the Physical World</h2>
             <p className="text-lg md:text-xl text-gray-700 dark:text-slate-100/80 leading-relaxed mb-8 max-w-3xl mx-auto">
               FairCut gives every physical product you create a digital soul. We attach an unforgeable digital certificate to each item you sell, creating a direct link between you and every future owner of your work.
             </p>
@@ -219,7 +219,7 @@ export default function FaircutLandingPage() {
                           </svg>
                         </div>
                         <h3 className="font-bold text-lg">Digital Soul</h3>
-                        <p className="text-xs text-gray-500 dark:text-gray-400">Authenticity is permanently attached.</p>
+                        <p className="text-xs text-gray-500 dark:text-gray-400">Prove authenticity and enable royalties.</p>
                     </div>
                 </div>
                 <div className="w-16 h-1 bg-gray-200 dark:bg-gray-700 md:w-16 md:h-1 rotate-90 md:rotate-0"></div>
@@ -376,7 +376,7 @@ export default function FaircutLandingPage() {
                   Perpetual Royalties
                 </h3>
                 <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-center">
-                  Earn passive, 100% margin profit from every resale. Pure profit that flows directly to your bottom line from products you've already sold.
+                  Generate 100% margin profit from items you sold years ago. A perpetual revenue stream from your existing creations.
                 </p>
               </div>
 
