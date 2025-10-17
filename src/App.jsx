@@ -5,6 +5,8 @@ import Landing from './pages/Landing';
 import FaircutLandingPage from './pages/FaircutLandingPage';
 
 function App() {
+  console.log('App rendering, current path:', window.location.pathname);
+  
   return (
     <DarkModeProvider>
       <DarkModeToggle />
