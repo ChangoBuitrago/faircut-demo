@@ -179,7 +179,7 @@ export default function FaircutLandingPage() {
         <section className="h-screen snap-start snap-always flex flex-col items-center justify-center p-6 bg-gradient-to-br from-slate-50 via-stone-50 to-zinc-50 dark:from-slate-950 dark:via-slate-900 dark:to-neutral-950 relative overflow-hidden">
           <div className="text-center w-full max-w-5xl mx-auto z-10">
             <h1 className="text-5xl sm:text-6xl md:text-8xl font-black tracking-tighter text-gray-900 dark:text-white mb-6">
-              Your Creations Generate Billions in Resale Profit.
+              Your Creations Generate Significant Profits in Resale.
             </h1>
             <h1 className="text-5xl sm:text-6xl md:text-8xl font-black tracking-tighter mb-8">
               You're Seeing <span className="bg-gradient-to-r from-amber-600 to-orange-600 dark:from-amber-400 dark:to-orange-400 bg-clip-text text-transparent">$0</span> Of It.
