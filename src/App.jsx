@@ -8,7 +8,7 @@ function App() {
   return (
     <DarkModeProvider>
       <DarkModeToggle />
-      <Router>
+      <Router basename="/faircut-demo">
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/faircut" element={<FaircutLandingPage />} />
