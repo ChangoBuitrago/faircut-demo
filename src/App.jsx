@@ -8,10 +8,10 @@ function App() {
   return (
     <DarkModeProvider>
       <DarkModeToggle />
-      <Router basename="/faircut-demo">
+      <Router basename="/faircut-demo/">
         <Routes>
-          <Route path="/" element={<Landing />} />
-          <Route path="/faircut" element={<FaircutLandingPage />} />
+          <Route path="/" element={<FaircutLandingPage />} />
+          <Route path="/landing" element={<Landing />} />
         </Routes>
       </Router>
     </DarkModeProvider>
