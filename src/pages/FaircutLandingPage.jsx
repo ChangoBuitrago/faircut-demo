@@ -351,7 +351,7 @@ export default function FaircutLandingPage() {
                         value={sliderValues.avgItemPrice} 
                         step="50" 
                         onChange={(e) => handleSliderChange('avgItemPrice', e.target.value)} 
-                        className="w-full h-2 bg-green-200 dark:bg-green-800 rounded-lg appearance-none cursor-pointer slider"
+                        className="w-full h-2 bg-gradient-to-r from-emerald-200 to-green-200 dark:from-emerald-800 dark:to-green-800 rounded-lg appearance-none cursor-pointer slider"
                       />
                     </div>
                     
@@ -368,7 +368,7 @@ export default function FaircutLandingPage() {
                         value={sliderValues.itemsSold} 
                         step="100" 
                         onChange={(e) => handleSliderChange('itemsSold', e.target.value)} 
-                        className="w-full h-2 bg-green-200 dark:bg-green-800 rounded-lg appearance-none cursor-pointer slider"
+                        className="w-full h-2 bg-gradient-to-r from-emerald-200 to-green-200 dark:from-emerald-800 dark:to-green-800 rounded-lg appearance-none cursor-pointer slider"
                       />
                       <p className="text-xs text-gray-500 dark:text-gray-500 mt-1">
                         Total annual sales: {formatCurrency(sliderValues.avgItemPrice * sliderValues.itemsSold)}
@@ -396,7 +396,7 @@ export default function FaircutLandingPage() {
                         value={sliderValues.royaltyRate} 
                         step="1" 
                         onChange={(e) => handleSliderChange('royaltyRate', e.target.value)} 
-                        className="w-full h-2 bg-orange-200 dark:bg-orange-800 rounded-lg appearance-none cursor-pointer slider"
+                        className="w-full h-2 bg-gradient-to-r from-amber-200 to-orange-200 dark:from-amber-800 dark:to-orange-800 rounded-lg appearance-none cursor-pointer slider"
                       />
                     </div>
                   </div>
@@ -421,7 +421,7 @@ export default function FaircutLandingPage() {
                         value={sliderValues.resaleMarkup} 
                         step="25" 
                         onChange={(e) => handleSliderChange('resaleMarkup', e.target.value)} 
-                        className="w-full h-2 bg-red-200 dark:bg-red-800 rounded-lg appearance-none cursor-pointer slider"
+                        className="w-full h-2 bg-gradient-to-r from-rose-200 to-red-200 dark:from-rose-800 dark:to-red-800 rounded-lg appearance-none cursor-pointer slider"
                       />
                       <p className="text-xs text-gray-500 dark:text-gray-500 mt-1">Set by resellers</p>
                     </div>
@@ -439,7 +439,7 @@ export default function FaircutLandingPage() {
                         value={sliderValues.lifetimeResales} 
                         step="1" 
                         onChange={(e) => handleSliderChange('lifetimeResales', e.target.value)} 
-                        className="w-full h-2 bg-red-200 dark:bg-red-800 rounded-lg appearance-none cursor-pointer slider"
+                        className="w-full h-2 bg-gradient-to-r from-rose-200 to-red-200 dark:from-rose-800 dark:to-red-800 rounded-lg appearance-none cursor-pointer slider"
                       />
                       <p className="text-xs text-gray-500 dark:text-gray-500 mt-1">Average over the product's lifespan</p>
                     </div>
