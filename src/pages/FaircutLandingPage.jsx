@@ -431,32 +431,32 @@ export default function FaircutLandingPage() {
             </button>
 
           </div>
-
-          {/* Footer */}
-          <div className="absolute bottom-6 left-0 right-0 text-center">
-            <div className="w-full max-w-6xl mx-auto px-6">
-              <div className="flex flex-col sm:flex-row justify-center items-center space-y-3 sm:space-y-0 sm:space-x-6 mb-3">
-                <a href="#" className="hover:text-gray-900 dark:hover:text-gray-300 transition-colors flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
-                  <Github size={16} />
-                  <span>GitHub</span>
-                </a>
-                <a href="#" className="hover:text-gray-900 dark:hover:text-gray-300 transition-colors flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
-                  <Twitter size={16} />
-                  <span>Twitter</span>
-                </a>
-                <a href="#" className="hover:text-gray-900 dark:hover:text-gray-300 transition-colors flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
-                  <MessageCircle size={16} />
-                  <span>Discord</span>
-                </a>
-                <a href="#" className="hover:text-gray-900 dark:hover:text-gray-300 transition-colors flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
-                  <BookOpen size={16} />
-                  <span>Docs</span>
-                </a>
-              </div>
-              <p className="text-xs text-gray-500 dark:text-gray-400">© {new Date().getFullYear()} Faircut. All Rights Reserved.</p>
-            </div>
-          </div>
         </section>
+      </div>
+
+      {/* Footer - Absolutely positioned to document */}
+      <div className="fixed bottom-6 left-0 right-0 text-center z-50">
+        <div className="w-full max-w-6xl mx-auto px-6">
+          <div className="flex flex-col sm:flex-row justify-center items-center space-y-3 sm:space-y-0 sm:space-x-6 mb-3">
+            <a href="#" className="hover:text-gray-900 dark:hover:text-gray-300 transition-colors flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+              <Github size={16} />
+              <span>GitHub</span>
+            </a>
+            <a href="#" className="hover:text-gray-900 dark:hover:text-gray-300 transition-colors flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+              <Twitter size={16} />
+              <span>Twitter</span>
+            </a>
+            <a href="#" className="hover:text-gray-900 dark:hover:text-gray-300 transition-colors flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+              <MessageCircle size={16} />
+              <span>Discord</span>
+            </a>
+            <a href="#" className="hover:text-gray-900 dark:hover:text-gray-300 transition-colors flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+              <BookOpen size={16} />
+              <span>Docs</span>
+            </a>
+          </div>
+          <p className="text-xs text-gray-500 dark:text-gray-400">© {new Date().getFullYear()} Faircut. All Rights Reserved.</p>
+        </div>
       </div>
 
       {/* Custom styles for sliders */}
