@@ -8,15 +8,35 @@ export default function FaircutLandingPage() {
   const totalSections = 6; // 6 sections: Hero, Solution, Calculator, Partnership, Benefits, CTA
   
   const [sliderValues, setSliderValues] = useState({
-    avgPrice: 500,
-    resaleMarkup: 150,
-    itemsSold: 1000,
-    royaltyRate: 10,
-    resalePercent: 10
+    salesVolume: 500000,
+    resaleMarkup: 200,
+    royaltyRate: 15
   });
   
   const [calculatedRevenue, setCalculatedRevenue] = useState(0);
   const [resaleCount, setResaleCount] = useState(0);
+
+  // Effect to ensure page starts at the top on load
+  useEffect(() => {
+    // Reset scroll position and current section on component mount
+    setCurrentSection(0);
+    
+    const forceScrollToTop = () => {
+      if (containerRef.current) {
+        containerRef.current.scrollTop = 0;
+        containerRef.current.scrollTo(0, 0);
+      }
+      window.scrollTo(0, 0);
+    };
+
+    // Force scroll immediately
+    forceScrollToTop();
+    
+    // Force scroll again after a short delay to ensure it sticks
+    const timeoutId = setTimeout(forceScrollToTop, 100);
+    
+    return () => clearTimeout(timeoutId);
+  }, []);
 
   // Effect for handling mouse wheel scroll navigation
   useEffect(() => {
@@ -36,7 +56,9 @@ export default function FaircutLandingPage() {
         setCurrentSection(nextSection);
         
         const targetSection = container.children[nextSection];
-        targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (targetSection) {
+          targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
 
         // Timeout to prevent rapid scrolling
         setTimeout(() => {
@@ -54,6 +76,10 @@ export default function FaircutLandingPage() {
     const container = containerRef.current;
     if (!container) return;
 
+    // Ensure we start at the top
+    container.scrollTop = 0;
+    setCurrentSection(0);
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -65,14 +91,20 @@ export default function FaircutLandingPage() {
           }
         });
       },
-      { threshold: 0.5 } // Trigger when 50% of the section is visible
+      { threshold: 0.6 } // Higher threshold to be more precise
     );
 
-    Array.from(container.children).forEach((child) => {
-      observer.observe(child);
-    });
+    // Wait longer before starting observation to ensure page is fully loaded
+    const timeoutId = setTimeout(() => {
+      Array.from(container.children).forEach((child) => {
+        observer.observe(child);
+      });
+    }, 500); // Increased delay
 
-    return () => observer.disconnect();
+    return () => {
+      clearTimeout(timeoutId);
+      observer.disconnect();
+    };
   }, []);
 
   // Effect for handling keyboard navigation
@@ -99,7 +131,10 @@ export default function FaircutLandingPage() {
       if (nextSection !== currentSection) {
         isScrollingRef.current = true;
         setCurrentSection(nextSection);
-        containerRef.current?.children[nextSection]?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const targetSection = containerRef.current?.children[nextSection];
+        if (targetSection) {
+          targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
         setTimeout(() => {
           isScrollingRef.current = false;
         }, 800);
@@ -120,16 +155,32 @@ export default function FaircutLandingPage() {
     }).format(value);
   };
 
+  // Format currency compact for display
+  const formatCurrencyCompact = (value) => {
+    if (value >= 1000000) {
+      return `$${(value / 1000000).toFixed(0)}M`;
+    } else if (value >= 1000) {
+      return `$${(value / 1000).toFixed(0)}K`;
+    }
+    return formatCurrency(value);
+  };
+
   // Calculate revenue based on slider values
   const calculateRevenue = () => {
-    const { avgPrice, resaleMarkup, itemsSold, royaltyRate, resalePercent } = sliderValues;
+    const { salesVolume, resaleMarkup, royaltyRate } = sliderValues;
+    
+    // Assume 20% annual resale rate as a market assumption
+    const annualResaleRate = 0.20;
+    
+    // Calculate average item price from sales volume (assuming 1000 items sold)
+    const avgPrice = salesVolume / 1000;
     
     const resalePrice = avgPrice * (1 + resaleMarkup / 100);
     const profitOnResale = resalePrice - avgPrice;
     const totalRoyaltyPerItem = profitOnResale > 0 ? profitOnResale * (royaltyRate / 100) : 0;
     const brandRoyaltyPerItem = totalRoyaltyPerItem * 0.50; // 50/50 split
 
-    const numberOfResales = itemsSold * (resalePercent / 100);
+    const numberOfResales = 1000 * annualResaleRate; // 1000 items * 20% resale rate
     const totalAnnualRevenue = brandRoyaltyPerItem * numberOfResales;
 
     setCalculatedRevenue(totalAnnualRevenue);
@@ -161,7 +212,10 @@ export default function FaircutLandingPage() {
             key={index}
             onClick={() => {
               setCurrentSection(index);
-              containerRef.current?.children[index]?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              const targetSection = containerRef.current?.children[index];
+              if (targetSection) {
+                targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }
             }}
             className={`transition-all duration-300 rounded-full ${
               index === currentSection 
@@ -172,8 +226,15 @@ export default function FaircutLandingPage() {
           />
         ))}
       </div>
+      
+      {/* --- FAIRCUT LOGO (MOVED HERE) --- */}
+      <div className="fixed top-6 left-6 z-50">
+        <div className="text-3xl font-black tracking-tight bg-gradient-to-r from-amber-600 to-orange-600 dark:from-amber-400 dark:to-orange-400 bg-clip-text text-transparent">
+          Faircut
+        </div>
+      </div>
 
-      <div ref={containerRef} className="smooth-scroll-container h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+      <div ref={containerRef} className="smooth-scroll-container h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]" style={{scrollBehavior: 'smooth'}}>
         
         {/* --- HERO SECTION --- */}
         <section className="h-screen snap-start snap-always flex flex-col items-center justify-center p-6 bg-gradient-to-br from-slate-50 via-stone-50 to-zinc-50 dark:from-slate-950 dark:via-slate-900 dark:to-neutral-950 relative overflow-hidden">
@@ -196,7 +257,7 @@ export default function FaircutLandingPage() {
           <div className="w-full max-w-5xl mx-auto text-center">
             <h2 className="text-4xl md:text-6xl font-black text-gray-900 dark:text-white mb-6 tracking-tighter">Unlock Royalties from Every Resale</h2>
             <p className="text-lg md:text-xl text-gray-700 dark:text-slate-100/80 leading-relaxed mb-8 max-w-3xl mx-auto">
-              Faircut gives every product you create a digital revenue stream. We attach a digital ownership certificate to each item you sell, creating an immutable connection that ensures you earn from every future resale.
+              Faircut gives every product you create a new digital revenue stream. We attach a digital ownership certificate to each item you sell, creating an immutable connection that ensures you earn from every future resale.
             </p>
             <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-0 text-gray-900 dark:text-white">
                 <div className="w-60 h-52">
@@ -258,66 +319,96 @@ export default function FaircutLandingPage() {
                 <p className="text-xl text-gray-600 dark:text-gray-400">Annual Passive Revenue</p>
               </div>
 
-              {/* Simplified Controls */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-                {/* Item Price */}
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
-                    ${sliderValues.avgPrice}
+              {/* Clean Calculator Controls */}
+              <div className="bg-slate-50 dark:bg-slate-900/50 rounded-3xl p-8 mb-12">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                  {/* Column 1 - Your Business */}
+                  <div className="space-y-6 lg:col-span-1">
+                    <div className="flex items-center gap-2 mb-4">
+                      <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                      <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Your Business</h3>
+                    </div>
+                    
+                    {/* Sales Volume */}
+                    <div className="w-full">
+                      <div className="flex flex-col items-center mb-2 px-2">
+                        <span className="text-sm text-gray-600 dark:text-gray-400 mb-1">Annual Sales Volume</span>
+                        <div className="text-base font-bold text-gray-900 dark:text-white text-center">
+                          {formatCurrencyCompact(sliderValues.salesVolume)}
+                        </div>
+                      </div>
+                      <input 
+                        type="range" 
+                        min="50000" 
+                        max="2000000" 
+                        value={sliderValues.salesVolume}
+                        step="25000"
+                        onChange={(e) => handleSliderChange('salesVolume', e.target.value)}
+                        className="w-full h-2 bg-green-200 dark:bg-green-800 rounded-lg appearance-none cursor-pointer slider"
+                      />
+                      <p className="text-xs text-gray-500 dark:text-gray-500 mt-1">You control this</p>
+                    </div>
                   </div>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">Average Item Price</p>
-                  <input 
-                    type="range" 
-                    min="100" 
-                    max="2000" 
-                    value={sliderValues.avgPrice}
-                    step="50"
-                    onChange={(e) => handleSliderChange('avgPrice', e.target.value)}
-                    className="w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-lg appearance-none cursor-pointer slider"
-                  />
-                </div>
 
-                {/* Items Sold */}
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
-                    {sliderValues.itemsSold}
+                  {/* Column 2 - Your Legacy */}
+                  <div className="space-y-6">
+                    <div className="flex items-center gap-2 mb-4">
+                      <div className="w-3 h-3 bg-amber-500 rounded-full"></div>
+                      <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Your Legacy</h3>
+                    </div>
+                    
+                    {/* Royalty Rate */}
+                    <div>
+                      <div className="flex justify-between items-center mb-2">
+                        <span className="text-sm text-gray-600 dark:text-gray-400">Royalty Rate</span>
+                        <span className="text-xl font-bold text-gray-900 dark:text-white">{sliderValues.royaltyRate}%</span>
+                      </div>
+                      <input 
+                        type="range" 
+                        min="5" 
+                        max="25" 
+                        value={sliderValues.royaltyRate}
+                        step="1"
+                        onChange={(e) => handleSliderChange('royaltyRate', e.target.value)}
+                        className="w-full h-2 bg-amber-200 dark:bg-amber-800 rounded-lg appearance-none cursor-pointer slider"
+                      />
+                      <p className="text-xs text-gray-500 dark:text-gray-500 mt-1">Faircut gives you control</p>
+                    </div>
                   </div>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">Items Sold / Year</p>
-                  <input 
-                    type="range" 
-                    min="100" 
-                    max="2000" 
-                    value={sliderValues.itemsSold}
-                    step="100"
-                    onChange={(e) => handleSliderChange('itemsSold', e.target.value)}
-                    className="w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-lg appearance-none cursor-pointer slider"
-                  />
-                </div>
 
-                {/* Resale Markup */}
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
-                    {sliderValues.resaleMarkup}%
+                  {/* Column 3 - Market Reality */}
+                  <div className="space-y-6">
+                    <div className="flex items-center gap-2 mb-4">
+                      <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                      <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Market Reality</h3>
+                    </div>
+                    
+                    {/* Resale Markup */}
+                    <div>
+                      <div className="flex justify-between items-center mb-2">
+                        <span className="text-sm text-gray-600 dark:text-gray-400">Resale Markup</span>
+                        <span className="text-xl font-bold text-gray-900 dark:text-white">{sliderValues.resaleMarkup}%</span>
+                      </div>
+                      <input 
+                        type="range" 
+                        min="50" 
+                        max="300" 
+                        value={sliderValues.resaleMarkup}
+                        step="25"
+                        onChange={(e) => handleSliderChange('resaleMarkup', e.target.value)}
+                        className="w-full h-2 bg-red-200 dark:bg-red-800 rounded-lg appearance-none cursor-pointer slider"
+                      />
+                      <p className="text-xs text-gray-500 dark:text-gray-500 mt-1">Set by resellers</p>
+                    </div>
                   </div>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">Resale Markup</p>
-                  <input 
-                    type="range" 
-                    min="50" 
-                    max="300" 
-                    value={sliderValues.resaleMarkup}
-                    step="25"
-                    onChange={(e) => handleSliderChange('resaleMarkup', e.target.value)}
-                    className="w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-lg appearance-none cursor-pointer slider"
-                  />
+                </div>
+                <div className="text-center mt-6">
+                  <p className="text-sm text-gray-500 dark:text-gray-500">
+                    *Calculation assumes 1,000 items sold annually with 20% resale rate
+                  </p>
                 </div>
               </div>
 
-              {/* Simple Disclaimer */}
-              <div className="text-center">
-                <p className="text-sm text-gray-500 dark:text-gray-500">
-                  *Based on 10% annual resale rate and 15% royalty rate
-                </p>
-              </div>
             </div>
           </div>
         </section>
@@ -414,7 +505,7 @@ export default function FaircutLandingPage() {
         </section>
 
         {/* --- CTA SECTION --- */}
-        <section className="h-screen snap-start snap-always flex flex-col items-center justify-center py-20 bg-white dark:bg-black px-6">
+        <section className="h-screen snap-start snap-always flex flex-col items-center justify-center py-20 pb-32 bg-gradient-to-br from-slate-50 via-stone-50 to-zinc-50 dark:from-slate-950 dark:via-slate-900 dark:to-neutral-950 px-6">
           <div className="w-full max-w-5xl mx-auto text-center">
             <h2 className="text-4xl md:text-6xl font-black text-gray-900 dark:text-white mb-6 tracking-tighter">
               Ready to Get Your Fair Cut?
@@ -460,7 +551,7 @@ export default function FaircutLandingPage() {
       </div>
 
       {/* Custom styles for sliders */}
-      <style jsx>{`
+      <style>{`
         .slider::-webkit-slider-thumb {
           appearance: none;
           width: 20px;
