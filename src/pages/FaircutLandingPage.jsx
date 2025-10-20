@@ -398,6 +398,7 @@ export default function FaircutLandingPage() {
                         onChange={(e) => handleSliderChange('royaltyRate', e.target.value)} 
                         className="w-full h-2 bg-gradient-to-r from-amber-200 to-orange-200 dark:from-amber-800 dark:to-orange-800 rounded-lg appearance-none cursor-pointer slider"
                       />
+                      <p className="text-xs text-amber-600 dark:text-amber-400 font-medium mt-1">Powered by Faircut</p>
                     </div>
                   </div>
 
