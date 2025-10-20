@@ -194,9 +194,9 @@ export default function FaircutLandingPage() {
         {/* --- SOLUTION SECTION --- */}
         <section className="h-screen snap-start snap-always flex flex-col items-center justify-center py-20 px-6 bg-white dark:bg-black">
           <div className="w-full max-w-5xl mx-auto text-center">
-            <h2 className="text-4xl md:text-6xl font-black text-gray-900 dark:text-white mb-6 tracking-tighter">Unlock Royalties from the Physical World</h2>
+            <h2 className="text-4xl md:text-6xl font-black text-gray-900 dark:text-white mb-6 tracking-tighter">Unlock Royalties from Every Resale</h2>
             <p className="text-lg md:text-xl text-gray-700 dark:text-slate-100/80 leading-relaxed mb-8 max-w-3xl mx-auto">
-              FairCut gives every physical product you create a digital soul. We attach an unforgeable digital certificate to each item you sell, creating a direct link between you and every future owner of your work.
+              Faircut gives every product you create a digital revenue stream. We attach a digital ownership certificate to each item you sell, creating an immutable connection that ensures you earn from every future resale.
             </p>
             <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-0 text-gray-900 dark:text-white">
                 <div className="w-60 h-52">
@@ -207,7 +207,7 @@ export default function FaircutLandingPage() {
                           </svg>
                         </div>
                         <h3 className="font-bold text-lg">Your Product</h3>
-                        <p className="text-xs text-gray-500 dark:text-gray-400">A limited-edition item is sold.</p>
+                        <p className="text-xs text-gray-500 dark:text-gray-400">A  product is sold.</p>
                     </div>
                 </div>
                 <div className="w-16 h-1 bg-gray-200 dark:bg-gray-700 md:w-16 md:h-1 rotate-90 md:rotate-0"></div>
@@ -218,8 +218,8 @@ export default function FaircutLandingPage() {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                           </svg>
                         </div>
-                        <h3 className="font-bold text-lg">Digital Soul</h3>
-                        <p className="text-xs text-gray-500 dark:text-gray-400">Prove authenticity and enable royalties.</p>
+                        <h3 className="font-bold text-lg">Revenue Engine</h3>
+                        <p className="text-xs text-gray-500 dark:text-gray-400">Enable perpetual royalties from resales.</p>
                     </div>
                 </div>
                 <div className="w-16 h-1 bg-gray-200 dark:bg-gray-700 md:w-16 md:h-1 rotate-90 md:rotate-0"></div>
@@ -245,7 +245,7 @@ export default function FaircutLandingPage() {
               Your Legacy Revenue
             </h2>
             <p className="max-w-2xl mx-auto text-xl text-gray-600 dark:text-gray-400 leading-relaxed mb-16">
-              See how your limited-edition items could be generating passive income for years to come.
+              See how your  products could be generating passive income for years to come.
             </p>
 
             {/* Simplified Calculator */}
@@ -380,18 +380,18 @@ export default function FaircutLandingPage() {
                 </p>
               </div>
 
-              {/* Ironclad Authenticity */}
+              {/* Digital Ownership Tracking */}
               <div className="bg-slate-100/50 dark:bg-slate-800/50 rounded-2xl p-8 h-full">
                 <div className="w-16 h-16 bg-amber-100 dark:bg-amber-900/50 text-amber-500 rounded-full flex items-center justify-center mb-6 mx-auto">
                   <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 text-center">
-                  Ironclad Authenticity
+                  Digital Ownership Tracking
                 </h3>
                 <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-center">
-                  Eliminate fakes and build customer trust with unforgeable digital certificates. Guarantee authenticity and protect your brand's reputation.
+                  Track ownership through digital certificates. When resales happen, the certificate system enables royalty collection through the Faircut platform.
                 </p>
               </div>
 
