@@ -303,6 +303,65 @@ export default function FaircutLandingPage() {
           </div>
         </section>
 
+        {/* --- BENEFITS SECTION --- */}
+        <section className="h-screen snap-start snap-always flex flex-col items-center justify-center py-20 bg-white dark:bg-black px-6">
+          <div className="w-full max-w-5xl mx-auto text-center">
+            <h2 className="text-4xl md:text-6xl font-black text-gray-900 dark:text-white mb-6 tracking-tighter">Strengthening Your Brand</h2>
+            <p className="text-lg md:text-xl text-gray-700 dark:text-slate-100/80 leading-relaxed mb-12 max-w-3xl mx-auto">
+              Strengthen your brand and forge a true community.
+            </p>
+
+            {/* Benefits Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              
+              {/* Perpetual Royalties */}
+              <div className="bg-slate-100/50 dark:bg-slate-800/50 rounded-2xl p-8 h-full">
+                <div className="w-16 h-16 bg-amber-100 dark:bg-amber-900/50 text-amber-500 rounded-full flex items-center justify-center mb-6 mx-auto">
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 text-center">
+                  Perpetual Royalties
+                </h3>
+                <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-center">
+                  Generate 100% margin profit from items you sold years ago. A perpetual revenue stream from your existing creations.
+                </p>
+              </div>
+
+              {/* Digital Ownership Tracking */}
+              <div className="bg-slate-100/50 dark:bg-slate-800/50 rounded-2xl p-8 h-full">
+                <div className="w-16 h-16 bg-amber-100 dark:bg-amber-900/50 text-amber-500 rounded-full flex items-center justify-center mb-6 mx-auto">
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 text-center">
+                  Digital Ownership Tracking
+                </h3>
+                <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-center">
+                  Track ownership through digital certificates. When resales happen, the certificate system enables royalty collection through the Faircut platform.
+                </p>
+              </div>
+
+              {/* Direct to Community */}
+              <div className="bg-slate-100/50 dark:bg-slate-800/50 rounded-2xl p-8 h-full">
+                <div className="w-16 h-16 bg-amber-100 dark:bg-amber-900/50 text-amber-500 rounded-full flex items-center justify-center mb-6 mx-auto">
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 text-center">
+                  Direct to Community
+                </h3>
+                <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-center">
+                  Connect directly with your most passionate collectors and fans. Turn anonymous secondary market owners into an engaged community you can market to and build relationships with.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* --- CALCULATOR SECTION --- */}
         <section className="h-screen snap-start snap-always flex flex-col items-center justify-center py-20 bg-gradient-to-br from-slate-50 via-stone-50 to-zinc-50 dark:from-slate-950 dark:via-slate-900 dark:to-neutral-950 px-6">
           <div className="w-full max-w-5xl mx-auto text-center">
@@ -483,64 +542,6 @@ export default function FaircutLandingPage() {
             </div>
         </section>
 
-        {/* --- BENEFITS SECTION --- */}
-        <section className="h-screen snap-start snap-always flex flex-col items-center justify-center py-20 bg-white dark:bg-black px-6">
-          <div className="w-full max-w-5xl mx-auto text-center">
-            <h2 className="text-4xl md:text-6xl font-black text-gray-900 dark:text-white mb-6 tracking-tighter">Strengthening Your Brand</h2>
-            <p className="text-lg md:text-xl text-gray-700 dark:text-slate-100/80 leading-relaxed mb-12 max-w-3xl mx-auto">
-              Strengthen your brand and forge a true community.
-            </p>
-
-            {/* Benefits Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              
-              {/* Perpetual Royalties */}
-              <div className="bg-slate-100/50 dark:bg-slate-800/50 rounded-2xl p-8 h-full">
-                <div className="w-16 h-16 bg-amber-100 dark:bg-amber-900/50 text-amber-500 rounded-full flex items-center justify-center mb-6 mx-auto">
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 text-center">
-                  Perpetual Royalties
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-center">
-                  Generate 100% margin profit from items you sold years ago. A perpetual revenue stream from your existing creations.
-                </p>
-              </div>
-
-              {/* Digital Ownership Tracking */}
-              <div className="bg-slate-100/50 dark:bg-slate-800/50 rounded-2xl p-8 h-full">
-                <div className="w-16 h-16 bg-amber-100 dark:bg-amber-900/50 text-amber-500 rounded-full flex items-center justify-center mb-6 mx-auto">
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 text-center">
-                  Digital Ownership Tracking
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-center">
-                  Track ownership through digital certificates. When resales happen, the certificate system enables royalty collection through the Faircut platform.
-                </p>
-              </div>
-
-              {/* Direct to Community */}
-              <div className="bg-slate-100/50 dark:bg-slate-800/50 rounded-2xl p-8 h-full">
-                <div className="w-16 h-16 bg-amber-100 dark:bg-amber-900/50 text-amber-500 rounded-full flex items-center justify-center mb-6 mx-auto">
-                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 text-center">
-                  Direct to Community
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-center">
-                  Connect directly with your most passionate collectors and fans. Turn anonymous secondary market owners into an engaged community you can market to and build relationships with.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* --- CTA SECTION --- */}
         <section className="h-screen snap-start snap-always flex flex-col items-center justify-center py-20 pb-32 bg-gradient-to-br from-slate-50 via-stone-50 to-zinc-50 dark:from-slate-950 dark:via-slate-900 dark:to-neutral-950 px-6">
