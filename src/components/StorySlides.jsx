@@ -52,7 +52,7 @@ export default function StorySlides() {
             </p>
             <div className="mt-12 max-w-2xl mx-auto bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-8">
                 <p className="text-lg text-gray-800 dark:text-gray-200 leading-relaxed">
-                    After purchase, she receives an email with her <span className="font-semibold text-blue-600 dark:text-blue-400">Digital Certificate of Authenticity</span>—proof of ownership secured on the blockchain, tied to her email.
+                    After purchase, she receives an email with her <span className="font-semibold text-blue-600 dark:text-blue-400">Digital Ownership Certificate</span>—proof of ownership that enables royalty collection on future resales, tied to her email.
                 </p>
             </div>
           </div>

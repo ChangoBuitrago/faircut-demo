@@ -40,12 +40,12 @@ export default function BusinessSlides() {
               <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-200">The Problem</h3>
               <p className="text-lg text-gray-600 dark:text-gray-400 mt-4">The global resale market for luxury goods, sneakers, and collectibles is worth over <span className="font-bold text-gray-900 dark:text-white">$95 Billion</span>.</p>
               <p className="text-2xl font-bold text-red-600 dark:text-red-400 mt-6">Brands see $0 of it.</p>
-              <p className="text-base text-gray-500 dark:text-gray-500 mt-4">Meanwhile, consumers navigate a market flooded with fakes, with no true way to verify authenticity.</p>
+              <p className="text-base text-gray-500 dark:text-gray-500 mt-4">Meanwhile, creators watch their work generate massive resale value while receiving zero compensation for their ongoing contribution to the market.</p>
             </div>
             <div className="bg-green-50 dark:bg-green-900/20 rounded-2xl p-8 border border-green-200 dark:border-green-800">
               <h3 className="text-2xl font-bold text-green-700 dark:text-green-400">The Opportunity</h3>
               <p className="text-lg text-gray-700 dark:text-gray-300 mt-4">We enable brands to tap into this massive revenue stream for the first time.</p>
-              <p className="text-lg text-gray-800 dark:text-gray-200 mt-6">We solve the <span className="font-bold text-gray-900 dark:text-white">brand's revenue problem</span> and the <span className="font-bold text-gray-900 dark:text-white">consumer's authenticity problem</span> in a single, elegant solution.</p>
+              <p className="text-lg text-gray-800 dark:text-gray-200 mt-6">We solve the <span className="font-bold text-gray-900 dark:text-white">creator's revenue problem</span> by enabling them to capture value from every resale of their work, forever.</p>
             </div>
           </div>
         </div>
@@ -64,8 +64,8 @@ export default function BusinessSlides() {
               <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">Set a permanent royalty percentage and floor price, enforced by a smart contract.</p>
             </div>
             <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
-              <h4 className="font-bold text-lg text-gray-900 dark:text-white">Guarantee Authenticity</h4>
-              <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">Every item gets a blockchain-verified certificate of authenticity that can't be faked.</p>
+              <h4 className="font-bold text-lg text-gray-900 dark:text-white">Enable Royalty Collection</h4>
+              <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">Every item gets a digital ownership certificate that automatically triggers royalty payments on resales.</p>
             </div>
             <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
               <h4 className="font-bold text-lg text-gray-900 dark:text-white">Seamless for Your Customers</h4>
