@@ -185,8 +185,8 @@ export default function FaircutLandingPage() {
               You're Seeing <span className="bg-gradient-to-r from-amber-600 to-orange-600 dark:from-amber-400 dark:to-orange-400 bg-clip-text text-transparent">$0</span> Of It.
             </h1>
             
-            <p className="max-w-3xl mx-auto text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-16 leading-relaxed">
-              Marketplaces and resellers capture all of that profit. You're the creator, but you're left out. <span className="bg-gradient-to-r from-amber-600 to-orange-600 dark:from-amber-400 dark:to-orange-400 bg-clip-text text-transparent font-black">We're changing that.</span>
+            <p className="max-w-3xl mx-auto text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-16" style={{lineHeight: '1.6'}}>
+              Marketplaces and resellers capture all of that profit. You're left out. <span className="bg-gradient-to-r from-amber-600 to-orange-600 dark:from-amber-400 dark:to-orange-400 bg-clip-text text-transparent font-black">We're changing that.</span>
             </p>
           </div>
         </section>
