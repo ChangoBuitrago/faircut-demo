@@ -8,12 +8,15 @@ export default function FaircutLandingPage() {
   const totalSections = 6; // 6 sections: Hero, Solution, Calculator, Partnership, Benefits, CTA
   
   const [sliderValues, setSliderValues] = useState({
-    salesVolume: 500000,
-    resaleMarkup: 200,
-    royaltyRate: 15
+    avgItemPrice: 300,
+    resaleMarkup: 125,
+    royaltyRate: 15,
+    itemsSold: 500,
+    lifetimeResales: 2
   });
   
   const [calculatedRevenue, setCalculatedRevenue] = useState(0);
+  const [totalResellerProfit, setTotalResellerProfit] = useState(0);
   const [resaleCount, setResaleCount] = useState(0);
 
   // Effect to ensure page starts at the top on load
@@ -167,26 +170,27 @@ export default function FaircutLandingPage() {
 
   // Calculate revenue based on slider values
   const calculateRevenue = () => {
-    const { salesVolume, resaleMarkup, royaltyRate } = sliderValues;
-    
-    // Assume 20% annual resale rate as a market assumption
-    const annualResaleRate = 0.20;
-    
-    // Calculate average item price from sales volume (assuming 1000 items sold)
-    const avgPrice = salesVolume / 1000;
-    
-    const resalePrice = avgPrice * (1 + resaleMarkup / 100);
-    const profitOnResale = resalePrice - avgPrice;
-    const totalRoyaltyPerItem = profitOnResale > 0 ? profitOnResale * (royaltyRate / 100) : 0;
-    const brandRoyaltyPerItem = totalRoyaltyPerItem * 0.50; // 50/50 split
+    const { avgItemPrice, itemsSold, resaleMarkup, royaltyRate, lifetimeResales } = sliderValues;
 
-    const numberOfResales = 1000 * annualResaleRate; // 1000 items * 20% resale rate
-    const totalAnnualRevenue = brandRoyaltyPerItem * numberOfResales;
+    if (itemsSold === 0) {
+      setCalculatedRevenue(0);
+      setTotalResellerProfit(0);
+      return;
+    }
 
-    setCalculatedRevenue(totalAnnualRevenue);
-    setResaleCount(Math.round(numberOfResales));
-    
-    return totalAnnualRevenue;
+    const profitPerResale = avgItemPrice * (resaleMarkup / 100);
+    const totalResales = itemsSold * lifetimeResales;
+
+    // This is the total profit generated in the secondary market
+    const totalMarketProfit = profitPerResale * totalResales;
+    setTotalResellerProfit(totalMarketProfit);
+
+    // This is the royalty pool created from that profit
+    const totalRoyaltyGenerated = totalMarketProfit * (royaltyRate / 100);
+
+    // The creator's 50% share of that royalty pool
+    const creatorShare = totalRoyaltyGenerated * 0.50;
+    setCalculatedRevenue(creatorShare);
   };
 
   // Recalculate when slider values change
@@ -300,65 +304,87 @@ export default function FaircutLandingPage() {
         </section>
 
         {/* --- CALCULATOR SECTION --- */}
-        <section className="h-screen snap-start snap-always flex flex-col items-center justify-center py-20 bg-gradient-to-br from-slate-50 via-stone-50 to-zinc-50 dark:from-slate-950 dark:via-slate-900 dark:to-neutral-950 px-6 relative">
+        <section className="h-screen snap-start snap-always flex flex-col items-center justify-center py-20 bg-gradient-to-br from-slate-50 via-stone-50 to-zinc-50 dark:from-slate-950 dark:via-slate-900 dark:to-neutral-950 px-6">
           <div className="w-full max-w-5xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 dark:text-white mb-6 tracking-tight">
-              Your Legacy Revenue
+              Stop Leaving Money on the Table
             </h2>
             <p className="max-w-2xl mx-auto text-xl text-gray-600 dark:text-gray-400 leading-relaxed mb-16">
-              See how your  products could be generating passive income for years to come.
+              See the profit your work generates for others, and how much of it you can claim back.
             </p>
-
-            {/* Simplified Calculator */}
-            <div className="max-w-4xl mx-auto">
-              {/* Main Revenue Display */}
-              <div className="mb-12">
-                <div className="text-6xl md:text-7xl font-black bg-gradient-to-r from-amber-600 to-orange-600 dark:from-amber-400 dark:to-orange-400 bg-clip-text text-transparent mb-4">
-                  {formatCurrency(calculatedRevenue)}
+            <div className="max-w-6xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-2 md:gap-8 items-center mb-12">
+                <div className="text-center mb-8 md:mb-0 md:border-r border-gray-200 dark:border-gray-700 md:pr-8">
+                  <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200 mb-2">Total Reseller Profit</h3>
+                  <div className="text-5xl md:text-6xl font-black text-gray-500 dark:text-gray-500 mb-2">
+                    {formatCurrency(totalResellerProfit)}
+                  </div>
+                  <p className="text-lg text-gray-600 dark:text-gray-400">Currently, you get <span className="font-bold bg-gradient-to-r from-amber-600 to-orange-600 dark:from-amber-400 dark:to-orange-400 bg-clip-text text-transparent">$0</span> of this.</p>
                 </div>
-                <p className="text-xl text-gray-600 dark:text-gray-400">Annual Passive Revenue</p>
+                <div className="text-center">
+                  <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200 mb-2">Your Share with Faircut</h3>
+                  <div className="text-6xl md:text-7xl font-black bg-gradient-to-r from-amber-600 to-orange-600 dark:from-amber-400 dark:to-orange-400 bg-clip-text text-transparent mb-2">
+                    {formatCurrency(calculatedRevenue)}
+                  </div>
+                  <p className="text-lg text-gray-600 dark:text-gray-400">Our 50/50 split ensures we win only when you do.</p>
+                </div>
               </div>
-
-              {/* Clean Calculator Controls */}
-              <div className="bg-slate-50 dark:bg-slate-900/50 rounded-3xl p-8 mb-12">
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                  {/* Column 1 - Your Business */}
-                  <div className="space-y-6 lg:col-span-1">
+              <div className="bg-slate-50 dark:bg-slate-900/50 rounded-3xl p-8">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-8 gap-y-6">
+                  {/* Column 1: Your Business */}
+                  <div className="space-y-6">
                     <div className="flex items-center gap-2 mb-4">
                       <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                       <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Your Business</h3>
                     </div>
-                    
-                    {/* Sales Volume */}
+
+                    {/* Average Item Price */}
                     <div className="w-full">
-                      <div className="flex flex-col items-center mb-2 px-2">
-                        <span className="text-sm text-gray-600 dark:text-gray-400 mb-1">Annual Sales Volume</span>
-                        <div className="text-base font-bold text-gray-900 dark:text-white text-center">
-                          {formatCurrencyCompact(sliderValues.salesVolume)}
-                        </div>
+                      <div className="flex justify-between items-center mb-2">
+                        <span className="text-sm text-gray-600 dark:text-gray-400">Average Item Price</span>
+                        <span className="text-xl font-bold text-gray-900 dark:text-white">{formatCurrency(sliderValues.avgItemPrice)}</span>
                       </div>
                       <input 
                         type="range" 
-                        min="50000" 
-                        max="2000000" 
-                        value={sliderValues.salesVolume}
-                        step="25000"
-                        onChange={(e) => handleSliderChange('salesVolume', e.target.value)}
+                        min="50" 
+                        max="5000" 
+                        value={sliderValues.avgItemPrice} 
+                        step="50" 
+                        onChange={(e) => handleSliderChange('avgItemPrice', e.target.value)} 
                         className="w-full h-2 bg-green-200 dark:bg-green-800 rounded-lg appearance-none cursor-pointer slider"
                       />
-                      <p className="text-xs text-gray-500 dark:text-gray-500 mt-1">You control this</p>
+                    </div>
+                    
+                    {/* Items Sold Annually */}
+                    <div className="w-full">
+                      <div className="flex justify-between items-center mb-2">
+                        <span className="text-sm text-gray-600 dark:text-gray-400">Items Sold Annually</span>
+                        <span className="text-xl font-bold text-gray-900 dark:text-white">{sliderValues.itemsSold.toLocaleString()}</span>
+                      </div>
+                      <input 
+                        type="range" 
+                        min="100" 
+                        max="10000" 
+                        value={sliderValues.itemsSold} 
+                        step="100" 
+                        onChange={(e) => handleSliderChange('itemsSold', e.target.value)} 
+                        className="w-full h-2 bg-green-200 dark:bg-green-800 rounded-lg appearance-none cursor-pointer slider"
+                      />
+                      <p className="text-xs text-gray-500 dark:text-gray-500 mt-1">
+                        Total annual sales: {formatCurrency(sliderValues.avgItemPrice * sliderValues.itemsSold)}
+                      </p>
                     </div>
                   </div>
 
-                  {/* Column 2 - Your Legacy */}
+                  {/* Column 2: Your Legacy */}
                   <div className="space-y-6">
                     <div className="flex items-center gap-2 mb-4">
-                      <div className="w-3 h-3 bg-amber-500 rounded-full"></div>
+                      <div className="w-3 h-3 bg-orange-500 rounded-full"></div>
                       <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Your Legacy</h3>
                     </div>
-                    
+
                     {/* Royalty Rate */}
-                    <div>
+                    <div className="w-full">
                       <div className="flex justify-between items-center mb-2">
                         <span className="text-sm text-gray-600 dark:text-gray-400">Royalty Rate</span>
                         <span className="text-xl font-bold text-gray-900 dark:text-white">{sliderValues.royaltyRate}%</span>
@@ -367,16 +393,15 @@ export default function FaircutLandingPage() {
                         type="range" 
                         min="5" 
                         max="25" 
-                        value={sliderValues.royaltyRate}
-                        step="1"
-                        onChange={(e) => handleSliderChange('royaltyRate', e.target.value)}
-                        className="w-full h-2 bg-amber-200 dark:bg-amber-800 rounded-lg appearance-none cursor-pointer slider"
+                        value={sliderValues.royaltyRate} 
+                        step="1" 
+                        onChange={(e) => handleSliderChange('royaltyRate', e.target.value)} 
+                        className="w-full h-2 bg-orange-200 dark:bg-orange-800 rounded-lg appearance-none cursor-pointer slider"
                       />
-                      <p className="text-xs text-gray-500 dark:text-gray-500 mt-1">Faircut gives you control</p>
                     </div>
                   </div>
 
-                  {/* Column 3 - Market Reality */}
+                  {/* Column 3: Market Reality */}
                   <div className="space-y-6">
                     <div className="flex items-center gap-2 mb-4">
                       <div className="w-3 h-3 bg-red-500 rounded-full"></div>
@@ -393,22 +418,34 @@ export default function FaircutLandingPage() {
                         type="range" 
                         min="50" 
                         max="300" 
-                        value={sliderValues.resaleMarkup}
-                        step="25"
-                        onChange={(e) => handleSliderChange('resaleMarkup', e.target.value)}
+                        value={sliderValues.resaleMarkup} 
+                        step="25" 
+                        onChange={(e) => handleSliderChange('resaleMarkup', e.target.value)} 
                         className="w-full h-2 bg-red-200 dark:bg-red-800 rounded-lg appearance-none cursor-pointer slider"
                       />
                       <p className="text-xs text-gray-500 dark:text-gray-500 mt-1">Set by resellers</p>
                     </div>
+                    
+                    {/* Lifetime Resales Per Item */}
+                    <div>
+                      <div className="flex justify-between items-center mb-2">
+                        <span className="text-sm text-gray-600 dark:text-gray-400">Lifetime Resales Per Item</span>
+                        <span className="text-xl font-bold text-gray-900 dark:text-white">{sliderValues.lifetimeResales}</span>
+                      </div>
+                      <input 
+                        type="range" 
+                        min="1" 
+                        max="10" 
+                        value={sliderValues.lifetimeResales} 
+                        step="1" 
+                        onChange={(e) => handleSliderChange('lifetimeResales', e.target.value)} 
+                        className="w-full h-2 bg-red-200 dark:bg-red-800 rounded-lg appearance-none cursor-pointer slider"
+                      />
+                      <p className="text-xs text-gray-500 dark:text-gray-500 mt-1">Average over the product's lifespan</p>
+                    </div>
                   </div>
                 </div>
-                <div className="text-center mt-6">
-                  <p className="text-sm text-gray-500 dark:text-gray-500">
-                    *Calculation assumes 1,000 items sold annually with 20% resale rate
-                  </p>
-                </div>
               </div>
-
             </div>
           </div>
         </section>
