@@ -261,7 +261,7 @@ export default function FaircutLandingPage() {
           <div className="w-full max-w-5xl mx-auto text-center">
             <h2 className="text-4xl md:text-6xl font-black text-gray-900 dark:text-white mb-6 tracking-tighter">Unlock Royalties from Every Resale</h2>
             <p className="text-lg md:text-xl text-gray-700 dark:text-slate-100/80 leading-relaxed mb-8 max-w-3xl mx-auto">
-              Faircut gives every product you create a new digital revenue stream. We attach a digital ownership certificate to each item you sell, creating an immutable connection that ensures resellers pay you a royalty on every future resale.
+              Faircut gives every product you create a new revenue stream. We attach a digital ownership certificate to each item you sell, creating an immutable connection that ensures resellers pay you a royalty on every future resale.
             </p>
             <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-0 text-gray-900 dark:text-white">
                 <div className="w-60 h-52">
