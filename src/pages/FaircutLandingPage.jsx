@@ -251,7 +251,7 @@ export default function FaircutLandingPage() {
             </h1>
             
             <p className="max-w-3xl mx-auto text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-16" style={{lineHeight: '1.6'}}>
-              Marketplaces and resellers capture all of that profit. You're left out. <span className="bg-gradient-to-r from-amber-600 to-orange-600 dark:from-amber-400 dark:to-orange-400 bg-clip-text text-transparent font-black">We're changing that.</span>
+              Marketplaces and resellers capture all of that profit. You're left out. <span className="bg-gradient-to-r from-amber-600 to-orange-600 dark:from-amber-400 dark:to-orange-400 bg-clip-text text-transparent font-black">We're changing that.</span> Resellers pay the royalty, not your customers.
             </p>
           </div>
         </section>
@@ -261,7 +261,7 @@ export default function FaircutLandingPage() {
           <div className="w-full max-w-5xl mx-auto text-center">
             <h2 className="text-4xl md:text-6xl font-black text-gray-900 dark:text-white mb-6 tracking-tighter">Unlock Royalties from Every Resale</h2>
             <p className="text-lg md:text-xl text-gray-700 dark:text-slate-100/80 leading-relaxed mb-8 max-w-3xl mx-auto">
-              Faircut gives every product you create a new digital revenue stream. We attach a digital ownership certificate to each item you sell, creating an immutable connection that ensures you earn from every future resale.
+              Faircut gives every product you create a new digital revenue stream. We attach a digital ownership certificate to each item you sell, creating an immutable connection that ensures resellers pay you a royalty on every future resale.
             </p>
             <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-0 text-gray-900 dark:text-white">
                 <div className="w-60 h-52">
@@ -296,7 +296,7 @@ export default function FaircutLandingPage() {
                           </svg>
                         </div>
                         <h3 className="font-bold text-lg">Resale & Royalty</h3>
-                        <p className="text-xs text-gray-500 dark:text-gray-400">Your rule is enforced on every resale.</p>
+                        <p className="text-xs text-gray-500 dark:text-gray-400">Resellers pay your royalty on every resale.</p>
                     </div>
                 </div>
             </div>
@@ -514,7 +514,7 @@ export default function FaircutLandingPage() {
         <section className="h-screen snap-start snap-always flex flex-col items-center justify-center py-20 bg-white dark:bg-black px-6">
             <div className="w-full max-w-5xl mx-auto text-center">
                 <h2 className="text-4xl md:text-6xl font-black text-gray-900 dark:text-white mb-4 tracking-tighter">Risk-Free Terms</h2>
-                <p className="max-w-3xl mx-auto text-lg text-gray-600 dark:text-gray-300 mb-12">We believe in perfect alignment. We only succeed when you do.</p>
+                <p className="max-w-3xl mx-auto text-lg text-gray-600 dark:text-gray-300 mb-12">We believe in perfect alignment. Resellers pay the royalty, not your customers. We only succeed when you do.</p>
                 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
                     <div className="bg-slate-100/50 dark:bg-slate-800/50 rounded-2xl p-8 h-full">
@@ -536,7 +536,7 @@ export default function FaircutLandingPage() {
                 <div className="mt-6 bg-gradient-to-r from-amber-400 to-orange-500 p-1 rounded-2xl shadow-lg shadow-amber-500/20">
                     <div className="bg-white dark:bg-gray-900 rounded-xl p-8 text-center">
                         <h3 className="text-3xl font-black text-gray-900 dark:text-white">Our Term: A 50/50 Royalty Split</h3>
-                        <p className="text-amber-600 dark:text-amber-400 font-semibold mt-1">Perfect Alignment. We only make money when you do.</p>
+                        <p className="text-amber-600 dark:text-amber-400 font-semibold mt-1">Resellers pay the royalty. We split it 50/50. Perfect alignment.</p>
                     </div>
                 </div>
             </div>
@@ -551,7 +551,7 @@ export default function FaircutLandingPage() {
             </h2>
             
             <p className="text-lg md:text-xl text-gray-700 dark:text-slate-100/80 leading-relaxed mb-12 max-w-3xl mx-auto">
-              Stop leaving money on the table. Join the brands turning every resale into revenue.
+              Stop leaving money on the table. Join the brands turning every resale into revenue. Your customers pay normal prices, resellers pay the royalty.
             </p>
 
             <button 
