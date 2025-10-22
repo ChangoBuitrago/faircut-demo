@@ -251,7 +251,7 @@ export default function FaircutLandingPage() {
             </h1>
             
             <p className="max-w-3xl mx-auto text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-16" style={{lineHeight: '1.6'}}>
-              Marketplaces and resellers capture all of that profit. You're left out. <span className="bg-gradient-to-r from-amber-600 to-orange-600 dark:from-amber-400 dark:to-orange-400 bg-clip-text text-transparent font-black">We're changing that.</span> Resellers pay the royalty, not your customers.
+              Marketplaces and resellers capture all of that profit. You're left out. <span className="bg-gradient-to-r from-amber-600 to-orange-600 dark:from-amber-400 dark:to-orange-400 bg-clip-text text-transparent font-black">We're changing that.</span>
             </p>
           </div>
         </section>
@@ -514,7 +514,7 @@ export default function FaircutLandingPage() {
         <section className="h-screen snap-start snap-always flex flex-col items-center justify-center py-20 bg-white dark:bg-black px-6">
             <div className="w-full max-w-5xl mx-auto text-center">
                 <h2 className="text-4xl md:text-6xl font-black text-gray-900 dark:text-white mb-4 tracking-tighter">Risk-Free Terms</h2>
-                <p className="max-w-3xl mx-auto text-lg text-gray-600 dark:text-gray-300 mb-12">We believe in perfect alignment. Resellers pay the royalty, not your customers. We only succeed when you do.</p>
+                <p className="max-w-3xl mx-auto text-lg text-gray-600 dark:text-gray-300 mb-12">We believe in perfect alignment. We only succeed when you do.</p>
                 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
                     <div className="bg-slate-100/50 dark:bg-slate-800/50 rounded-2xl p-8 h-full">
@@ -551,7 +551,7 @@ export default function FaircutLandingPage() {
             </h2>
             
             <p className="text-lg md:text-xl text-gray-700 dark:text-slate-100/80 leading-relaxed mb-12 max-w-3xl mx-auto">
-              Stop leaving money on the table. Join the brands turning every resale into revenue. Your customers pay normal prices, resellers pay the royalty.
+              Stop leaving money on the table. Join the brands turning every resale into revenue.
             </p>
 
             <button 
