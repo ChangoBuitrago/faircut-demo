@@ -167,39 +167,53 @@ export default function NapkinStrategy() {
             
             {/* Title */}
             <div className="text-center mb-16">
-              <p className="text-sm text-gray-500 dark:text-gray-400 mb-4 uppercase tracking-wider">At Louis Erard</p>
+              <p className="text-sm text-gray-500 dark:text-gray-500 mb-4 uppercase tracking-wider">Louis Erard Strategy</p>
               <h2 className="text-4xl md:text-5xl font-black tracking-tight text-gray-900 dark:text-white mb-3">Selling, Not Distributing</h2>
               <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">50% direct, 50% selected retailers — self-sustainable and independent</p>
             </div>
 
             {/* Primary Market */}
             <div className="mb-12">
-              <p className="text-xs text-gray-400 uppercase tracking-widest mb-4">Primary Market</p>
+              <p className="text-xs text-gray-500 dark:text-gray-500 uppercase tracking-widest mb-4">Primary Market</p>
               <div className="bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-200 dark:border-gray-800">
-                <div className="flex items-center gap-4 text-xl text-gray-900 dark:text-gray-100">
+                <div className="flex items-center gap-4 text-xl text-gray-900 dark:text-white">
                   <span className="font-medium">You</span>
-                  <span className="text-gray-400">→</span>
+                  <span className="text-gray-500">→</span>
                   <span className="font-medium">Collector</span>
-                  <span className="ml-auto font-mono text-2xl font-bold text-green-600 dark:text-green-400">CHF 3,000</span>
+                  <span className="ml-auto font-mono text-2xl font-bold text-gray-900 dark:text-white">CHF 3,000</span>
                 </div>
               </div>
             </div>
 
             {/* Secondary Market */}
             <div className="mb-16">
-              <p className="text-xs text-gray-400 uppercase tracking-widest mb-4">Secondary Market (Le Régulateur x Alain Silberstein — Chrono24)</p>
+              <p className="text-xs text-gray-500 dark:text-gray-500 uppercase tracking-widest mb-4">Secondary Market (Le Régulateur x Alain Silberstein — Chrono24)</p>
               <div className="bg-red-50/70 dark:bg-red-900/20 backdrop-blur-sm rounded-2xl p-6 border border-red-200 dark:border-red-800">
-                <div className="flex items-center gap-4 text-xl text-gray-900 dark:text-gray-100 mb-4">
-                  <span className="font-medium">You</span>
-                  <span className="text-gray-400">→</span>
-                  <span className="font-medium">Flipper</span>
-                  <span className="text-gray-400">→</span>
-                  <span className="font-medium">New Collector</span>
-                  <span className="ml-auto font-mono text-2xl font-bold text-red-600 dark:text-red-400">CHF 6,500 <span className="text-sm text-red-500 dark:text-red-400">(~116% markup)</span></span>
-                </div>
-                <div className="flex justify-end gap-8 text-base text-gray-600 dark:text-gray-400 pt-4 border-t border-red-200 dark:border-red-800">
-                  <span>Flipper profit: <span className="font-mono font-bold text-red-600 dark:text-red-400">CHF 3,500</span></span>
-                  <span>Your share: <span className="font-mono font-bold">CHF 0</span></span>
+                <div className="space-y-4">
+                  <div className="flex items-center gap-4 text-xl text-gray-900 dark:text-white">
+                    <span className="font-medium">You</span>
+                    <span className="text-gray-500">→</span>
+                    <span className="font-medium">Flipper</span>
+                    <span className="text-gray-500">→</span>
+                    <span className="font-medium">New Collector</span>
+                    <span className="ml-auto font-mono text-2xl font-bold text-red-600 dark:text-red-400">CHF 6,500 <span className="text-sm">(~116% markup)</span></span>
+                  </div>
+                  
+                  {/* Lost Revenue Ticker */}
+                  <div className="bg-red-100 dark:bg-red-900/40 rounded-lg px-4 py-2 border border-red-400 dark:border-red-600">
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm text-gray-600 dark:text-gray-400">Flipper profit</span>
+                      <div className="text-right">
+                        <span className="font-mono text-lg font-bold text-gray-900 dark:text-white">CHF 3,500</span>
+                      </div>
+                    </div>
+                    <div className="flex items-center justify-between mt-2 pt-2 border-t border-red-300 dark:border-red-600">
+                      <span className="text-sm text-gray-600 dark:text-gray-400">Your share</span>
+                      <div className="text-right">
+                        <span className="font-mono text-lg font-bold text-gray-900 dark:text-white">CHF 0</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -208,11 +222,11 @@ export default function NapkinStrategy() {
             <div className="pt-12 border-t border-gray-300 dark:border-gray-700">
               <div className="flex justify-center gap-16 max-w-5xl mx-auto">
                 <div className="text-center flex-1">
-                  <p className="text-2xl font-bold text-red-600 dark:text-red-400 mb-3">"Frustration"</p>
+                  <p className="text-2xl mb-3"><span className="font-bold text-red-600 dark:text-red-400">"Frustration"</span></p>
                   <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Real collectors can't buy at retail because flippers buy instantly and list immediately at markup</p>
                 </div>
                 <div className="text-center flex-1">
-                  <p className="text-2xl font-bold text-red-600 dark:text-red-400 mb-3">"Headaches"</p>
+                  <p className="text-2xl mb-3"><span className="font-bold text-red-600 dark:text-red-400">"Headaches"</span></p>
                   <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Collectors buying secondhand face authenticity concerns, warranty issues, and condition uncertainties</p>
                 </div>
               </div>
@@ -227,52 +241,61 @@ export default function NapkinStrategy() {
             
             {/* Title */}
             <div className="text-center mb-16">
-              <p className="text-sm text-gray-500 dark:text-gray-400 mb-4 uppercase tracking-wider">The Napkin Strategy</p>
+              <p className="text-sm text-gray-500 dark:text-gray-500 mb-4 uppercase tracking-wider">The Napkin Strategy</p>
               <h2 className="text-4xl md:text-5xl font-black tracking-tight text-gray-900 dark:text-white mb-3">Selling And Distributing</h2>
               <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">100% control, zero cost, perpetual revenue — maintaining independence and self-sustainability</p>
             </div>
 
-            {/* Primary Market */}
-            <div className="mb-12">
-              <p className="text-xs text-gray-400 uppercase tracking-widest mb-4">Primary Market</p>
-              <div className="bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-200 dark:border-gray-800">
-                <div className="flex items-center gap-4 text-xl text-gray-900 dark:text-gray-100">
-                  <span className="font-medium">You</span>
-                  <span className="text-gray-400">→</span>
-                  <span className="font-medium">Collector</span>
-                  <span className="ml-auto font-mono text-2xl font-bold text-green-600 dark:text-green-400">CHF 3,000</span>
+            {/* With Digital Passport Container */}
+            <div className="mb-16 bg-gradient-to-br from-amber-50/70 to-orange-50/70 dark:from-amber-900/20 dark:to-orange-900/20 backdrop-blur-sm rounded-2xl p-6 border border-amber-300 dark:border-amber-700">
+              {/* Digital Passport Badge */}
+              <div className="mb-6">
+                <span className="inline-block bg-amber-200 dark:bg-amber-800 text-amber-900 dark:text-amber-100 px-3 py-1 rounded-full text-xs font-semibold border border-amber-400 dark:border-amber-600">
+                  🔐 Watch With a Digital Passport
+                </span>
+              </div>
+
+              {/* Primary Market */}
+              <div className="mb-8">
+                <p className="text-xs text-gray-500 dark:text-gray-500 uppercase tracking-widest mb-4">Primary Market</p>
+                <div className="bg-white dark:bg-slate-900 rounded-2xl p-6 border border-gray-300 dark:border-gray-700">
+                  <div className="flex items-center gap-4 text-xl text-gray-900 dark:text-white">
+                    <span className="font-medium">You</span>
+                    <span className="text-gray-500">→</span>
+                    <span className="font-medium">Collector</span>
+                    <span className="ml-auto font-mono text-2xl font-bold text-gray-900 dark:text-white">CHF 3,000</span>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            {/* Secondary Market with Royalty */}
-            <div className="mb-16">
-              <p className="text-xs text-gray-400 uppercase tracking-widest mb-4">Secondary Market (Le Régulateur x Alain Silberstein — Chrono24)</p>
-              <div className="bg-gradient-to-br from-amber-50/70 to-orange-50/70 dark:from-amber-900/20 dark:to-orange-900/20 backdrop-blur-sm rounded-2xl p-6 border border-amber-300 dark:border-amber-700">
-                {/* Digital Passport Badge */}
-                <div className="mb-4">
-                  <span className="inline-block bg-amber-200 dark:bg-amber-800 text-amber-900 dark:text-amber-100 px-3 py-1 rounded-full text-xs font-semibold border border-amber-400 dark:border-amber-600">
-                    🔐 With Digital Passport
-                  </span>
-                </div>
-                
-                <div className="space-y-4">
-                  <div className="flex items-center gap-4 text-xl text-gray-900 dark:text-gray-100">
-                    <span className="font-medium">You</span>
-                    <span className="text-gray-400">→</span>
-                    <span className="font-medium">Reseller</span>
-                    <span className="text-gray-400">→</span>
-                    <span className="font-medium">New Collector</span>
-                    <span className="ml-auto font-mono text-2xl font-bold">CHF 6,500</span>
-                  </div>
-                  
-                  {/* Royalty Ticker */}
-                  <div className="bg-amber-100 dark:bg-amber-900/30 rounded-lg px-4 py-2 border border-amber-300 dark:border-amber-700">
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm text-gray-700 dark:text-gray-300">Revenue (30% royalty)</span>
-                      <div className="text-right">
-                        <span className="font-mono text-lg font-bold text-amber-600 dark:text-amber-400">+ CHF 1,050</span>
-                        <p className="text-xs text-gray-500 dark:text-gray-400 italic mt-1">Per resale. Perpetual.</p>
+              {/* Secondary Market with Royalty */}
+              <div>
+                <p className="text-xs text-gray-500 dark:text-gray-500 uppercase tracking-widest mb-4">Secondary Market (Le Régulateur x Alain Silberstein — Chrono24)</p>
+                <div className="bg-white dark:bg-slate-900 rounded-2xl p-6 border border-gray-300 dark:border-gray-700">
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-4 text-xl text-gray-900 dark:text-white">
+                      <span className="font-medium">You</span>
+                      <span className="text-gray-500">→</span>
+                      <span className="font-medium">Reseller</span>
+                      <span className="text-gray-500">→</span>
+                      <span className="font-medium">New Collector</span>
+                      <span className="ml-auto font-mono text-2xl font-bold">CHF 6,500</span>
+                    </div>
+                    
+                    {/* Royalty Ticker */}
+                    <div className="bg-amber-50 dark:bg-amber-900/30 rounded-lg px-4 py-2 border border-amber-300 dark:border-amber-700">
+                      <div className="flex items-center justify-between">
+                        <span className="text-sm text-gray-600 dark:text-gray-400">Reseller profit</span>
+                        <div className="text-right">
+                          <span className="font-mono text-lg font-bold text-gray-900 dark:text-white">CHF 2,450</span>
+                        </div>
+                      </div>
+                      <div className="flex items-center justify-between mt-2 pt-2 border-t border-amber-200 dark:border-amber-700">
+                        <span className="text-sm text-gray-600 dark:text-gray-400">Your share (30% royalty)</span>
+                        <div className="text-right">
+                          <span className="font-mono text-lg font-bold text-amber-600 dark:text-amber-400">CHF 1,050</span>
+                          <p className="text-xs text-gray-600 dark:text-gray-400 italic mt-1">Per resale. Perpetual.</p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -284,11 +307,11 @@ export default function NapkinStrategy() {
             <div className="pt-12 border-t border-gray-300 dark:border-gray-700">
               <div className="flex justify-center gap-16 max-w-5xl mx-auto">
                 <div className="text-center flex-1">
-                  <p className="text-2xl font-bold text-green-600 dark:text-green-400 mb-3">"Fair Access"</p>
+                  <p className="text-2xl font-bold mb-3"><span className="text-orange-600 dark:text-orange-400">"Fair Access"</span></p>
                   <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Set time-based royalty rates (e.g., 90% first year) to eliminate flippers' margin, ensuring real collectors get priority access</p>
                 </div>
                 <div className="text-center flex-1">
-                  <p className="text-2xl font-bold text-green-600 dark:text-green-400 mb-3">"Trust & Security"</p>
+                  <p className="text-2xl font-bold mb-3"><span className="text-orange-600 dark:text-orange-400">"Trust & Security"</span></p>
                   <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Digital passport ensures authenticity, tracks warranty, and maintains condition history throughout ownership</p>
                 </div>
               </div>
