@@ -251,7 +251,7 @@ export default function NapkinStrategy() {
               {/* Digital Passport Badge */}
               <div className="mb-6">
                 <span className="inline-block bg-amber-200 dark:bg-amber-800 text-amber-900 dark:text-amber-100 px-3 py-1 rounded-full text-xs font-semibold border border-amber-400 dark:border-amber-600">
-                  🔐 Watch With a Digital Passport
+                  🔐 Watch With A Digital Passport
                 </span>
               </div>
 
