@@ -1,0 +1,304 @@
+import { useEffect, useRef, useState } from 'react';
+
+export default function NapkinStrategy() {
+  const containerRef = useRef(null);
+  const [currentSection, setCurrentSection] = useState(0);
+  const isScrollingRef = useRef(false);
+  const totalSections = 2; // Current Strategy, New Strategy
+  
+  // Effect to ensure page starts at the top on load
+  useEffect(() => {
+    setCurrentSection(0);
+    
+    const forceScrollToTop = () => {
+      if (containerRef.current) {
+        containerRef.current.scrollTop = 0;
+        containerRef.current.scrollTo(0, 0);
+      }
+      window.scrollTo(0, 0);
+    };
+
+    forceScrollToTop();
+    const timeoutId = setTimeout(forceScrollToTop, 100);
+    
+    return () => clearTimeout(timeoutId);
+  }, []);
+
+  // Effect for handling mouse wheel scroll navigation
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const handleWheel = (e) => {
+      e.preventDefault();
+      
+      if (isScrollingRef.current) return;
+
+      const direction = e.deltaY > 0 ? 1 : -1;
+      const nextSection = currentSection + direction;
+
+      if (nextSection >= 0 && nextSection < totalSections) {
+        isScrollingRef.current = true;
+        setCurrentSection(nextSection);
+        
+        const targetSection = container.children[nextSection];
+        if (targetSection) {
+          targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        setTimeout(() => {
+          isScrollingRef.current = false;
+        }, 800);
+      }
+    };
+
+    container.addEventListener('wheel', handleWheel, { passive: false });
+    return () => container.removeEventListener('wheel', handleWheel);
+  }, [currentSection]);
+
+  // Effect for updating the current section based on viewport visibility
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    container.scrollTop = 0;
+    setCurrentSection(0);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !isScrollingRef.current) {
+            const index = Array.from(container.children).indexOf(entry.target);
+            if (index !== -1) {
+              setCurrentSection(index);
+            }
+          }
+        });
+      },
+      { threshold: 0.6 }
+    );
+
+    const timeoutId = setTimeout(() => {
+      Array.from(container.children).forEach((child) => {
+        observer.observe(child);
+      });
+    }, 500);
+
+    return () => {
+      clearTimeout(timeoutId);
+      observer.disconnect();
+    };
+  }, []);
+
+  // Effect for handling keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (isScrollingRef.current) return;
+
+      let nextSection = currentSection;
+      
+      if (e.key === 'ArrowDown' || e.key === 'ArrowRight' || e.key === 'PageDown') {
+        e.preventDefault();
+        nextSection = Math.min(currentSection + 1, totalSections - 1);
+      } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft' || e.key === 'PageUp') {
+        e.preventDefault();
+        nextSection = Math.max(currentSection - 1, 0);
+      } else if (e.key === 'Home') {
+        e.preventDefault();
+        nextSection = 0;
+      } else if (e.key === 'End') {
+        e.preventDefault();
+        nextSection = totalSections - 1;
+      }
+
+      if (nextSection !== currentSection) {
+        isScrollingRef.current = true;
+        setCurrentSection(nextSection);
+        const targetSection = containerRef.current?.children[nextSection];
+        if (targetSection) {
+          targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        setTimeout(() => {
+          isScrollingRef.current = false;
+        }, 800);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [currentSection, totalSections]);
+
+  return (
+    <>
+      {/* Section Indicators */}
+      <div className="fixed right-8 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-3">
+        {Array.from({ length: totalSections }).map((_, index) => (
+          <button
+            key={index}
+            onClick={() => {
+              setCurrentSection(index);
+              const targetSection = containerRef.current?.children[index];
+              if (targetSection) {
+                targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }
+            }}
+            className={`transition-all duration-300 rounded-full ${
+              index === currentSection 
+                ? 'w-2 h-6 bg-slate-800 dark:bg-slate-200' 
+                : 'w-2 h-2 bg-slate-300 dark:bg-slate-600 hover:bg-slate-600 dark:hover:bg-slate-400'
+            }`}
+            aria-label={`Go to section ${index + 1}`}
+          />
+        ))}
+      </div>
+      
+      {/* Faircut Logo */}
+      <div className="fixed top-6 left-6 z-50">
+        <div className="text-3xl font-black tracking-tight bg-gradient-to-r from-amber-600 to-orange-600 dark:from-amber-400 dark:to-orange-400 bg-clip-text text-transparent">
+          Faircut
+        </div>
+      </div>
+
+      <div ref={containerRef} className="smooth-scroll-container h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]" style={{scrollBehavior: 'smooth'}}>
+        
+        {/* --- SLIDE 1: CURRENT STRATEGY --- */}
+        <section className="h-screen snap-start snap-always flex flex-col items-center justify-center p-6 bg-gradient-to-br from-slate-50 via-stone-50 to-zinc-50 dark:from-slate-950 dark:via-slate-900 dark:to-neutral-950 relative overflow-hidden">
+          <div className="w-full max-w-5xl mx-auto z-10">
+            
+            {/* Title */}
+            <div className="text-center mb-16">
+              <p className="text-sm text-gray-500 dark:text-gray-400 mb-4 uppercase tracking-wider">At Louis Erard</p>
+              <h2 className="text-4xl md:text-5xl font-black tracking-tight text-gray-900 dark:text-white mb-3">Selling, Not Distributing</h2>
+              <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">50% direct, 50% selected retailers — self-sustainable and independent</p>
+            </div>
+
+            {/* Primary Market */}
+            <div className="mb-12">
+              <p className="text-xs text-gray-400 uppercase tracking-widest mb-4">Primary Market</p>
+              <div className="bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-200 dark:border-gray-800">
+                <div className="flex items-center gap-4 text-xl text-gray-900 dark:text-gray-100">
+                  <span className="font-medium">You</span>
+                  <span className="text-gray-400">→</span>
+                  <span className="font-medium">Collector</span>
+                  <span className="ml-auto font-mono text-2xl font-bold text-green-600 dark:text-green-400">CHF 3,000</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Secondary Market */}
+            <div className="mb-16">
+              <p className="text-xs text-gray-400 uppercase tracking-widest mb-4">Secondary Market (Le Régulateur x Alain Silberstein — Chrono24)</p>
+              <div className="bg-red-50/70 dark:bg-red-900/20 backdrop-blur-sm rounded-2xl p-6 border border-red-200 dark:border-red-800">
+                <div className="flex items-center gap-4 text-xl text-gray-900 dark:text-gray-100 mb-4">
+                  <span className="font-medium">You</span>
+                  <span className="text-gray-400">→</span>
+                  <span className="font-medium">Flipper</span>
+                  <span className="text-gray-400">→</span>
+                  <span className="font-medium">New Collector</span>
+                  <span className="ml-auto font-mono text-2xl font-bold text-red-600 dark:text-red-400">CHF 6,500 <span className="text-sm text-red-500 dark:text-red-400">(~116% markup)</span></span>
+                </div>
+                <div className="flex justify-end gap-8 text-base text-gray-600 dark:text-gray-400 pt-4 border-t border-red-200 dark:border-red-800">
+                  <span>Flipper profit: <span className="font-mono font-bold text-red-600 dark:text-red-400">CHF 3,500</span></span>
+                  <span>Your share: <span className="font-mono font-bold">CHF 0</span></span>
+                </div>
+              </div>
+            </div>
+
+            {/* The Problem */}
+            <div className="pt-12 border-t border-gray-300 dark:border-gray-700">
+              <div className="flex justify-center gap-16 max-w-5xl mx-auto">
+                <div className="text-center flex-1">
+                  <p className="text-2xl font-bold text-red-600 dark:text-red-400 mb-3">"Frustration"</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Real collectors can't buy at retail because flippers buy instantly and list immediately at markup</p>
+                </div>
+                <div className="text-center flex-1">
+                  <p className="text-2xl font-bold text-red-600 dark:text-red-400 mb-3">"Headaches"</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Collectors buying secondhand face authenticity concerns, warranty issues, and condition uncertainties</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        {/* --- SLIDE 2: NEW STRATEGY --- */}
+        <section className="h-screen snap-start snap-always flex flex-col items-center justify-center p-6 bg-gradient-to-br from-slate-50 via-stone-50 to-zinc-50 dark:from-slate-950 dark:via-slate-900 dark:to-neutral-950 relative overflow-hidden">
+          <div className="w-full max-w-5xl mx-auto z-10">
+            
+            {/* Title */}
+            <div className="text-center mb-16">
+              <p className="text-sm text-gray-500 dark:text-gray-400 mb-4 uppercase tracking-wider">The Napkin Strategy</p>
+              <h2 className="text-4xl md:text-5xl font-black tracking-tight text-gray-900 dark:text-white mb-3">Selling And Distributing</h2>
+              <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">100% control, zero cost, perpetual revenue — maintaining independence and self-sustainability</p>
+            </div>
+
+            {/* Primary Market */}
+            <div className="mb-12">
+              <p className="text-xs text-gray-400 uppercase tracking-widest mb-4">Primary Market</p>
+              <div className="bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-200 dark:border-gray-800">
+                <div className="flex items-center gap-4 text-xl text-gray-900 dark:text-gray-100">
+                  <span className="font-medium">You</span>
+                  <span className="text-gray-400">→</span>
+                  <span className="font-medium">Collector</span>
+                  <span className="ml-auto font-mono text-2xl font-bold text-green-600 dark:text-green-400">CHF 3,000</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Secondary Market with Royalty */}
+            <div className="mb-16">
+              <p className="text-xs text-gray-400 uppercase tracking-widest mb-4">Secondary Market (Le Régulateur x Alain Silberstein — Chrono24)</p>
+              <div className="bg-gradient-to-br from-amber-50/70 to-orange-50/70 dark:from-amber-900/20 dark:to-orange-900/20 backdrop-blur-sm rounded-2xl p-6 border border-amber-300 dark:border-amber-700">
+                {/* Digital Passport Badge */}
+                <div className="mb-4">
+                  <span className="inline-block bg-amber-200 dark:bg-amber-800 text-amber-900 dark:text-amber-100 px-3 py-1 rounded-full text-xs font-semibold border border-amber-400 dark:border-amber-600">
+                    🔐 With Digital Passport
+                  </span>
+                </div>
+                
+                <div className="space-y-4">
+                  <div className="flex items-center gap-4 text-xl text-gray-900 dark:text-gray-100">
+                    <span className="font-medium">You</span>
+                    <span className="text-gray-400">→</span>
+                    <span className="font-medium">Reseller</span>
+                    <span className="text-gray-400">→</span>
+                    <span className="font-medium">New Collector</span>
+                    <span className="ml-auto font-mono text-2xl font-bold">CHF 6,500</span>
+                  </div>
+                  
+                  {/* Royalty Ticker */}
+                  <div className="bg-amber-100 dark:bg-amber-900/30 rounded-lg px-4 py-2 border border-amber-300 dark:border-amber-700">
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm text-gray-700 dark:text-gray-300">Revenue (30% royalty)</span>
+                      <div className="text-right">
+                        <span className="font-mono text-lg font-bold text-amber-600 dark:text-amber-400">+ CHF 1,050</span>
+                        <p className="text-xs text-gray-500 dark:text-gray-400 italic mt-1">Per resale. Perpetual.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* The Solution */}
+            <div className="pt-12 border-t border-gray-300 dark:border-gray-700">
+              <div className="flex justify-center gap-16 max-w-5xl mx-auto">
+                <div className="text-center flex-1">
+                  <p className="text-2xl font-bold text-green-600 dark:text-green-400 mb-3">"Fair Access"</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Set time-based royalty rates (e.g., 90% first year) to eliminate flippers' margin, ensuring real collectors get priority access</p>
+                </div>
+                <div className="text-center flex-1">
+                  <p className="text-2xl font-bold text-green-600 dark:text-green-400 mb-3">"Trust & Security"</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Digital passport ensures authenticity, tracks warranty, and maintains condition history throughout ownership</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+      </div>
+    </>
+  );
+}
+
