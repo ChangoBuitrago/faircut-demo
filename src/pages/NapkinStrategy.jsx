@@ -392,7 +392,7 @@ export default function NapkinStrategy() {
 
                       {/* Programmable Rules Display */}
                       <div className="pt-2 border-t border-neutral-200 dark:border-neutral-700 space-y-2">
-                          <p className="text-xs text-neutral-500 uppercase tracking-widest font-medium">Programmable Rules (Example)</p>
+                          <p className="text-xs text-neutral-500 uppercase tracking-widest font-medium">Programmable Rules</p>
                           {/* Base Resale Price */}
                           <div className="flex items-center text-sm" title="Minimum price for royalty calculation">
                               <Baseline className="w-4 h-4 mr-2 text-neutral-400 dark:text-neutral-500 flex-shrink-0"/>
