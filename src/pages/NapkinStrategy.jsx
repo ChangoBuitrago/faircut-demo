@@ -351,9 +351,11 @@ export default function NapkinStrategy() {
           {/* Content container */}
           <div className="w-full max-w-4xl mx-auto space-y-6"> {/* Adjusted spacing */}
 
-            {/* Title - Updated Subtitle */}
+            {/* Title */}
             <div className="text-center">
-              <h2 className="text-3xl md:text-4xl font-light mb-2 tracking-tight">The Digital Passport</h2>
+              <p className="text-sm text-neutral-500 dark:text-neutral-500 mb-2 uppercase tracking-wider">Proof of Concept</p>
+              <h2 className="text-3xl md:text-4xl font-black tracking-tight text-neutral-900 dark:text-white mb-2">The Digital Passport</h2>
+              <p className="text-base text-neutral-600 dark:text-neutral-400 max-w-3xl mx-auto">Programmable rules, immutable history, perpetual connection — turning collectors into community</p>
             </div>
 
             {/* Passport Visual Mockup Area */}
