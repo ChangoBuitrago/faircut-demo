@@ -1,10 +1,28 @@
 import { useEffect, useRef, useState } from 'react';
+import { FileText, Edit3, Tag, Calendar, Baseline, Clock, Percent, Wrench, Users } from 'lucide-react';
 
 export default function NapkinStrategy() {
   const containerRef = useRef(null);
   const [currentSection, setCurrentSection] = useState(0);
   const isScrollingRef = useRef(false);
   const totalSections = 3; // Current Strategy, New Strategy, Digital Passport
+  
+  // Digital Passport data
+  const watchMintTimestamp = new Date('2021-01-15').getTime();
+  const transferLockEndDateTimestamp = new Date('2021-07-15').getTime();
+  const isTransferLockActive = Date.now() < transferLockEndDateTimestamp;
+  const activeRoyaltyTier = 'Year 3+'; // Can be 'Year 1', 'Year 2', or 'Year 3+'
+  const serviceLogStatus = "Verified";
+  const communityAccessStatus = "Enabled";
+  
+  // Helper functions
+  const formatDate = (timestamp) => {
+    return new Date(timestamp).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
+  };
+  
+  const formatNumber = (num) => {
+    return num.toLocaleString('en-US');
+  };
   
   // Effect to ensure page starts at the top on load
   useEffect(() => {
@@ -177,7 +195,7 @@ export default function NapkinStrategy() {
               <p className="text-xs text-gray-500 dark:text-gray-500 uppercase tracking-widest mb-4">Primary Market</p>
               <div className="bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-200 dark:border-gray-800">
                 <div className="flex items-center gap-4 text-xl text-gray-900 dark:text-white">
-                  <span className="font-medium">You</span>
+                  <span className="font-medium">Brand</span>
                   <span className="text-gray-500">→</span>
                   <span className="font-medium">Collector</span>
                   <span className="ml-auto font-mono text-2xl font-bold text-gray-900 dark:text-white">CHF 3,000</span>
@@ -191,7 +209,7 @@ export default function NapkinStrategy() {
               <div className="bg-red-50/70 dark:bg-red-900/20 backdrop-blur-sm rounded-2xl p-6 border border-red-200 dark:border-red-800">
                 <div className="space-y-4">
                   <div className="flex items-center gap-4 text-xl text-gray-900 dark:text-white">
-                    <span className="font-medium">You</span>
+                    <span className="font-medium">Brand</span>
                     <span className="text-gray-500">→</span>
                     <span className="font-medium">Flipper</span>
                     <span className="text-gray-500">→</span>
@@ -208,7 +226,7 @@ export default function NapkinStrategy() {
                       </div>
                     </div>
                     <div className="flex items-center justify-between mt-2 pt-2 border-t border-red-300 dark:border-red-600">
-                      <span className="text-sm text-gray-600 dark:text-gray-400">Your share</span>
+                      <span className="text-sm text-gray-600 dark:text-gray-400">Brand share</span>
                       <div className="text-right">
                         <span className="font-mono text-lg font-bold text-gray-900 dark:text-white">CHF 0</span>
                       </div>
@@ -220,10 +238,10 @@ export default function NapkinStrategy() {
 
             {/* The Problem */}
             <div className="pt-12 border-t border-gray-300 dark:border-gray-700">
-              <div className="flex justify-center gap-12 max-w-6xl mx-auto">
+              <div className="flex justify-center gap-6 max-w-6xl mx-auto px-4">
                 <div className="text-center flex-1">
                   <p className="text-2xl mb-3"><span className="font-bold text-red-600 dark:text-red-400">"Frustration"</span></p>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Real collectors can't buy at retail because flippers buy instantly and list immediately at markup</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Real collectors can't buy at retail because flippers buy instantly and list immediately at markup. Brand loses huge profits to resellers.</p>
                 </div>
                 <div className="text-center flex-1">
                   <p className="text-2xl mb-3"><span className="font-bold text-red-600 dark:text-red-400">"Headaches"</span></p>
@@ -244,60 +262,60 @@ export default function NapkinStrategy() {
           <div className="w-full max-w-5xl mx-auto z-10">
             
             {/* Title */}
-            <div className="text-center mb-16">
-              <p className="text-sm text-gray-500 dark:text-gray-500 mb-4 uppercase tracking-wider">The Napkin Strategy</p>
-              <h2 className="text-4xl md:text-5xl font-black tracking-tight text-gray-900 dark:text-white mb-3">Selling And Distributing</h2>
-              <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">100% control, zero cost, perpetual revenue — maintaining independence and self-sustainability</p>
+            <div className="text-center mb-8">
+              <p className="text-sm text-gray-500 dark:text-gray-500 mb-2 uppercase tracking-wider">The Napkin Strategy</p>
+              <h2 className="text-3xl md:text-4xl font-black tracking-tight text-gray-900 dark:text-white mb-2">Selling And Distributing,<br /><span className="bg-gradient-to-r from-amber-600 to-orange-600 dark:from-amber-400 dark:to-orange-400 bg-clip-text text-transparent">With A Digital Passport</span></h2>
+              <p className="text-base text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">100% control, zero cost, perpetual revenue — maintaining independence and self-sustainability</p>
             </div>
 
             {/* With Digital Passport Container */}
-            <div className="mb-16 bg-gradient-to-br from-amber-50/70 to-orange-50/70 dark:from-amber-900/20 dark:to-orange-900/20 backdrop-blur-sm rounded-2xl p-6 border border-amber-300 dark:border-amber-700">
+            <div className="mb-8 bg-gradient-to-br from-amber-50/70 to-orange-50/70 dark:from-amber-900/20 dark:to-orange-900/20 backdrop-blur-sm rounded-2xl p-5 border border-amber-300 dark:border-amber-700">
               {/* Digital Passport Badge */}
-              <div className="mb-6">
+              <div className="mb-4">
                 <span className="inline-block bg-amber-200 dark:bg-amber-800 text-amber-900 dark:text-amber-100 px-3 py-1 rounded-full text-xs font-semibold border border-amber-400 dark:border-amber-600">
                   🔐 Watch With A Digital Passport
                 </span>
               </div>
 
               {/* Primary Market */}
-              <div className="mb-8">
-                <p className="text-xs text-gray-500 dark:text-gray-500 uppercase tracking-widest mb-4">Primary Market</p>
-                <div className="bg-white dark:bg-slate-900 rounded-2xl p-6 border border-gray-300 dark:border-gray-700">
-                  <div className="flex items-center gap-4 text-xl text-gray-900 dark:text-white">
-                    <span className="font-medium">You</span>
+              <div className="mb-6">
+                <p className="text-xs text-gray-500 dark:text-gray-500 uppercase tracking-widest mb-3">Primary Market</p>
+                <div className="bg-white dark:bg-slate-900 rounded-2xl p-4 border border-gray-300 dark:border-gray-700">
+                  <div className="flex items-center gap-4 text-lg text-gray-900 dark:text-white">
+                    <span className="font-medium">Brand</span>
                     <span className="text-gray-500">→</span>
                     <span className="font-medium">Collector</span>
-                    <span className="ml-auto font-mono text-2xl font-bold text-gray-900 dark:text-white">CHF 3,000</span>
+                    <span className="ml-auto font-mono text-xl font-bold text-gray-900 dark:text-white">CHF 3,000</span>
                   </div>
                 </div>
               </div>
 
               {/* Secondary Market with Royalty */}
               <div>
-                <p className="text-xs text-gray-500 dark:text-gray-500 uppercase tracking-widest mb-4">Secondary Market (Le Régulateur x Alain Silberstein — Chrono24)</p>
-                <div className="bg-white dark:bg-slate-900 rounded-2xl p-6 border border-gray-300 dark:border-gray-700">
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-4 text-xl text-gray-900 dark:text-white">
-                      <span className="font-medium">You</span>
+                <p className="text-xs text-gray-500 dark:text-gray-500 uppercase tracking-widest mb-3">Secondary Market (Le Régulateur x Alain Silberstein — Chrono24)</p>
+                <div className="bg-white dark:bg-slate-900 rounded-2xl p-4 border border-gray-300 dark:border-gray-700">
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-4 text-lg text-gray-900 dark:text-white">
+                      <span className="font-medium">Brand</span>
                       <span className="text-gray-500">→</span>
                       <span className="font-medium">Reseller</span>
                       <span className="text-gray-500">→</span>
                       <span className="font-medium">New Collector</span>
-                      <span className="ml-auto font-mono text-2xl font-bold">CHF 6,500</span>
+                      <span className="ml-auto font-mono text-xl font-bold">CHF 6,500</span>
                     </div>
                     
                     {/* Royalty Ticker */}
-                    <div className="bg-amber-50 dark:bg-amber-900/30 rounded-lg px-4 py-2 border border-amber-300 dark:border-amber-700">
+                    <div className="bg-amber-50 dark:bg-amber-900/30 rounded-lg px-3 py-2 border border-amber-300 dark:border-amber-700">
                       <div className="flex items-center justify-between">
                         <span className="text-sm text-gray-600 dark:text-gray-400">Reseller profit</span>
                         <div className="text-right">
-                          <span className="font-mono text-lg font-bold text-gray-900 dark:text-white">CHF 2,450</span>
+                          <span className="font-mono text-base font-bold text-gray-900 dark:text-white">CHF 2,450</span>
                         </div>
                       </div>
                       <div className="flex items-center justify-between mt-2 pt-2 border-t border-amber-200 dark:border-amber-700">
-                        <span className="text-sm text-gray-600 dark:text-gray-400">Your share (30% royalty)</span>
+                        <span className="text-sm text-gray-600 dark:text-gray-400">Brand share (30% royalty)</span>
                         <div className="text-right">
-                          <span className="font-mono text-lg font-bold text-amber-600 dark:text-amber-400">CHF 1,050</span>
+                          <span className="font-mono text-base font-bold text-amber-600 dark:text-amber-400">CHF 1,050</span>
                           <p className="text-xs text-gray-600 dark:text-gray-400 italic mt-1">Per resale. Perpetual.</p>
                         </div>
                       </div>
@@ -308,19 +326,19 @@ export default function NapkinStrategy() {
             </div>
 
             {/* The Solution */}
-            <div className="pt-12 border-t border-gray-300 dark:border-gray-700">
-              <div className="flex justify-center gap-12 max-w-6xl mx-auto">
+            <div className="pt-8 border-t border-gray-300 dark:border-gray-700">
+              <div className="flex justify-center gap-6 max-w-6xl mx-auto px-4">
                 <div className="text-center flex-1">
-                  <p className="text-2xl font-bold mb-3"><span className="text-orange-600 dark:text-orange-400">"Fair Access"</span></p>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Set time-based royalty rates (e.g., 90% first year) to eliminate flippers' margin, ensuring real collectors get priority access</p>
+                  <p className="text-xl font-bold mb-2"><span className="text-orange-600 dark:text-orange-400">"Fair Access"</span></p>
+                  <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">Dynamic royalties (90% Yr 1, 60% Yr 2, 15% Yr 3+) eliminate flippers' margin and return profits to the brand. Transfer locks (first 6 months) ensure real collectors get priority access.</p>
                 </div>
                 <div className="text-center flex-1">
-                  <p className="text-2xl font-bold mb-3"><span className="text-orange-600 dark:text-orange-400">"Trust & Security"</span></p>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Digital passport ensures authenticity, tracks warranty, and maintains condition history throughout ownership</p>
+                  <p className="text-xl font-bold mb-2"><span className="text-orange-600 dark:text-orange-400">"Trust & Security"</span></p>
+                  <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">Digital passport ensures authenticity, tracks warranty, and maintains condition history throughout ownership</p>
                 </div>
                 <div className="text-center flex-1">
-                  <p className="text-2xl font-bold mb-3"><span className="text-orange-600 dark:text-orange-400">"Connected Community"</span></p>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Like a dating app, you connect collectors with each other across the watch's lifetime, building lasting relationships and community</p>
+                  <p className="text-xl font-bold mb-2"><span className="text-orange-600 dark:text-orange-400">"Connected Community"</span></p>
+                  <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">Like a dating app, you connect collectors with each other across the watch's lifetime, building lasting relationships and community</p>
                 </div>
               </div>
             </div>
@@ -328,92 +346,144 @@ export default function NapkinStrategy() {
           </div>
         </section>
 
-        {/* --- SLIDE 3: DIGITAL PASSPORT EXAMPLE --- */}
-        <section className="h-screen snap-start snap-always flex flex-col items-center justify-center p-6 bg-gradient-to-br from-slate-50 via-stone-50 to-zinc-50 dark:from-slate-950 dark:via-slate-900 dark:to-neutral-950 relative overflow-hidden">
-          <div className="w-full max-w-4xl mx-auto z-10">
-            
-            {/* Title */}
-            <div className="text-center mb-12">
-              <p className="text-sm text-gray-500 dark:text-gray-500 mb-4 uppercase tracking-wider">Example</p>
-              <h2 className="text-4xl md:text-5xl font-black tracking-tight text-gray-900 dark:text-white mb-3">Digital Passport</h2>
-              <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">Le Régulateur Louis Erard x Alain Silberstein</p>
+        {/* --- SECTION 3: THE DIGITAL PASSPORT (Visual & Simplified) --- */}
+        <section className="h-screen snap-start snap-always flex flex-col items-center justify-center p-12 bg-neutral-50 dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 font-[Inter]">
+          {/* Content container */}
+          <div className="w-full max-w-4xl mx-auto space-y-8 md:space-y-10"> {/* Adjusted spacing */}
+
+            {/* Title - Updated Subtitle */}
+            <div className="text-center">
+              <h2 className="text-3xl md:text-4xl font-light mb-2 tracking-tight">The Digital Passport</h2>
             </div>
 
-            {/* Digital Passport Card */}
-            <div className="bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-900/30 dark:to-orange-900/30 backdrop-blur-sm rounded-3xl p-8 border-2 border-amber-400 dark:border-amber-600 shadow-2xl">
-              
-              {/* Header with Lock Icon */}
-              <div className="flex items-center justify-between mb-8 pb-6 border-b-2 border-amber-300 dark:border-amber-700">
-                <div>
-                  <h3 className="text-2xl font-black text-gray-900 dark:text-white mb-1">Le Régulateur</h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">Louis Erard × Alain Silberstein</p>
-                </div>
-                <div className="text-5xl">🔐</div>
-              </div>
+            {/* Passport Visual Mockup Area */}
+            <div className="bg-gradient-to-br from-white to-neutral-100 dark:from-neutral-900 dark:to-neutral-800 p-6 rounded-2xl shadow-lg border border-neutral-200 dark:border-neutral-700">
+              {/* Main Content Flex Container */}
+              <div className="flex flex-col md:flex-row gap-6 items-start">
+                  {/* Left Column: Core Info + Rules */}
+                  <div className="flex-1 space-y-3">
+                      <div className="flex items-center justify-between">
+                          <span className="text-xs uppercase tracking-widest text-neutral-500 font-medium">Louis Erard</span>
+                          {/* Badge Removed */}
+                      </div>
+                      <h3 className="text-lg font-semibold tracking-tight">Le Régulateur x Alain Silberstein</h3>
+                      
+                      {/* NEW: Combined Details & Image */}
+                      <div className="flex gap-4 items-start pt-1">
+                          {/* Details Block */}
+                          <div className="space-y-1 text-sm text-neutral-600 dark:text-neutral-400 flex-1">
+                              <p className="flex items-center"><FileText className="w-4 h-4 mr-2 text-neutral-400 dark:text-neutral-500"/> Ref: 85358TT02.BTT88</p>
+                              <p className="flex items-center"><Edit3 className="w-4 h-4 mr-2 text-neutral-400 dark:text-neutral-500"/> Edition: #042 / 178</p>
+                              <p className="flex items-center"><Tag className="w-4 h-4 mr-2 text-neutral-400 dark:text-neutral-500"/> Serial: LE-AS-2021-042</p>
+                              <p className="flex items-center"><Calendar className="w-4 h-4 mr-2 text-neutral-400 dark:text-neutral-500"/> Issued: {formatDate(watchMintTimestamp)}</p>
+                          </div>
+                          {/* Watch Image */}
+                          <div className="w-24 h-auto flex-shrink-0 flex items-center justify-center self-center overflow-hidden rounded-lg bg-neutral-100 dark:bg-neutral-800 p-1 border border-neutral-200 dark:border-neutral-700">
+                              <img
+                                src="https://img.chrono24.com/images/uhren/26746621-zpbgyrk9dwrlxwziwnej4dcs-Zoom.jpg"
+                                alt="Watch"
+                                className="max-w-full h-auto object-contain rounded"
+                                onError={(e) => { e.target.onerror = null; e.target.src='https://placehold.co/96x120/e2e8f0/cbd5e1?text=Img'; }}
+                              />
+                          </div>
+                      </div>
 
-              {/* Watch Details Grid */}
-              <div className="grid grid-cols-2 gap-6 mb-8">
-                <div>
-                  <p className="text-xs text-gray-500 dark:text-gray-500 uppercase tracking-wider mb-2">Serial Number</p>
-                  <p className="text-lg font-mono font-bold text-gray-900 dark:text-white">LE-AS-2024-0042</p>
-                </div>
-                <div>
-                  <p className="text-xs text-gray-500 dark:text-gray-500 uppercase tracking-wider mb-2">Edition</p>
-                  <p className="text-lg font-bold text-gray-900 dark:text-white">Limited 178 pcs</p>
-                </div>
-                <div>
-                  <p className="text-xs text-gray-500 dark:text-gray-500 uppercase tracking-wider mb-2">Retail Base Price</p>
-                  <p className="text-lg font-mono font-bold text-gray-900 dark:text-white">CHF 3,000</p>
-                </div>
-                <div>
-                  <p className="text-xs text-gray-500 dark:text-gray-500 uppercase tracking-wider mb-2">Warranty</p>
-                  <p className="text-lg font-bold text-gray-900 dark:text-white">Valid until Oct 2026</p>
-                </div>
-              </div>
-
-              {/* Resale Royalties */}
-              <div className="bg-white dark:bg-slate-900 rounded-2xl p-6 mb-6 border border-gray-300 dark:border-gray-700">
-                <h4 className="text-sm font-bold text-gray-900 dark:text-white mb-4 uppercase tracking-wider">Resale Royalties</h4>
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-gray-600 dark:text-gray-400">Year 1 (2024-2025)</span>
-                    <span className="font-mono font-bold text-orange-600 dark:text-orange-400">90%</span>
+                      {/* Programmable Rules Display */}
+                      <div className="pt-2 border-t border-neutral-200 dark:border-neutral-700 space-y-3">
+                          <p className="text-xs text-neutral-500 uppercase tracking-widest font-medium">Programmable Rules (Example)</p>
+                          {/* Base Resale Price */}
+                          <div className="flex items-center text-sm" title="Minimum price for royalty calculation">
+                              <Baseline className="w-4 h-4 mr-2 text-neutral-400 dark:text-neutral-500 flex-shrink-0"/>
+                              <span className="flex-grow text-neutral-500 dark:text-neutral-500">
+                                  Base Resale Price
+                                  <span className="font-mono float-right tabular-nums font-semibold text-neutral-800 dark:text-neutral-200">CHF {formatNumber(3000)}</span>
+                              </span>
+                          </div>
+                           {/* Transfer Lock Rule Display */}
+                          <div className="flex items-center text-sm pt-1 border-t border-neutral-200 dark:border-neutral-700 mt-2" title={`Transfer lock active for first 6 months. Ends ${formatDate(transferLockEndDateTimestamp)}`}>
+                              <Clock className={`w-4 h-4 mr-2 flex-shrink-0 ${isTransferLockActive ? 'text-red-600 dark:text-red-500' : 'text-neutral-400 dark:text-neutral-600'}`}/>
+                              <span className={`flex-grow ${isTransferLockActive ? 'text-red-600 dark:text-red-500' : 'text-neutral-500 dark:text-neutral-500'}`}>
+                                  Transfer Lock Date
+                                  <span className={`float-right font-medium ${isTransferLockActive ? 'text-red-600 dark:text-red-500' : 'text-neutral-800 dark:text-neutral-200'}`}>
+                                      {isTransferLockActive ? 'Active' : formatDate(transferLockEndDateTimestamp)} {/* Show date */}
+                                  </span>
+                              </span>
+                          </div>
+                          {/* Royalty Rules Display */}
+                          <div className="space-y-1 pt-1 border-t border-neutral-200 dark:border-neutral-700 mt-2">
+                              <p className="flex items-center text-sm" title="Royalty within first year">
+                                  <Percent className={`w-4 h-4 mr-2 flex-shrink-0 ${activeRoyaltyTier === 'Year 1' ? 'text-red-600 dark:text-red-500' : 'text-neutral-400 dark:text-neutral-600'}`}/>
+                                  <span className={`flex-grow ${activeRoyaltyTier === 'Year 1' ? 'font-semibold text-neutral-800 dark:text-neutral-200' : 'text-neutral-500 dark:text-neutral-500'}`}>
+                                      Year 1 Royalty: <span className="font-mono float-right">90%</span>
+                                  </span>
+                              </p>
+                              <p className="flex items-center text-sm" title="Royalty during second year">
+                                  <Percent className={`w-4 h-4 mr-2 flex-shrink-0 ${activeRoyaltyTier === 'Year 2' ? 'text-red-600 dark:text-red-500' : 'text-neutral-400 dark:text-neutral-600'}`}/>
+                                  <span className={`flex-grow ${activeRoyaltyTier === 'Year 2' ? 'font-semibold text-neutral-800 dark:text-neutral-200' : 'text-neutral-500 dark:text-neutral-500'}`}>
+                                      Year 2 Royalty: <span className="font-mono float-right">60%</span>
+                                  </span>
+                              </p>
+                              <p className="flex items-center text-sm" title="Royalty after two years">
+                                  <Percent className={`w-4 h-4 mr-2 flex-shrink-0 ${activeRoyaltyTier === 'Year 3+' ? 'text-red-600 dark:text-red-500' : 'text-neutral-400 dark:text-neutral-600'}`}/>
+                                  <span className={`flex-grow ${activeRoyaltyTier === 'Year 3+' ? 'font-semibold text-neutral-800 dark:text-neutral-200' : 'text-neutral-500 dark:text-neutral-500'}`}>
+                                      Year 3+ Royalty: <span className="font-mono float-right">15%</span>
+                                  </span>
+                              </p>
+                          </div>
+                          {/* Service Log Status */}
+                          <div className="flex items-center text-sm pt-1 border-t border-neutral-200 dark:border-neutral-700 mt-2" title="Service history verifiable">
+                              <Wrench className={`w-4 h-4 mr-2 flex-shrink-0 ${serviceLogStatus === "Verified" ? 'text-red-600 dark:text-red-500' : 'text-neutral-400 dark:text-neutral-600'}`}/>
+                              <span className="flex-grow text-neutral-500 dark:text-neutral-500">
+                                  Service Log Status
+                                  <span className={`float-right font-medium ${serviceLogStatus === "Verified" ? 'text-neutral-800 dark:text-neutral-200' : 'text-neutral-500 dark:text-neutral-500'}`}>{serviceLogStatus}</span>
+                              </span>
+                          </div>
+                          {/* Community Access Status */}
+                          <div className="flex items-center text-sm pt-1 border-t border-neutral-200 dark:border-neutral-700 mt-2" title="Access to owner community & perks">
+                              <Users className={`w-4 h-4 mr-2 flex-shrink-0 ${communityAccessStatus === "Enabled" ? 'text-red-600 dark:text-red-500' : 'text-neutral-400 dark:text-neutral-600'}`}/>
+                              <span className="flex-grow text-neutral-500 dark:text-neutral-500">
+                                  Community Access
+                                  <span className={`float-right font-medium ${communityAccessStatus === "Enabled" ? 'text-neutral-800 dark:text-neutral-200' : 'text-neutral-500 dark:text-neutral-500'}`}>{communityAccessStatus}</span>
+                              </span>
+                          </div>
+                      </div>
                   </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-gray-600 dark:text-gray-400">Year 2 (2025-2026)</span>
-                    <span className="font-mono font-bold text-orange-600 dark:text-orange-400">60%</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-gray-600 dark:text-gray-400">Year 3+ (2026 onwards)</span>
-                    <span className="font-mono font-bold text-orange-600 dark:text-orange-400">30%</span>
-                  </div>
+              </div> {/* End Main Flex Container */}
+            </div> {/* End Passport Card */}
+
+            {/* SECTION: Brand-Defined Rules & Benefits Tiles */}
+            <div className="space-y-4 pt-4 border-t border-neutral-200 dark:border-neutral-800">
+              <p className="text-xs text-neutral-500 dark:text-neutral-500 uppercase tracking-widest font-medium text-center">Programmable Rules & Benefits</p>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                {/* Dynamic Royalties */}
+                <div className="p-4 bg-neutral-100 dark:bg-neutral-800 rounded-lg border border-neutral-200 dark:border-neutral-700 h-full flex flex-col items-center">
+                  <Percent className="w-6 h-6 mx-auto mb-2 text-amber-600 dark:text-amber-500"/>
+                  <p className="text-sm font-medium">Dynamic Royalties</p>
+                  <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-1 flex-grow">Capture higher % on quick flips (e.g., 90% Yr 1, 60% Yr 2, 15% Yr 3+).</p>
+                </div>
+                {/* Anti-Flipping Cooldown */}
+                 <div className="p-4 bg-neutral-100 dark:bg-neutral-800 rounded-lg border border-neutral-200 dark:border-neutral-700 h-full flex flex-col items-center">
+                  <Clock className="w-6 h-6 mx-auto mb-2 text-amber-600 dark:text-amber-500"/>
+                  <p className="text-sm font-medium">Anti-Flipping Rules</p>
+                  <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-1 flex-grow">Implement transfer locks (e.g., first 6 months) to discourage immediate speculation.</p>
+                </div>
+                 {/* Service History */}
+                 <div className="p-4 bg-neutral-100 dark:bg-neutral-800 rounded-lg border border-neutral-200 dark:border-neutral-700 h-full flex flex-col items-center">
+                  <Wrench className="w-6 h-6 mx-auto mb-2 text-amber-600 dark:text-amber-500"/>
+                  <p className="text-sm font-medium">Verified Service Log</p>
+                  <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-1 flex-grow">Build trust & value: only official centers can update the immutable service history.</p>
+                </div>
+                 {/* Owner Perks & Community */}
+                 <div className="p-4 bg-neutral-100 dark:bg-neutral-800 rounded-lg border border-neutral-200 dark:border-neutral-700 h-full flex flex-col items-center">
+                  <Users className="w-6 h-6 mx-auto mb-2 text-amber-600 dark:text-amber-500"/>
+                  <p className="text-sm font-medium">Connected Community</p>
+                  <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-1 flex-grow">Fulfill the 'dating site' vision: connect owners, offer perks, discounts & early access.</p>
                 </div>
               </div>
-
-              {/* Additional Properties */}
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-white/50 dark:bg-slate-900/50 rounded-xl p-4 border border-gray-300 dark:border-gray-700">
-                  <p className="text-xs text-gray-500 dark:text-gray-500 uppercase tracking-wider mb-2">Authenticity</p>
-                  <p className="text-sm font-semibold text-green-600 dark:text-green-400">✓ Verified</p>
-                </div>
-                <div className="bg-white/50 dark:bg-slate-900/50 rounded-xl p-4 border border-gray-300 dark:border-gray-700">
-                  <p className="text-xs text-gray-500 dark:text-gray-500 uppercase tracking-wider mb-2">Ownership History</p>
-                  <p className="text-sm font-semibold text-gray-900 dark:text-white">1 Transfer</p>
-                </div>
-                <div className="bg-white/50 dark:bg-slate-900/50 rounded-xl p-4 border border-gray-300 dark:border-gray-700">
-                  <p className="text-xs text-gray-500 dark:text-gray-500 uppercase tracking-wider mb-2">Service Records</p>
-                  <p className="text-sm font-semibold text-gray-900 dark:text-white">Up to date</p>
-                </div>
-                <div className="bg-white/50 dark:bg-slate-900/50 rounded-xl p-4 border border-gray-300 dark:border-gray-700">
-                  <p className="text-xs text-gray-500 dark:text-gray-500 uppercase tracking-wider mb-2">Insurance</p>
-                  <p className="text-sm font-semibold text-green-600 dark:text-green-400">✓ Active</p>
-                </div>
-              </div>
-
             </div>
 
           </div>
-        </section>
+        </section> {/* End Section 3 */}
 
       </div>
     </>

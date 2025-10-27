@@ -8,9 +8,9 @@ export default function FaircutLandingPage() {
   const totalSections = 6; // 6 sections: Hero, Solution, Calculator, Partnership, Benefits, CTA
   
   const [sliderValues, setSliderValues] = useState({
-    avgItemPrice: 300,
-    resaleMarkup: 125,
-    royaltyRate: 15,
+    avgItemPrice: 3000,
+    resaleMarkup: 116,
+    royaltyRate: 30,
     itemsSold: 500,
     lifetimeResales: 2
   });
@@ -451,7 +451,7 @@ export default function FaircutLandingPage() {
                       <input 
                         type="range" 
                         min="5" 
-                        max="25" 
+                        max="50" 
                         value={sliderValues.royaltyRate} 
                         step="1" 
                         onChange={(e) => handleSliderChange('royaltyRate', e.target.value)} 
