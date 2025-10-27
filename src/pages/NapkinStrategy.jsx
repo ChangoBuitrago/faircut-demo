@@ -355,7 +355,7 @@ export default function NapkinStrategy() {
             <div className="text-center">
               <p className="text-xs text-neutral-500 dark:text-neutral-500 mb-1 uppercase tracking-wider">Proof of Concept</p>
               <h2 className="text-2xl md:text-3xl font-black tracking-tight text-neutral-900 dark:text-white mb-1">The Digital Passport</h2>
-              <p className="text-sm text-neutral-600 dark:text-neutral-400 max-w-3xl mx-auto">Programmable rules, immutable history, perpetual revenues, turning collectors into community</p>
+              <p className="text-sm text-neutral-600 dark:text-neutral-400 max-w-3xl mx-auto">Configurable rules, immutable history, perpetual revenues, turning collectors into community</p>
             </div>
 
             {/* Passport Visual Mockup Area */}
@@ -422,11 +422,11 @@ export default function NapkinStrategy() {
                           </div>
                       </div>
 
-                      {/* Programmable Rules Display */}
+                      {/* Configurable Rules Display */}
                       <div className="pt-2 mt-2 border-t-2 border-neutral-200 dark:border-neutral-700 space-y-1.5">
                           <div className="flex items-center gap-1.5">
                             <div className="w-0.5 h-3 bg-amber-500 dark:bg-amber-600 rounded-full"></div>
-                            <p className="text-xs text-neutral-900 dark:text-white uppercase tracking-wider font-bold">Programmable Rules</p>
+                            <p className="text-xs text-neutral-900 dark:text-white uppercase tracking-wider font-bold">Configurable Rules</p>
                           </div>
                           
                           {/* Base Resale Price */}
@@ -497,7 +497,7 @@ export default function NapkinStrategy() {
 
             {/* SECTION: Brand-Defined Rules & Benefits Tiles */}
             <div className="space-y-2 pt-2 border-t border-neutral-200 dark:border-neutral-800">
-              <p className="text-xs text-neutral-500 dark:text-neutral-500 uppercase tracking-widest font-medium text-center">Programmable Rules & Benefits</p>
+              <p className="text-xs text-neutral-500 dark:text-neutral-500 uppercase tracking-widest font-medium text-center">Configurable Rules & Benefits</p>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-2 text-center">
                 {/* Dynamic Royalties */}
                 <div className="p-2 bg-neutral-100 dark:bg-neutral-800 rounded-lg border border-neutral-200 dark:border-neutral-700 h-full flex flex-col items-center">
