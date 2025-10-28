@@ -326,7 +326,7 @@ export default function NapkinStrategy() {
             </div>
 
             {/* The Solution */}
-            <div className="pt-10 border-t border-gray-300 dark:border-gray-700">
+            <div className="pt-10 pb-6 border-t border-gray-300 dark:border-gray-700">
               <div className="flex justify-center gap-8 max-w-6xl mx-auto">
                 <div className="text-center flex-1">
                   <p className="text-2xl font-bold mb-3"><span className="text-orange-600 dark:text-orange-400">"Fair Access"</span></p>
