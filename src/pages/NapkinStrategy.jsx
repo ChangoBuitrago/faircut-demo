@@ -8,10 +8,10 @@ export default function NapkinStrategy() {
   const totalSections = 4; // Current Strategy, New Strategy, Digital Passport, Transfer Flow
   
   // Digital Passport data
-  const watchMintTimestamp = new Date('2021-01-15').getTime();
-  const transferLockEndDateTimestamp = new Date('2021-07-15').getTime();
+  const watchMintTimestamp = new Date('2025-06-15').getTime();
+  const transferLockEndDateTimestamp = new Date('2025-12-15').getTime();
   const isTransferLockActive = Date.now() < transferLockEndDateTimestamp;
-  const activeRoyaltyTier = 'Year 3+'; // Can be 'Year 1', 'Year 2', or 'Year 3+'
+  const activeRoyaltyTier = 'Year 1'; // Can be 'Year 1', 'Year 2', or 'Year 3+'
   const serviceLogStatus = "Verified";
   const communityAccessStatus = "Enabled";
   
@@ -180,55 +180,55 @@ export default function NapkinStrategy() {
       <div ref={containerRef} className="smooth-scroll-container h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]" style={{scrollBehavior: 'smooth'}}>
         
         {/* --- SLIDE 1: CURRENT STRATEGY --- */}
-        <section className="h-screen snap-start snap-always flex flex-col items-center justify-center p-6 bg-gradient-to-br from-slate-50 via-stone-50 to-zinc-50 dark:from-slate-950 dark:via-slate-900 dark:to-neutral-950 relative overflow-hidden">
-          <div className="w-full max-w-5xl mx-auto z-10">
+        <section className="h-screen snap-start snap-always flex flex-col items-center justify-center p-8 bg-gradient-to-br from-slate-50 via-stone-50 to-zinc-50 dark:from-slate-950 dark:via-slate-900 dark:to-neutral-950 relative overflow-hidden">
+          <div className="w-full max-w-6xl mx-auto z-10">
             
             {/* Title */}
-            <div className="text-center mb-8">
-              <p className="text-sm text-gray-500 dark:text-gray-500 mb-2 uppercase tracking-wider">Louis Erard Strategy</p>
-              <h2 className="text-3xl md:text-4xl font-black tracking-tight text-gray-900 dark:text-white mb-2">Selling, Not Distributing</h2>
-              <p className="text-base text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">50% direct, 50% selected retailers — self-sustainable and independent</p>
+            <div className="text-center mb-10">
+              <p className="text-base text-gray-500 dark:text-gray-500 mb-3 uppercase tracking-wider">Louis Erard Strategy</p>
+              <h2 className="text-4xl md:text-5xl font-black tracking-tight text-gray-900 dark:text-white mb-3">Selling, Not Distributing</h2>
+              <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">50% direct, 50% selected retailers — self-sustainable and independent</p>
             </div>
 
             {/* Primary Market */}
-            <div className="mb-6">
-              <p className="text-xs text-gray-500 dark:text-gray-500 uppercase tracking-widest mb-3">Primary Market</p>
-              <div className="bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm rounded-2xl p-4 border border-gray-200 dark:border-gray-800">
-                <div className="flex items-center gap-4 text-lg text-gray-900 dark:text-white">
+            <div className="mb-8">
+              <p className="text-sm text-gray-500 dark:text-gray-500 uppercase tracking-widest mb-4">Primary Market</p>
+              <div className="bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm rounded-2xl p-5 border border-gray-200 dark:border-gray-800">
+                <div className="flex items-center gap-4 text-xl text-gray-900 dark:text-white">
                   <span className="font-medium">Brand</span>
                   <span className="text-gray-500">→</span>
                   <span className="font-medium">Collector</span>
-                  <span className="ml-auto font-mono text-xl font-bold text-gray-900 dark:text-white">CHF 3,000</span>
+                  <span className="ml-auto font-mono text-2xl font-bold text-gray-900 dark:text-white">CHF 3,000</span>
                 </div>
               </div>
             </div>
 
             {/* Secondary Market */}
-            <div className="mb-8">
-              <p className="text-xs text-gray-500 dark:text-gray-500 uppercase tracking-widest mb-3">Secondary Market (Le Régulateur x Alain Silberstein — Chrono24)</p>
-              <div className="bg-red-50/70 dark:bg-red-900/20 backdrop-blur-sm rounded-2xl p-4 border border-red-200 dark:border-red-800">
-                <div className="space-y-3">
-                  <div className="flex items-center gap-4 text-lg text-gray-900 dark:text-white">
+            <div className="mb-10">
+              <p className="text-sm text-gray-500 dark:text-gray-500 uppercase tracking-widest mb-4">Secondary Market (Le Régulateur x Alain Silberstein — Chrono24)</p>
+              <div className="bg-red-50/70 dark:bg-red-900/20 backdrop-blur-sm rounded-2xl p-5 border border-red-200 dark:border-red-800">
+                <div className="space-y-4">
+                  <div className="flex items-center gap-4 text-xl text-gray-900 dark:text-white">
                     <span className="font-medium">Brand</span>
                     <span className="text-gray-500">→</span>
                     <span className="font-medium">Flipper</span>
                     <span className="text-gray-500">→</span>
                     <span className="font-medium">New Collector</span>
-                    <span className="ml-auto font-mono text-xl font-bold text-red-600 dark:text-red-400">CHF 6,500 <span className="text-sm">(~116% markup)</span></span>
+                    <span className="ml-auto font-mono text-2xl font-bold text-red-600 dark:text-red-400">CHF 6,500 <span className="text-base">(~116% markup)</span></span>
                   </div>
                   
                   {/* Lost Revenue Ticker */}
-                  <div className="bg-red-100 dark:bg-red-900/40 rounded-lg px-3 py-2 border border-red-400 dark:border-red-600">
+                  <div className="bg-red-100 dark:bg-red-900/40 rounded-lg px-4 py-3 border border-red-400 dark:border-red-600">
                     <div className="flex items-center justify-between">
-                      <span className="text-sm text-gray-600 dark:text-gray-400">Flipper profit</span>
+                      <span className="text-base text-gray-600 dark:text-gray-400">Flipper profit</span>
                       <div className="text-right">
-                        <span className="font-mono text-base font-bold text-gray-900 dark:text-white">CHF 3,500</span>
+                        <span className="font-mono text-lg font-bold text-gray-900 dark:text-white">CHF 3,500</span>
                       </div>
                     </div>
                     <div className="flex items-center justify-between mt-2 pt-2 border-t border-red-300 dark:border-red-600">
-                      <span className="text-sm text-gray-600 dark:text-gray-400">Brand share</span>
+                      <span className="text-base text-gray-600 dark:text-gray-400">Brand share</span>
                       <div className="text-right">
-                        <span className="font-mono text-base font-bold text-gray-900 dark:text-white">CHF 0</span>
+                        <span className="font-mono text-lg font-bold text-gray-900 dark:text-white">CHF 0</span>
                       </div>
                     </div>
                   </div>
@@ -237,19 +237,19 @@ export default function NapkinStrategy() {
             </div>
 
             {/* The Problem */}
-            <div className="pt-8 border-t border-gray-300 dark:border-gray-700">
-              <div className="flex justify-center gap-6 max-w-6xl mx-auto px-4">
+            <div className="pt-10 border-t border-gray-300 dark:border-gray-700">
+              <div className="flex justify-center gap-8 max-w-6xl mx-auto">
                 <div className="text-center flex-1">
-                  <p className="text-xl mb-2"><span className="font-bold text-red-600 dark:text-red-400">"Frustration"</span></p>
-                  <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">Real collectors can't buy at retail because flippers buy instantly and list immediately at markup. Brand loses huge profits to resellers.</p>
+                  <p className="text-2xl mb-3"><span className="font-bold text-red-600 dark:text-red-400">"Frustration"</span></p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Real collectors can't buy at retail because flippers buy instantly and list immediately at markup. Brand loses huge profits to resellers.</p>
                 </div>
                 <div className="text-center flex-1">
-                  <p className="text-xl mb-2"><span className="font-bold text-red-600 dark:text-red-400">"Headaches"</span></p>
-                  <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">Collectors buying secondhand face authenticity concerns, warranty issues, and condition uncertainties</p>
+                  <p className="text-2xl mb-3"><span className="font-bold text-red-600 dark:text-red-400">"Headaches"</span></p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Collectors buying secondhand face authenticity concerns, warranty issues, and condition uncertainties</p>
                 </div>
                 <div className="text-center flex-1">
-                  <p className="text-xl mb-2"><span className="font-bold text-red-600 dark:text-red-400">"Lost Community"</span></p>
-                  <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">No connection between brand and secondary market collectors, missing opportunities to build lasting relationships</p>
+                  <p className="text-2xl mb-3"><span className="font-bold text-red-600 dark:text-red-400">"Lost Community"</span></p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">No connection between brand and secondary market collectors, missing opportunities to build lasting relationships</p>
                 </div>
               </div>
             </div>
@@ -258,65 +258,65 @@ export default function NapkinStrategy() {
         </section>
 
         {/* --- SLIDE 2: NEW STRATEGY --- */}
-        <section className="h-screen snap-start snap-always flex flex-col items-center justify-center p-6 bg-gradient-to-br from-slate-50 via-stone-50 to-zinc-50 dark:from-slate-950 dark:via-slate-900 dark:to-neutral-950 relative overflow-hidden">
-          <div className="w-full max-w-5xl mx-auto z-10">
+        <section className="h-screen snap-start snap-always flex flex-col items-center justify-center p-8 bg-gradient-to-br from-slate-50 via-stone-50 to-zinc-50 dark:from-slate-950 dark:via-slate-900 dark:to-neutral-950 relative overflow-hidden">
+          <div className="w-full max-w-6xl mx-auto z-10">
             
             {/* Title */}
-            <div className="text-center mb-8">
-              <p className="text-sm text-gray-500 dark:text-gray-500 mb-2 uppercase tracking-wider">The Napkin Strategy</p>
-              <h2 className="text-3xl md:text-4xl font-black tracking-tight text-gray-900 dark:text-white mb-2">Selling And Distributing,<br /><span className="bg-gradient-to-r from-amber-600 to-orange-600 dark:from-amber-400 dark:to-orange-400 bg-clip-text text-transparent">With A Digital Passport</span></h2>
-              <p className="text-base text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">100% control, zero cost, perpetual revenue — maintaining independence and self-sustainability</p>
+            <div className="text-center mb-10">
+              <p className="text-base text-gray-500 dark:text-gray-500 mb-3 uppercase tracking-wider">The Napkin Strategy</p>
+              <h2 className="text-4xl md:text-5xl font-black tracking-tight text-gray-900 dark:text-white mb-3">Selling And Distributing,<br /><span className="bg-gradient-to-r from-amber-600 to-orange-600 dark:from-amber-400 dark:to-orange-400 bg-clip-text text-transparent">With A Digital Passport</span></h2>
+              <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">100% control, zero cost, perpetual revenue — maintaining independence and self-sustainability</p>
             </div>
 
             {/* With Digital Passport Container */}
-            <div className="mb-8 bg-gradient-to-br from-amber-50/70 to-orange-50/70 dark:from-amber-900/20 dark:to-orange-900/20 backdrop-blur-sm rounded-2xl p-5 border border-amber-300 dark:border-amber-700">
+            <div className="mb-10 bg-gradient-to-br from-amber-50/70 to-orange-50/70 dark:from-amber-900/20 dark:to-orange-900/20 backdrop-blur-sm rounded-2xl p-6 border border-amber-300 dark:border-amber-700">
               {/* Digital Passport Badge */}
-              <div className="mb-4">
-                <span className="inline-block bg-amber-200 dark:bg-amber-800 text-amber-900 dark:text-amber-100 px-3 py-1 rounded-full text-xs font-semibold border border-amber-400 dark:border-amber-600">
+              <div className="mb-5">
+                <span className="inline-block bg-amber-200 dark:bg-amber-800 text-amber-900 dark:text-amber-100 px-4 py-1.5 rounded-full text-sm font-semibold border border-amber-400 dark:border-amber-600">
                   🔐 Watch With A Digital Passport
                 </span>
               </div>
 
               {/* Primary Market */}
-              <div className="mb-6">
-                <p className="text-xs text-gray-500 dark:text-gray-500 uppercase tracking-widest mb-3">Primary Market</p>
-                <div className="bg-white dark:bg-slate-900 rounded-2xl p-4 border border-gray-300 dark:border-gray-700">
-                  <div className="flex items-center gap-4 text-lg text-gray-900 dark:text-white">
+              <div className="mb-8">
+                <p className="text-sm text-gray-500 dark:text-gray-500 uppercase tracking-widest mb-4">Primary Market</p>
+                <div className="bg-white dark:bg-slate-900 rounded-2xl p-5 border border-gray-300 dark:border-gray-700">
+                  <div className="flex items-center gap-4 text-xl text-gray-900 dark:text-white">
                     <span className="font-medium">Brand</span>
                     <span className="text-gray-500">→</span>
                     <span className="font-medium">Collector</span>
-                    <span className="ml-auto font-mono text-xl font-bold text-gray-900 dark:text-white">CHF 3,000</span>
+                    <span className="ml-auto font-mono text-2xl font-bold text-gray-900 dark:text-white">CHF 3,000</span>
                   </div>
                 </div>
               </div>
 
               {/* Secondary Market with Royalty */}
               <div>
-                <p className="text-xs text-gray-500 dark:text-gray-500 uppercase tracking-widest mb-3">Secondary Market (Le Régulateur x Alain Silberstein — Chrono24)</p>
-                <div className="bg-white dark:bg-slate-900 rounded-2xl p-4 border border-gray-300 dark:border-gray-700">
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-4 text-lg text-gray-900 dark:text-white">
+                <p className="text-sm text-gray-500 dark:text-gray-500 uppercase tracking-widest mb-4">Secondary Market (Le Régulateur x Alain Silberstein — Chrono24)</p>
+                <div className="bg-white dark:bg-slate-900 rounded-2xl p-5 border border-gray-300 dark:border-gray-700">
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-4 text-xl text-gray-900 dark:text-white">
                       <span className="font-medium">Brand</span>
                       <span className="text-gray-500">→</span>
                       <span className="font-medium">Reseller</span>
                       <span className="text-gray-500">→</span>
                       <span className="font-medium">New Collector</span>
-                      <span className="ml-auto font-mono text-xl font-bold">CHF 6,500</span>
+                      <span className="ml-auto font-mono text-2xl font-bold">CHF 6,500</span>
                     </div>
                     
                     {/* Royalty Ticker */}
-                    <div className="bg-amber-50 dark:bg-amber-900/30 rounded-lg px-3 py-2 border border-amber-300 dark:border-amber-700">
+                    <div className="bg-amber-50 dark:bg-amber-900/30 rounded-lg px-4 py-3 border border-amber-300 dark:border-amber-700">
                       <div className="flex items-center justify-between">
-                        <span className="text-sm text-gray-600 dark:text-gray-400">Reseller profit</span>
+                        <span className="text-base text-gray-600 dark:text-gray-400">Reseller profit</span>
                         <div className="text-right">
-                          <span className="font-mono text-base font-bold text-gray-900 dark:text-white">CHF 2,450</span>
+                          <span className="font-mono text-lg font-bold text-gray-900 dark:text-white">CHF 2,450</span>
                         </div>
                       </div>
                       <div className="flex items-center justify-between mt-2 pt-2 border-t border-amber-200 dark:border-amber-700">
-                        <span className="text-sm text-gray-600 dark:text-gray-400">Brand share (30% royalty)</span>
+                        <span className="text-base text-gray-600 dark:text-gray-400">Brand share (30% royalty)</span>
                         <div className="text-right">
-                          <span className="font-mono text-base font-bold text-amber-600 dark:text-amber-400">CHF 1,050</span>
-                          <p className="text-xs text-gray-600 dark:text-gray-400 italic mt-1">Per resale. Perpetual.</p>
+                          <span className="font-mono text-lg font-bold text-amber-600 dark:text-amber-400">CHF 1,050</span>
+                          <p className="text-sm text-gray-600 dark:text-gray-400 italic mt-1">Per resale. Perpetual.</p>
                         </div>
                       </div>
                     </div>
@@ -326,19 +326,19 @@ export default function NapkinStrategy() {
             </div>
 
             {/* The Solution */}
-            <div className="pt-8 border-t border-gray-300 dark:border-gray-700">
-              <div className="flex justify-center gap-6 max-w-6xl mx-auto px-4">
+            <div className="pt-10 border-t border-gray-300 dark:border-gray-700">
+              <div className="flex justify-center gap-8 max-w-6xl mx-auto">
                 <div className="text-center flex-1">
-                  <p className="text-xl font-bold mb-2"><span className="text-orange-600 dark:text-orange-400">"Fair Access"</span></p>
-                  <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">Dynamic royalties (90% Yr 1, 60% Yr 2, 15% Yr 3+) eliminate flippers' margin and return profits to the brand. Transfer locks (first 6 months) ensure real collectors get priority access.</p>
+                  <p className="text-2xl font-bold mb-3"><span className="text-orange-600 dark:text-orange-400">"Fair Access"</span></p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Dynamic royalties (90% Yr 1, 60% Yr 2, 15% Yr 3+) eliminate flippers' margin and return profits to the brand. Transfer locks (first 6 months) ensure real collectors get priority access.</p>
                 </div>
                 <div className="text-center flex-1">
-                  <p className="text-xl font-bold mb-2"><span className="text-orange-600 dark:text-orange-400">"Trust & Security"</span></p>
-                  <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">Digital passport ensures authenticity, tracks warranty, and maintains condition history throughout ownership</p>
+                  <p className="text-2xl font-bold mb-3"><span className="text-orange-600 dark:text-orange-400">"Trust & Security"</span></p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Digital passport ensures authenticity, tracks warranty, and maintains condition history throughout ownership</p>
                 </div>
                 <div className="text-center flex-1">
-                  <p className="text-xl font-bold mb-2"><span className="text-orange-600 dark:text-orange-400">"Connected Community"</span></p>
-                  <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">Like a dating app, you connect collectors with each other across the watch's lifetime, building lasting relationships and community</p>
+                  <p className="text-2xl font-bold mb-3"><span className="text-orange-600 dark:text-orange-400">"Connected Community"</span></p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Like a dating app, you connect collectors with each other across the watch's lifetime, building lasting relationships and community</p>
                 </div>
               </div>
             </div>
@@ -347,28 +347,28 @@ export default function NapkinStrategy() {
         </section>
 
         {/* --- SECTION 3: THE DIGITAL PASSPORT (Visual & Simplified) --- */}
-        <section className="h-screen snap-start snap-always flex flex-col items-center justify-center p-6 bg-neutral-50 dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 font-[Inter]">
+        <section className="h-screen snap-start snap-always flex flex-col items-center justify-center p-8 bg-neutral-50 dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 font-[Inter]">
           {/* Content container */}
-          <div className="w-full max-w-4xl mx-auto space-y-4">
+          <div className="w-full max-w-5xl mx-auto space-y-5">
 
             {/* Title */}
             <div className="text-center">
-              <p className="text-xs text-neutral-500 dark:text-neutral-500 mb-1 uppercase tracking-wider">Proof of Concept</p>
-              <h2 className="text-2xl md:text-3xl font-black tracking-tight text-neutral-900 dark:text-white mb-1">The Digital Passport</h2>
-              <p className="text-sm text-neutral-600 dark:text-neutral-400 max-w-3xl mx-auto">Smart rules, immutable records, perpetual revenues—connected communities</p>
+              <p className="text-sm text-neutral-500 dark:text-neutral-500 mb-2 uppercase tracking-wider">Proof of Concept</p>
+              <h2 className="text-3xl md:text-4xl font-black tracking-tight text-neutral-900 dark:text-white mb-2">The Digital Passport</h2>
+              <p className="text-base text-neutral-600 dark:text-neutral-400 max-w-3xl mx-auto">Smart rules, immutable records, perpetual revenues—connected communities</p>
             </div>
 
             {/* Passport Visual Mockup Area */}
             <div className="bg-gradient-to-br from-white to-neutral-50 dark:from-neutral-900 dark:to-neutral-800 rounded-2xl shadow-xl border-2 border-amber-200 dark:border-amber-800 overflow-hidden">
               {/* Header with Brand and Badge */}
-              <div className="bg-gradient-to-r from-amber-50 to-orange-50 dark:from-amber-950 dark:to-orange-950 px-4 py-2 border-b border-amber-200 dark:border-amber-800">
+              <div className="bg-gradient-to-r from-amber-50 to-orange-50 dark:from-amber-950 dark:to-orange-950 px-5 py-3 border-b border-amber-200 dark:border-amber-800">
                 <div className="flex items-center justify-between">
                   <div>
-                    <span className="text-xs uppercase tracking-widest text-amber-700 dark:text-amber-400 font-bold">Louis Erard</span>
-                    <h3 className="text-base font-bold tracking-tight text-neutral-900 dark:text-white">Le Régulateur x Alain Silberstein</h3>
+                    <span className="text-sm uppercase tracking-widest text-amber-700 dark:text-amber-400 font-bold">Louis Erard</span>
+                    <h3 className="text-lg font-bold tracking-tight text-neutral-900 dark:text-white mt-0.5">Le Régulateur x Alain Silberstein</h3>
                   </div>
-                  <div className="flex items-center gap-1 bg-green-100 dark:bg-green-900/50 text-green-700 dark:text-green-300 px-2 py-0.5 rounded-full text-xs font-semibold border border-green-300 dark:border-green-700">
-                    <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                  <div className="flex items-center gap-1.5 bg-green-100 dark:bg-green-900/50 text-green-700 dark:text-green-300 px-3 py-1 rounded-full text-xs font-semibold border border-green-300 dark:border-green-700">
+                    <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
                     </svg>
                     Verified
@@ -377,42 +377,42 @@ export default function NapkinStrategy() {
               </div>
               
               {/* Main Content Flex Container */}
-              <div className="flex flex-col md:flex-row gap-3 p-3 items-start">
+              <div className="flex flex-col md:flex-row gap-4 p-4 items-start">
                   {/* Left Column: Core Info + Rules */}
-                  <div className="flex-1 space-y-2.5">
+                  <div className="flex-1 space-y-3">
                       
                       {/* Watch Details & Image */}
-                      <div className="flex gap-3 items-start">
+                      <div className="flex gap-4 items-start">
                           {/* Details Block */}
-                          <div className="space-y-1.5 text-xs flex-1">
-                              <div className="flex items-center gap-1.5">
-                                <Users className="w-3.5 h-3.5 text-amber-600 dark:text-amber-500 flex-shrink-0"/>
+                          <div className="space-y-2 text-sm flex-1">
+                              <div className="flex items-center gap-2">
+                                <Users className="w-4 h-4 text-amber-600 dark:text-amber-500 flex-shrink-0"/>
                                 <span className="text-neutral-500 dark:text-neutral-400">Owner:</span>
                                 <span className="font-semibold text-neutral-900 dark:text-white">Manuel Emch</span>
                               </div>
-                              <div className="flex items-center gap-1.5">
-                                <FileText className="w-3.5 h-3.5 text-amber-600 dark:text-amber-500 flex-shrink-0"/>
+                              <div className="flex items-center gap-2">
+                                <FileText className="w-4 h-4 text-amber-600 dark:text-amber-500 flex-shrink-0"/>
                                 <span className="text-neutral-500 dark:text-neutral-400">Ref:</span>
                                 <span className="font-mono font-semibold text-neutral-900 dark:text-white">85358TT02.BTT88</span>
                               </div>
-                              <div className="flex items-center gap-1.5">
-                                <Edit3 className="w-3.5 h-3.5 text-amber-600 dark:text-amber-500 flex-shrink-0"/>
+                              <div className="flex items-center gap-2">
+                                <Edit3 className="w-4 h-4 text-amber-600 dark:text-amber-500 flex-shrink-0"/>
                                 <span className="text-neutral-500 dark:text-neutral-400">Edition:</span>
                                 <span className="font-semibold text-neutral-900 dark:text-white">#042 / 178</span>
                               </div>
-                              <div className="flex items-center gap-1.5">
-                                <Tag className="w-3.5 h-3.5 text-amber-600 dark:text-amber-500 flex-shrink-0"/>
+                              <div className="flex items-center gap-2">
+                                <Tag className="w-4 h-4 text-amber-600 dark:text-amber-500 flex-shrink-0"/>
                                 <span className="text-neutral-500 dark:text-neutral-400">Serial:</span>
                                 <span className="font-mono font-semibold text-neutral-900 dark:text-white">LE-AS-2021-042</span>
                               </div>
-                              <div className="flex items-center gap-1.5">
-                                <Calendar className="w-3.5 h-3.5 text-amber-600 dark:text-amber-500 flex-shrink-0"/>
+                              <div className="flex items-center gap-2">
+                                <Calendar className="w-4 h-4 text-amber-600 dark:text-amber-500 flex-shrink-0"/>
                                 <span className="text-neutral-500 dark:text-neutral-400">Issued:</span>
                                 <span className="font-semibold text-neutral-900 dark:text-white">{formatDate(watchMintTimestamp)}</span>
                               </div>
                           </div>
                           {/* Watch Image */}
-                          <div className="w-28 h-auto flex-shrink-0 flex items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-neutral-50 to-neutral-100 dark:from-neutral-800 dark:to-neutral-900 p-1.5 border-2 border-amber-200 dark:border-amber-800 shadow-md">
+                          <div className="w-32 h-auto flex-shrink-0 flex items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-neutral-50 to-neutral-100 dark:from-neutral-800 dark:to-neutral-900 p-2 border-2 border-amber-200 dark:border-amber-800 shadow-md">
                               <img
                                 src="https://img.chrono24.com/images/uhren/26746621-zpbgyrk9dwrlxwziwnej4dcs-Zoom.jpg"
                                 alt="Watch"
@@ -496,32 +496,32 @@ export default function NapkinStrategy() {
             </div> {/* End Passport Card */}
 
             {/* SECTION: Brand-Defined Rules & Benefits Tiles */}
-            <div className="space-y-2 pt-2 border-t border-neutral-200 dark:border-neutral-800">
-              <p className="text-xs text-neutral-500 dark:text-neutral-500 uppercase tracking-widest font-medium text-center">Smart Rules & Benefits</p>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-2 text-center">
+            <div className="space-y-3 pt-3 border-t border-neutral-200 dark:border-neutral-800">
+              <p className="text-sm text-neutral-500 dark:text-neutral-500 uppercase tracking-widest font-medium text-center">Smart Rules & Benefits</p>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-center">
                 {/* Anti-Flipping Rules */}
-                 <div className="p-2 bg-neutral-100 dark:bg-neutral-800 rounded-lg border border-neutral-200 dark:border-neutral-700 h-full flex flex-col items-center">
-                  <Clock className="w-4 h-4 mx-auto mb-1 text-amber-600 dark:text-amber-500"/>
-                  <p className="text-xs font-medium">Anti-Flipping Rules</p>
-                  <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5 flex-grow">Implement transfer locks (e.g., first 6 months) to discourage immediate speculation.</p>
+                 <div className="p-3 bg-neutral-100 dark:bg-neutral-800 rounded-lg border border-neutral-200 dark:border-neutral-700 h-full flex flex-col items-center">
+                  <Clock className="w-5 h-5 mx-auto mb-2 text-amber-600 dark:text-amber-500"/>
+                  <p className="text-sm font-medium">Anti-Flipping Rules</p>
+                  <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-1 flex-grow">Implement transfer locks (e.g., first 6 months) to discourage immediate speculation.</p>
                 </div>
                 {/* Dynamic Royalties */}
-                <div className="p-2 bg-neutral-100 dark:bg-neutral-800 rounded-lg border border-neutral-200 dark:border-neutral-700 h-full flex flex-col items-center">
-                  <Percent className="w-4 h-4 mx-auto mb-1 text-amber-600 dark:text-amber-500"/>
-                  <p className="text-xs font-medium">Dynamic Royalties</p>
-                  <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5 flex-grow">Automated time-based royalties on every resale, ensuring perpetual revenue stream for the brand.</p>
+                <div className="p-3 bg-neutral-100 dark:bg-neutral-800 rounded-lg border border-neutral-200 dark:border-neutral-700 h-full flex flex-col items-center">
+                  <Percent className="w-5 h-5 mx-auto mb-2 text-amber-600 dark:text-amber-500"/>
+                  <p className="text-sm font-medium">Dynamic Royalties</p>
+                  <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-1 flex-grow">Automated time-based royalties on every resale, ensuring perpetual revenue stream for the brand.</p>
                 </div>
                  {/* Service History */}
-                 <div className="p-2 bg-neutral-100 dark:bg-neutral-800 rounded-lg border border-neutral-200 dark:border-neutral-700 h-full flex flex-col items-center">
-                  <Wrench className="w-4 h-4 mx-auto mb-1 text-amber-600 dark:text-amber-500"/>
-                  <p className="text-xs font-medium">Verified Service Log</p>
-                  <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5 flex-grow">Build trust & value: only official centers can update the immutable service history.</p>
+                 <div className="p-3 bg-neutral-100 dark:bg-neutral-800 rounded-lg border border-neutral-200 dark:border-neutral-700 h-full flex flex-col items-center">
+                  <Wrench className="w-5 h-5 mx-auto mb-2 text-amber-600 dark:text-amber-500"/>
+                  <p className="text-sm font-medium">Verified Service Log</p>
+                  <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-1 flex-grow">Build trust & value: only official centers can update the immutable service history.</p>
                 </div>
                  {/* Owner Perks & Community */}
-                 <div className="p-2 bg-neutral-100 dark:bg-neutral-800 rounded-lg border border-neutral-200 dark:border-neutral-700 h-full flex flex-col items-center">
-                  <Users className="w-4 h-4 mx-auto mb-1 text-amber-600 dark:text-amber-500"/>
-                  <p className="text-xs font-medium">Connected Community</p>
-                  <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5 flex-grow">Fulfill the 'dating site' vision: connect owners, offer perks, discounts & early access.</p>
+                 <div className="p-3 bg-neutral-100 dark:bg-neutral-800 rounded-lg border border-neutral-200 dark:border-neutral-700 h-full flex flex-col items-center">
+                  <Users className="w-5 h-5 mx-auto mb-2 text-amber-600 dark:text-amber-500"/>
+                  <p className="text-sm font-medium">Connected Community</p>
+                  <p className="text-xs text-neutral-500 dark:text-neutral-400 mt-1 flex-grow">Fulfill the 'dating site' vision: connect owners, offer perks, discounts & early access.</p>
                 </div>
               </div>
             </div>
@@ -530,29 +530,29 @@ export default function NapkinStrategy() {
         </section> {/* End Section 3 */}
 
          {/* --- SECTION 4: THE TRANSFER FLOW --- */}
-         <section className="h-screen snap-start snap-always flex flex-col items-center justify-center p-6 bg-neutral-50 dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 font-[Inter]">
+         <section className="h-screen snap-start snap-always flex flex-col items-center justify-center p-8 bg-neutral-50 dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 font-[Inter]">
            {/* Content container */}
-           <div className="w-full max-w-4xl mx-auto space-y-8">
+           <div className="w-full max-w-5xl mx-auto space-y-12">
 
              {/* Title */}
              <div className="text-center">
-               <h2 className="text-3xl md:text-4xl font-light mb-2 tracking-tight">The Royalty-Enforced Transfer</h2>
-               <p className="text-xs text-neutral-500 dark:text-neutral-500 uppercase tracking-widest font-medium">Simple, Secure & Automated</p>
+               <h2 className="text-4xl md:text-5xl font-light mb-3 tracking-tight">The Royalty-Enforced Transfer</h2>
+               <p className="text-sm text-neutral-500 dark:text-neutral-500 uppercase tracking-widest font-medium">Simple, Secure & Automated</p>
              </div>
 
              {/* Simplified Transfer Flow - Centered and Enlarged */}
-             <div className="space-y-4">
-               <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-4 text-sm text-center text-neutral-700 dark:text-neutral-300">
-                   <div className="p-3 bg-neutral-100 dark:bg-neutral-800 rounded-xl border border-neutral-200 dark:border-neutral-700 w-full md:w-auto">1. Seller lists price</div>
-                   <ArrowRight className="w-4 h-4 text-neutral-400 dark:text-neutral-600 hidden md:block" />
-                    <CornerDownRight className="w-4 h-4 text-neutral-400 dark:text-neutral-600 md:hidden my-1" />
-                   <div className="p-3 bg-neutral-100 dark:bg-neutral-800 rounded-xl border border-neutral-200 dark:border-neutral-700 w-full md:w-auto">2. Hub enforces rules & royalty</div>
-                   <ArrowRight className="w-4 h-4 text-neutral-400 dark:text-neutral-600 hidden md:block" />
-                   <CornerDownRight className="w-4 h-4 text-neutral-400 dark:text-neutral-600 md:hidden my-1" />
-                   <div className="p-3 bg-neutral-100 dark:bg-neutral-800 rounded-xl border border-neutral-200 dark:border-neutral-700 w-full md:w-auto">3. Seller pays royalty</div>
-                   <ArrowRight className="w-4 h-4 text-neutral-400 dark:text-neutral-600 hidden md:block" />
-                   <CornerDownRight className="w-4 h-4 text-neutral-400 dark:text-neutral-600 md:hidden my-1" />
-                   <div className="p-3 bg-green-100 dark:bg-green-900 rounded-xl border border-green-300 dark:border-green-700 text-green-800 dark:text-green-200 w-full md:w-auto font-semibold">4. Passport transfers</div>
+             <div className="space-y-6">
+               <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-5 text-base text-center text-neutral-700 dark:text-neutral-300">
+                   <div className="p-4 bg-neutral-100 dark:bg-neutral-800 rounded-xl border border-neutral-200 dark:border-neutral-700 w-full md:w-auto">1. Seller lists price</div>
+                   <ArrowRight className="w-5 h-5 text-neutral-400 dark:text-neutral-600 hidden md:block" />
+                    <CornerDownRight className="w-5 h-5 text-neutral-400 dark:text-neutral-600 md:hidden my-1" />
+                   <div className="p-4 bg-neutral-100 dark:bg-neutral-800 rounded-xl border border-neutral-200 dark:border-neutral-700 w-full md:w-auto">2. Hub enforces rules & royalty</div>
+                   <ArrowRight className="w-5 h-5 text-neutral-400 dark:text-neutral-600 hidden md:block" />
+                   <CornerDownRight className="w-5 h-5 text-neutral-400 dark:text-neutral-600 md:hidden my-1" />
+                   <div className="p-4 bg-neutral-100 dark:bg-neutral-800 rounded-xl border border-neutral-200 dark:border-neutral-700 w-full md:w-auto">3. Seller pays royalty</div>
+                   <ArrowRight className="w-5 h-5 text-neutral-400 dark:text-neutral-600 hidden md:block" />
+                   <CornerDownRight className="w-5 h-5 text-neutral-400 dark:text-neutral-600 md:hidden my-1" />
+                   <div className="p-4 bg-green-100 dark:bg-green-900 rounded-xl border border-green-300 dark:border-green-700 text-green-800 dark:text-green-200 w-full md:w-auto font-semibold">4. Passport transfers</div>
                </div>
              </div>
 
