@@ -359,7 +359,7 @@ export default function NapkinStrategy() {
             </div>
 
             {/* Passport Visual Mockup Area */}
-            <div className="bg-gradient-to-br from-white to-neutral-50 dark:from-neutral-900 dark:to-neutral-800 rounded-xl shadow-lg border-2 border-amber-200 dark:border-amber-800 overflow-hidden">
+            <div className="bg-gradient-to-br from-white to-neutral-50 dark:from-neutral-900 dark:to-neutral-800 rounded-xl shadow-lg border-2 border-amber-200 dark:border-amber-800 overflow-hidden max-w-3xl mx-auto">
               {/* Header with Brand and Badge */}
               <div className="bg-gradient-to-r from-amber-50 to-orange-50 dark:from-amber-950 dark:to-orange-950 px-4 py-3 border-b border-amber-200 dark:border-amber-800">
                 <div className="flex items-center justify-between">
