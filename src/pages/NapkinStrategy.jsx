@@ -258,7 +258,7 @@ export default function NapkinStrategy() {
         </section>
 
         {/* --- SLIDE 2: NEW STRATEGY --- */}
-        <section className="h-screen snap-start snap-always flex flex-col items-center justify-center px-16 py-12 bg-gradient-to-br from-slate-50 via-stone-50 to-zinc-50 dark:from-slate-950 dark:via-slate-900 dark:to-neutral-950 relative overflow-hidden">
+        <section className="h-screen snap-start snap-always flex flex-col items-center justify-center px-20 py-16 bg-gradient-to-br from-slate-50 via-stone-50 to-zinc-50 dark:from-slate-950 dark:via-slate-900 dark:to-neutral-950 relative overflow-hidden">
           <div className="w-full max-w-6xl mx-auto z-10">
             
             {/* Title */}
@@ -530,29 +530,102 @@ export default function NapkinStrategy() {
         </section> {/* End Section 3 */}
 
          {/* --- SECTION 4: THE TRANSFER FLOW --- */}
-         <section className="h-screen snap-start snap-always flex flex-col items-center justify-center p-8 bg-neutral-50 dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 font-[Inter]">
+         <section className="h-screen snap-start snap-always flex flex-col items-center justify-center p-12 bg-gradient-to-br from-slate-50 via-stone-50 to-zinc-50 dark:from-slate-950 dark:via-slate-900 dark:to-neutral-950 relative overflow-hidden">
            {/* Content container */}
-           <div className="w-full max-w-5xl mx-auto space-y-12">
+           <div className="w-full max-w-6xl mx-auto space-y-12 z-10">
 
              {/* Title */}
              <div className="text-center">
-               <h2 className="text-4xl md:text-5xl font-light mb-3 tracking-tight">The Royalty-Enforced Transfer</h2>
-               <p className="text-sm text-neutral-500 dark:text-neutral-500 uppercase tracking-widest font-medium">Simple, Secure & Automated</p>
+               <p className="text-base text-gray-500 dark:text-gray-500 mb-3 uppercase tracking-wider">How It Works</p>
+               <h2 className="text-4xl md:text-5xl font-black tracking-tight text-gray-900 dark:text-white mb-3">The Royalty-Enforced Transfer</h2>
+               <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">Every resale automatically enforces smart rules and captures revenue for the brand</p>
              </div>
 
-             {/* Simplified Transfer Flow - Centered and Enlarged */}
+             {/* Transfer Flow Steps */}
              <div className="space-y-6">
-               <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-5 text-base text-center text-neutral-700 dark:text-neutral-300">
-                   <div className="p-4 bg-neutral-100 dark:bg-neutral-800 rounded-xl border border-neutral-200 dark:border-neutral-700 w-full md:w-auto">1. Seller lists price</div>
-                   <ArrowRight className="w-5 h-5 text-neutral-400 dark:text-neutral-600 hidden md:block" />
-                    <CornerDownRight className="w-5 h-5 text-neutral-400 dark:text-neutral-600 md:hidden my-1" />
-                   <div className="p-4 bg-neutral-100 dark:bg-neutral-800 rounded-xl border border-neutral-200 dark:border-neutral-700 w-full md:w-auto">2. Hub enforces rules & royalty</div>
-                   <ArrowRight className="w-5 h-5 text-neutral-400 dark:text-neutral-600 hidden md:block" />
-                   <CornerDownRight className="w-5 h-5 text-neutral-400 dark:text-neutral-600 md:hidden my-1" />
-                   <div className="p-4 bg-neutral-100 dark:bg-neutral-800 rounded-xl border border-neutral-200 dark:border-neutral-700 w-full md:w-auto">3. Seller pays royalty</div>
-                   <ArrowRight className="w-5 h-5 text-neutral-400 dark:text-neutral-600 hidden md:block" />
-                   <CornerDownRight className="w-5 h-5 text-neutral-400 dark:text-neutral-600 md:hidden my-1" />
-                   <div className="p-4 bg-green-100 dark:bg-green-900 rounded-xl border border-green-300 dark:border-green-700 text-green-800 dark:text-green-200 w-full md:w-auto font-semibold">4. Passport transfers</div>
+               <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+                   {/* Step 1 */}
+                   <div className="relative">
+                     <div className="bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-200 dark:border-gray-800 h-full">
+                       <div className="flex flex-col items-center text-center space-y-3">
+                         <div className="w-12 h-12 rounded-full bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center">
+                           <Tag className="w-6 h-6 text-amber-600 dark:text-amber-500" />
+                         </div>
+                         <div>
+                           <p className="text-sm font-bold text-gray-900 dark:text-white mb-1">Step 1</p>
+                           <p className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Seller Lists Price</p>
+                           <p className="text-sm text-gray-600 dark:text-gray-400">Owner decides to sell and sets their asking price</p>
+                         </div>
+                       </div>
+                     </div>
+                     <ArrowRight className="hidden md:block absolute -right-3 top-1/2 -translate-y-1/2 w-6 h-6 text-amber-500 dark:text-amber-600 z-10" />
+                   </div>
+
+                   {/* Step 2 */}
+                   <div className="relative">
+                     <div className="bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-200 dark:border-gray-800 h-full">
+                       <div className="flex flex-col items-center text-center space-y-3">
+                         <div className="w-12 h-12 rounded-full bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center">
+                           <Wrench className="w-6 h-6 text-amber-600 dark:text-amber-500" />
+                         </div>
+                         <div>
+                           <p className="text-sm font-bold text-gray-900 dark:text-white mb-1">Step 2</p>
+                           <p className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Rules Enforced</p>
+                           <p className="text-sm text-gray-600 dark:text-gray-400">Hub calculates royalty based on smart rules</p>
+                         </div>
+                       </div>
+                     </div>
+                     <ArrowRight className="hidden md:block absolute -right-3 top-1/2 -translate-y-1/2 w-6 h-6 text-amber-500 dark:text-amber-600 z-10" />
+                   </div>
+
+                   {/* Step 3 */}
+                   <div className="relative">
+                     <div className="bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-200 dark:border-gray-800 h-full">
+                       <div className="flex flex-col items-center text-center space-y-3">
+                         <div className="w-12 h-12 rounded-full bg-amber-100 dark:bg-amber-900/30 flex items-center justify-center">
+                           <Percent className="w-6 h-6 text-amber-600 dark:text-amber-500" />
+                         </div>
+                         <div>
+                           <p className="text-sm font-bold text-gray-900 dark:text-white mb-1">Step 3</p>
+                           <p className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Royalty Paid</p>
+                           <p className="text-sm text-gray-600 dark:text-gray-400">Seller pays required percentage to brand</p>
+                         </div>
+                       </div>
+                     </div>
+                     <ArrowRight className="hidden md:block absolute -right-3 top-1/2 -translate-y-1/2 w-6 h-6 text-green-500 dark:text-green-600 z-10" />
+                   </div>
+
+                   {/* Step 4 */}
+                   <div>
+                     <div className="bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 backdrop-blur-sm rounded-2xl p-6 border-2 border-green-300 dark:border-green-700 h-full">
+                       <div className="flex flex-col items-center text-center space-y-3">
+                         <div className="w-12 h-12 rounded-full bg-green-100 dark:bg-green-900/50 flex items-center justify-center">
+                           <FileText className="w-6 h-6 text-green-600 dark:text-green-500" />
+                         </div>
+                         <div>
+                           <p className="text-sm font-bold text-green-900 dark:text-green-300 mb-1">Step 4</p>
+                           <p className="text-lg font-semibold text-green-900 dark:text-green-200 mb-2">Passport Transfers</p>
+                           <p className="text-sm text-green-700 dark:text-green-400">Ownership updates, history preserved</p>
+                         </div>
+                       </div>
+                     </div>
+                   </div>
+               </div>
+
+               {/* Key Benefits */}
+               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-6">
+                 <div className="bg-amber-50/50 dark:bg-amber-900/10 rounded-xl p-4 border border-amber-200 dark:border-amber-800">
+                   <p className="text-sm font-semibold text-amber-900 dark:text-amber-300 mb-1">Zero Enforcement Cost</p>
+                   <p className="text-xs text-amber-700 dark:text-amber-400">Rules execute automatically—no manual oversight needed</p>
+                 </div>
+                 <div className="bg-amber-50/50 dark:bg-amber-900/10 rounded-xl p-4 border border-amber-200 dark:border-amber-800">
+                   <p className="text-sm font-semibold text-amber-900 dark:text-amber-300 mb-1">Perpetual Revenue</p>
+                   <p className="text-xs text-amber-700 dark:text-amber-400">Brand earns on every resale, forever</p>
+                 </div>
+                 <div className="bg-amber-50/50 dark:bg-amber-900/10 rounded-xl p-4 border border-amber-200 dark:border-amber-800">
+                   <p className="text-sm font-semibold text-amber-900 dark:text-amber-300 mb-1">Immutable History</p>
+                   <p className="text-xs text-amber-700 dark:text-amber-400">Complete provenance and ownership chain preserved</p>
+                 </div>
                </div>
              </div>
 
