@@ -432,63 +432,63 @@ export default function NapkinStrategy() {
                           {/* Base Resale Price */}
                           <div className="flex items-center justify-between p-2 bg-neutral-50 dark:bg-neutral-800/50 rounded-lg border border-neutral-200 dark:border-neutral-700" title="Minimum price for royalty calculation">
                               <div className="flex items-center gap-1.5">
-                                <Baseline className="w-3.5 h-3.5 text-amber-600 dark:text-amber-500 flex-shrink-0"/>
+                                <Baseline className="w-3.5 h-3.5 text-neutral-500 dark:text-neutral-400 flex-shrink-0"/>
                                 <span className="text-xs text-neutral-600 dark:text-neutral-400">Base Resale Price</span>
                               </div>
                               <span className="font-mono text-xs tabular-nums font-bold text-neutral-900 dark:text-white">CHF {formatNumber(3000)}</span>
                           </div>
                            {/* Transfer Lock Rule Display */}
-                          <div className={`flex items-center justify-between p-2 rounded-lg border ${isTransferLockActive ? 'bg-red-50 dark:bg-red-900/20 border-red-300 dark:border-red-700' : 'bg-neutral-50 dark:bg-neutral-800/50 border-neutral-200 dark:border-neutral-700'}`} title={`Transfer lock active for first 6 months. Ends ${formatDate(transferLockEndDateTimestamp)}`}>
+                          <div className="flex items-center justify-between p-2 bg-neutral-50 dark:bg-neutral-800/50 rounded-lg border border-neutral-200 dark:border-neutral-700" title={`Transfer lock active for first 6 months. Ends ${formatDate(transferLockEndDateTimestamp)}`}>
                               <div className="flex items-center gap-1.5">
-                                <Clock className={`w-3.5 h-3.5 flex-shrink-0 ${isTransferLockActive ? 'text-red-600 dark:text-red-500' : 'text-amber-600 dark:text-amber-500'}`}/>
-                                <span className={`text-xs ${isTransferLockActive ? 'text-red-600 dark:text-red-400' : 'text-neutral-600 dark:text-neutral-400'}`}>Transfer Lock</span>
+                                <Clock className={`w-3.5 h-3.5 flex-shrink-0 ${isTransferLockActive ? 'text-red-600 dark:text-red-500' : 'text-neutral-500 dark:text-neutral-400'}`}/>
+                                <span className="text-xs text-neutral-600 dark:text-neutral-400">Transfer Lock</span>
                               </div>
-                              <span className={`text-xs font-bold ${isTransferLockActive ? 'text-red-700 dark:text-red-300' : 'text-neutral-900 dark:text-white'}`}>
+                              <span className={`text-xs font-bold ${isTransferLockActive ? 'text-red-600 dark:text-red-400' : 'text-neutral-900 dark:text-white'}`}>
                                   {isTransferLockActive ? 'Active' : formatDate(transferLockEndDateTimestamp)}
                               </span>
                           </div>
                           
                           {/* Royalty Rules Display */}
                           <div className="space-y-1">
-                              <div className={`flex items-center justify-between p-2 rounded-lg border ${activeRoyaltyTier === 'Year 1' ? 'bg-amber-50 dark:bg-amber-900/20 border-amber-300 dark:border-amber-700' : 'bg-neutral-50 dark:bg-neutral-800/50 border-neutral-200 dark:border-neutral-700'}`} title="Royalty within first year">
+                              <div className="flex items-center justify-between p-2 bg-neutral-50 dark:bg-neutral-800/50 rounded-lg border border-neutral-200 dark:border-neutral-700" title="Royalty within first year">
                                   <div className="flex items-center gap-1.5">
-                                    <Percent className={`w-3.5 h-3.5 flex-shrink-0 ${activeRoyaltyTier === 'Year 1' ? 'text-amber-600 dark:text-amber-500' : 'text-neutral-400 dark:text-neutral-500'}`}/>
-                                    <span className={`text-xs ${activeRoyaltyTier === 'Year 1' ? 'text-amber-900 dark:text-amber-200' : 'text-neutral-600 dark:text-neutral-400'}`}>Year 1 Royalty</span>
+                                    <Percent className={`w-3.5 h-3.5 flex-shrink-0 ${activeRoyaltyTier === 'Year 1' ? 'text-amber-600 dark:text-amber-500' : 'text-neutral-500 dark:text-neutral-400'}`}/>
+                                    <span className="text-xs text-neutral-600 dark:text-neutral-400">Year 1 Royalty</span>
                                   </div>
-                                  <span className={`font-mono text-xs font-bold ${activeRoyaltyTier === 'Year 1' ? 'text-amber-900 dark:text-amber-100' : 'text-neutral-900 dark:text-white'}`}>90%</span>
+                                  <span className={`font-mono text-xs font-bold ${activeRoyaltyTier === 'Year 1' ? 'text-amber-600 dark:text-amber-400' : 'text-neutral-900 dark:text-white'}`}>90%</span>
                               </div>
-                              <div className={`flex items-center justify-between p-2 rounded-lg border ${activeRoyaltyTier === 'Year 2' ? 'bg-amber-50 dark:bg-amber-900/20 border-amber-300 dark:border-amber-700' : 'bg-neutral-50 dark:bg-neutral-800/50 border-neutral-200 dark:border-neutral-700'}`} title="Royalty during second year">
+                              <div className="flex items-center justify-between p-2 bg-neutral-50 dark:bg-neutral-800/50 rounded-lg border border-neutral-200 dark:border-neutral-700" title="Royalty during second year">
                                   <div className="flex items-center gap-1.5">
-                                    <Percent className={`w-3.5 h-3.5 flex-shrink-0 ${activeRoyaltyTier === 'Year 2' ? 'text-amber-600 dark:text-amber-500' : 'text-neutral-400 dark:text-neutral-500'}`}/>
-                                    <span className={`text-xs ${activeRoyaltyTier === 'Year 2' ? 'text-amber-900 dark:text-amber-200' : 'text-neutral-600 dark:text-neutral-400'}`}>Year 2 Royalty</span>
+                                    <Percent className={`w-3.5 h-3.5 flex-shrink-0 ${activeRoyaltyTier === 'Year 2' ? 'text-amber-600 dark:text-amber-500' : 'text-neutral-500 dark:text-neutral-400'}`}/>
+                                    <span className="text-xs text-neutral-600 dark:text-neutral-400">Year 2 Royalty</span>
                                   </div>
-                                  <span className={`font-mono text-xs font-bold ${activeRoyaltyTier === 'Year 2' ? 'text-amber-900 dark:text-amber-100' : 'text-neutral-900 dark:text-white'}`}>60%</span>
+                                  <span className={`font-mono text-xs font-bold ${activeRoyaltyTier === 'Year 2' ? 'text-amber-600 dark:text-amber-400' : 'text-neutral-900 dark:text-white'}`}>60%</span>
                               </div>
-                              <div className={`flex items-center justify-between p-2 rounded-lg border ${activeRoyaltyTier === 'Year 3+' ? 'bg-amber-50 dark:bg-amber-900/20 border-amber-300 dark:border-amber-700' : 'bg-neutral-50 dark:bg-neutral-800/50 border-neutral-200 dark:border-neutral-700'}`} title="Royalty after two years">
+                              <div className="flex items-center justify-between p-2 bg-neutral-50 dark:bg-neutral-800/50 rounded-lg border border-neutral-200 dark:border-neutral-700" title="Royalty after two years">
                                   <div className="flex items-center gap-1.5">
-                                    <Percent className={`w-3.5 h-3.5 flex-shrink-0 ${activeRoyaltyTier === 'Year 3+' ? 'text-amber-600 dark:text-amber-500' : 'text-neutral-400 dark:text-neutral-500'}`}/>
-                                    <span className={`text-xs ${activeRoyaltyTier === 'Year 3+' ? 'text-amber-900 dark:text-amber-200' : 'text-neutral-600 dark:text-neutral-400'}`}>Year 3+ Royalty</span>
+                                    <Percent className={`w-3.5 h-3.5 flex-shrink-0 ${activeRoyaltyTier === 'Year 3+' ? 'text-amber-600 dark:text-amber-500' : 'text-neutral-500 dark:text-neutral-400'}`}/>
+                                    <span className="text-xs text-neutral-600 dark:text-neutral-400">Year 3+ Royalty</span>
                                   </div>
-                                  <span className={`font-mono text-xs font-bold ${activeRoyaltyTier === 'Year 3+' ? 'text-amber-900 dark:text-amber-100' : 'text-neutral-900 dark:text-white'}`}>15%</span>
+                                  <span className={`font-mono text-xs font-bold ${activeRoyaltyTier === 'Year 3+' ? 'text-amber-600 dark:text-amber-400' : 'text-neutral-900 dark:text-white'}`}>15%</span>
                               </div>
                           </div>
                           
                           {/* Service Log Status */}
-                          <div className={`flex items-center justify-between p-2 rounded-lg border ${serviceLogStatus === "Verified" ? 'bg-green-50 dark:bg-green-900/20 border-green-300 dark:border-green-700' : 'bg-neutral-50 dark:bg-neutral-800/50 border-neutral-200 dark:border-neutral-700'}`} title="Service history verifiable">
+                          <div className="flex items-center justify-between p-2 bg-neutral-50 dark:bg-neutral-800/50 rounded-lg border border-neutral-200 dark:border-neutral-700" title="Service history verifiable">
                               <div className="flex items-center gap-1.5">
-                                <Wrench className={`w-3.5 h-3.5 flex-shrink-0 ${serviceLogStatus === "Verified" ? 'text-green-600 dark:text-green-500' : 'text-neutral-400 dark:text-neutral-500'}`}/>
-                                <span className={`text-xs ${serviceLogStatus === "Verified" ? 'text-green-900 dark:text-green-200' : 'text-neutral-600 dark:text-neutral-400'}`}>Service Log</span>
+                                <Wrench className={`w-3.5 h-3.5 flex-shrink-0 ${serviceLogStatus === "Verified" ? 'text-green-600 dark:text-green-500' : 'text-neutral-500 dark:text-neutral-400'}`}/>
+                                <span className="text-xs text-neutral-600 dark:text-neutral-400">Service Log</span>
                               </div>
-                              <span className={`text-xs font-bold ${serviceLogStatus === "Verified" ? 'text-green-700 dark:text-green-300' : 'text-neutral-900 dark:text-white'}`}>{serviceLogStatus}</span>
+                              <span className={`text-xs font-bold ${serviceLogStatus === "Verified" ? 'text-green-600 dark:text-green-400' : 'text-neutral-900 dark:text-white'}`}>{serviceLogStatus}</span>
                           </div>
                           
                           {/* Community Access Status */}
-                          <div className={`flex items-center justify-between p-2 rounded-lg border ${communityAccessStatus === "Enabled" ? 'bg-green-50 dark:bg-green-900/20 border-green-300 dark:border-green-700' : 'bg-neutral-50 dark:bg-neutral-800/50 border-neutral-200 dark:border-neutral-700'}`} title="Access to owner community & perks">
+                          <div className="flex items-center justify-between p-2 bg-neutral-50 dark:bg-neutral-800/50 rounded-lg border border-neutral-200 dark:border-neutral-700" title="Access to owner community & perks">
                               <div className="flex items-center gap-1.5">
-                                <Users className={`w-3.5 h-3.5 flex-shrink-0 ${communityAccessStatus === "Enabled" ? 'text-green-600 dark:text-green-500' : 'text-neutral-400 dark:text-neutral-500'}`}/>
-                                <span className={`text-xs ${communityAccessStatus === "Enabled" ? 'text-green-900 dark:text-green-200' : 'text-neutral-600 dark:text-neutral-400'}`}>Community Access</span>
+                                <Users className={`w-3.5 h-3.5 flex-shrink-0 ${communityAccessStatus === "Enabled" ? 'text-green-600 dark:text-green-500' : 'text-neutral-500 dark:text-neutral-400'}`}/>
+                                <span className="text-xs text-neutral-600 dark:text-neutral-400">Community Access</span>
                               </div>
-                              <span className={`text-xs font-bold ${communityAccessStatus === "Enabled" ? 'text-green-700 dark:text-green-300' : 'text-neutral-900 dark:text-white'}`}>{communityAccessStatus}</span>
+                              <span className={`text-xs font-bold ${communityAccessStatus === "Enabled" ? 'text-green-600 dark:text-green-400' : 'text-neutral-900 dark:text-white'}`}>{communityAccessStatus}</span>
                           </div>
                       </div>
                   </div>
