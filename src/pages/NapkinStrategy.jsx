@@ -258,29 +258,29 @@ export default function NapkinStrategy() {
         </section>
 
         {/* --- SLIDE 2: NEW STRATEGY --- */}
-        <section className="h-screen snap-start snap-always flex flex-col items-center justify-center px-20 py-16 bg-gradient-to-br from-slate-50 via-stone-50 to-zinc-50 dark:from-slate-950 dark:via-slate-900 dark:to-neutral-950 relative overflow-hidden">
+        <section className="h-screen snap-start snap-always flex flex-col items-center justify-center px-16 py-10 bg-gradient-to-br from-slate-50 via-stone-50 to-zinc-50 dark:from-slate-950 dark:via-slate-900 dark:to-neutral-950 relative overflow-hidden">
           <div className="w-full max-w-6xl mx-auto z-10">
             
             {/* Title */}
-            <div className="text-center mb-10">
-              <p className="text-base text-gray-500 dark:text-gray-500 mb-3 uppercase tracking-wider">The Napkin Strategy</p>
-              <h2 className="text-4xl md:text-5xl font-black tracking-tight text-gray-900 dark:text-white mb-3">Selling And Distributing,<br /><span className="bg-gradient-to-r from-amber-600 to-orange-600 dark:from-amber-400 dark:to-orange-400 bg-clip-text text-transparent">With A Digital Passport</span></h2>
-              <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">100% control, zero cost, perpetual revenue — maintaining independence and self-sustainability</p>
+            <div className="text-center mb-6">
+              <p className="text-sm text-gray-500 dark:text-gray-500 mb-2 uppercase tracking-wider">The Napkin Strategy</p>
+              <h2 className="text-3xl md:text-4xl font-black tracking-tight text-gray-900 dark:text-white mb-2">Selling And Distributing,<br /><span className="bg-gradient-to-r from-amber-600 to-orange-600 dark:from-amber-400 dark:to-orange-400 bg-clip-text text-transparent">With A Digital Passport</span></h2>
+              <p className="text-base text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">100% control, zero cost, perpetual revenue — maintaining independence and self-sustainability</p>
             </div>
 
             {/* With Digital Passport Container */}
-            <div className="mb-10 bg-gradient-to-br from-amber-50/70 to-orange-50/70 dark:from-amber-900/20 dark:to-orange-900/20 backdrop-blur-sm rounded-2xl p-6 border border-amber-300 dark:border-amber-700">
+            <div className="mb-6 bg-gradient-to-br from-amber-50/70 to-orange-50/70 dark:from-amber-900/20 dark:to-orange-900/20 backdrop-blur-sm rounded-2xl p-5 border border-amber-300 dark:border-amber-700">
               {/* Digital Passport Badge */}
-              <div className="mb-5">
-                <span className="inline-block bg-amber-200 dark:bg-amber-800 text-amber-900 dark:text-amber-100 px-4 py-1.5 rounded-full text-sm font-semibold border border-amber-400 dark:border-amber-600">
+              <div className="mb-4">
+                <span className="inline-block bg-amber-200 dark:bg-amber-800 text-amber-900 dark:text-amber-100 px-3 py-1 rounded-full text-sm font-semibold border border-amber-400 dark:border-amber-600">
                   🔐 Watch With A Digital Passport
                 </span>
               </div>
 
               {/* Primary Market */}
-              <div className="mb-8">
-                <p className="text-sm text-gray-500 dark:text-gray-500 uppercase tracking-widest mb-4">Primary Market</p>
-                <div className="bg-white dark:bg-slate-900 rounded-2xl p-5 border border-gray-300 dark:border-gray-700">
+              <div className="mb-5">
+                <p className="text-sm text-gray-500 dark:text-gray-500 uppercase tracking-widest mb-3">Primary Market</p>
+                <div className="bg-white dark:bg-slate-900 rounded-2xl p-4 border border-gray-300 dark:border-gray-700">
                   <div className="flex items-center gap-4 text-xl text-gray-900 dark:text-white">
                     <span className="font-medium">Brand</span>
                     <span className="text-gray-500">→</span>
@@ -292,9 +292,9 @@ export default function NapkinStrategy() {
 
               {/* Secondary Market with Royalty */}
               <div>
-                <p className="text-sm text-gray-500 dark:text-gray-500 uppercase tracking-widest mb-4">Secondary Market (Le Régulateur x Alain Silberstein — Chrono24)</p>
-                <div className="bg-white dark:bg-slate-900 rounded-2xl p-5 border border-gray-300 dark:border-gray-700">
-                  <div className="space-y-4">
+                <p className="text-sm text-gray-500 dark:text-gray-500 uppercase tracking-widest mb-3">Secondary Market (Le Régulateur x Alain Silberstein — Chrono24)</p>
+                <div className="bg-white dark:bg-slate-900 rounded-2xl p-4 border border-gray-300 dark:border-gray-700">
+                  <div className="space-y-3">
                     <div className="flex items-center gap-4 text-xl text-gray-900 dark:text-white">
                       <span className="font-medium">Brand</span>
                       <span className="text-gray-500">→</span>
@@ -305,7 +305,7 @@ export default function NapkinStrategy() {
                     </div>
                     
                     {/* Royalty Ticker */}
-                    <div className="bg-amber-50 dark:bg-amber-900/30 rounded-lg px-4 py-3 border border-amber-300 dark:border-amber-700">
+                    <div className="bg-amber-50 dark:bg-amber-900/30 rounded-lg px-3 py-2 border border-amber-300 dark:border-amber-700">
                       <div className="flex items-center justify-between">
                         <span className="text-base text-gray-600 dark:text-gray-400">Reseller profit</span>
                         <div className="text-right">
@@ -326,18 +326,18 @@ export default function NapkinStrategy() {
             </div>
 
             {/* The Solution */}
-            <div className="pt-10 pb-6 border-t border-gray-300 dark:border-gray-700">
-              <div className="flex justify-center gap-8 max-w-6xl mx-auto">
+            <div className="pt-6 pb-4 border-t border-gray-300 dark:border-gray-700">
+              <div className="flex justify-center gap-6 max-w-6xl mx-auto">
                 <div className="text-center flex-1">
-                  <p className="text-2xl font-bold mb-3"><span className="text-orange-600 dark:text-orange-400">"Fair Access"</span></p>
+                  <p className="text-xl font-bold mb-2"><span className="text-orange-600 dark:text-orange-400">"Fair Access"</span></p>
                   <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Dynamic royalties (90% Yr 1, 60% Yr 2, 15% Yr 3+) eliminate flippers' margin and return profits to the brand. Transfer locks ensure real collectors get priority access.</p>
                 </div>
                 <div className="text-center flex-1">
-                  <p className="text-2xl font-bold mb-3"><span className="text-orange-600 dark:text-orange-400">"Trust & Security"</span></p>
+                  <p className="text-xl font-bold mb-2"><span className="text-orange-600 dark:text-orange-400">"Trust & Security"</span></p>
                   <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Digital passport ensures authenticity, tracks warranty, and maintains condition history throughout ownership</p>
                 </div>
                 <div className="text-center flex-1">
-                  <p className="text-2xl font-bold mb-3"><span className="text-orange-600 dark:text-orange-400">"Connected Community"</span></p>
+                  <p className="text-xl font-bold mb-2"><span className="text-orange-600 dark:text-orange-400">"Connected Community"</span></p>
                   <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Like a dating app, you connect collectors with each other across the watch's lifetime, building lasting relationships and community</p>
                 </div>
               </div>
