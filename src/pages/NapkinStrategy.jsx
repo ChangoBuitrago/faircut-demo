@@ -330,7 +330,7 @@ export default function NapkinStrategy() {
               <div className="flex justify-center gap-8 max-w-6xl mx-auto">
                 <div className="text-center flex-1">
                   <p className="text-2xl font-bold mb-3"><span className="text-orange-600 dark:text-orange-400">"Fair Access"</span></p>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Dynamic royalties (90% Yr 1, 60% Yr 2, 15% Yr 3+) eliminate flippers' margin and return profits to the brand. Transfer locks (first 6 months) ensure real collectors get priority access.</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">Dynamic royalties (90% Yr 1, 60% Yr 2, 15% Yr 3+) eliminate flippers' margin and return profits to the brand. Transfer locks ensure real collectors get priority access.</p>
                 </div>
                 <div className="text-center flex-1">
                   <p className="text-2xl font-bold mb-3"><span className="text-orange-600 dark:text-orange-400">"Trust & Security"</span></p>
