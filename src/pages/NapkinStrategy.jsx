@@ -258,7 +258,7 @@ export default function NapkinStrategy() {
         </section>
 
         {/* --- SLIDE 2: NEW STRATEGY --- */}
-        <section className="h-screen snap-start snap-always flex flex-col items-center justify-center p-12 bg-gradient-to-br from-slate-50 via-stone-50 to-zinc-50 dark:from-slate-950 dark:via-slate-900 dark:to-neutral-950 relative overflow-hidden">
+        <section className="h-screen snap-start snap-always flex flex-col items-center justify-center px-16 py-12 bg-gradient-to-br from-slate-50 via-stone-50 to-zinc-50 dark:from-slate-950 dark:via-slate-900 dark:to-neutral-950 relative overflow-hidden">
           <div className="w-full max-w-6xl mx-auto z-10">
             
             {/* Title */}
@@ -347,28 +347,28 @@ export default function NapkinStrategy() {
         </section>
 
         {/* --- SECTION 3: THE DIGITAL PASSPORT (Visual & Simplified) --- */}
-        <section className="h-screen snap-start snap-always flex flex-col items-center justify-center p-6 bg-neutral-50 dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 font-[Inter]">
+        <section className="h-screen snap-start snap-always flex flex-col items-center justify-center p-8 bg-neutral-50 dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 font-[Inter]">
           {/* Content container */}
-          <div className="w-full max-w-5xl mx-auto space-y-3">
+          <div className="w-full max-w-6xl mx-auto space-y-6">
 
             {/* Title */}
             <div className="text-center">
-              <p className="text-xs text-neutral-500 dark:text-neutral-500 mb-1 uppercase tracking-wider">Proof of Concept</p>
-              <h2 className="text-2xl md:text-3xl font-black tracking-tight text-neutral-900 dark:text-white mb-1">The Digital Passport</h2>
-              <p className="text-sm text-neutral-600 dark:text-neutral-400 max-w-3xl mx-auto">Smart rules, immutable records, perpetual revenues—connected communities</p>
+              <p className="text-sm text-neutral-500 dark:text-neutral-500 mb-2 uppercase tracking-wider">Proof of Concept</p>
+              <h2 className="text-3xl md:text-4xl font-black tracking-tight text-neutral-900 dark:text-white mb-2">The Digital Passport</h2>
+              <p className="text-base text-neutral-600 dark:text-neutral-400 max-w-3xl mx-auto">Smart rules, immutable records, perpetual revenues—connected communities</p>
             </div>
 
             {/* Passport Visual Mockup Area */}
             <div className="bg-gradient-to-br from-white to-neutral-50 dark:from-neutral-900 dark:to-neutral-800 rounded-xl shadow-lg border-2 border-amber-200 dark:border-amber-800 overflow-hidden">
               {/* Header with Brand and Badge */}
-              <div className="bg-gradient-to-r from-amber-50 to-orange-50 dark:from-amber-950 dark:to-orange-950 px-3 py-2 border-b border-amber-200 dark:border-amber-800">
+              <div className="bg-gradient-to-r from-amber-50 to-orange-50 dark:from-amber-950 dark:to-orange-950 px-4 py-3 border-b border-amber-200 dark:border-amber-800">
                 <div className="flex items-center justify-between">
                   <div>
-                    <span className="text-xs uppercase tracking-widest text-amber-700 dark:text-amber-400 font-bold">Louis Erard</span>
-                    <h3 className="text-sm font-bold tracking-tight text-neutral-900 dark:text-white">Le Régulateur x Alain Silberstein</h3>
+                    <span className="text-sm uppercase tracking-widest text-amber-700 dark:text-amber-400 font-bold">Louis Erard</span>
+                    <h3 className="text-base font-bold tracking-tight text-neutral-900 dark:text-white mt-0.5">Le Régulateur x Alain Silberstein</h3>
                   </div>
-                  <div className="flex items-center gap-1 bg-green-100 dark:bg-green-900/50 text-green-700 dark:text-green-300 px-2 py-0.5 rounded-full text-xs font-semibold border border-green-300 dark:border-green-700">
-                    <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                  <div className="flex items-center gap-1.5 bg-green-100 dark:bg-green-900/50 text-green-700 dark:text-green-300 px-3 py-1 rounded-full text-xs font-semibold border border-green-300 dark:border-green-700">
+                    <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
                     </svg>
                     Verified
@@ -377,42 +377,42 @@ export default function NapkinStrategy() {
               </div>
               
               {/* Main Content Flex Container */}
-              <div className="flex flex-col md:flex-row gap-3 p-3 items-start">
+              <div className="flex flex-col md:flex-row gap-4 p-4 items-start">
                   {/* Left Column: Core Info + Rules */}
-                  <div className="flex-1 space-y-2">
+                  <div className="flex-1 space-y-3">
                       
                       {/* Watch Details & Image */}
-                      <div className="flex gap-3 items-start">
+                      <div className="flex gap-4 items-start">
                           {/* Details Block */}
-                          <div className="space-y-1.5 text-xs flex-1">
-                              <div className="flex items-center gap-1.5">
-                                <Users className="w-3.5 h-3.5 text-amber-600 dark:text-amber-500 flex-shrink-0"/>
+                          <div className="space-y-2 text-sm flex-1">
+                              <div className="flex items-center gap-2">
+                                <Users className="w-4 h-4 text-amber-600 dark:text-amber-500 flex-shrink-0"/>
                                 <span className="text-neutral-500 dark:text-neutral-400">Owner:</span>
                                 <span className="font-semibold text-neutral-900 dark:text-white">Manuel Emch</span>
                               </div>
-                              <div className="flex items-center gap-1.5">
-                                <FileText className="w-3.5 h-3.5 text-amber-600 dark:text-amber-500 flex-shrink-0"/>
+                              <div className="flex items-center gap-2">
+                                <FileText className="w-4 h-4 text-amber-600 dark:text-amber-500 flex-shrink-0"/>
                                 <span className="text-neutral-500 dark:text-neutral-400">Ref:</span>
                                 <span className="font-mono font-semibold text-neutral-900 dark:text-white">85358TT02.BTT88</span>
                               </div>
-                              <div className="flex items-center gap-1.5">
-                                <Edit3 className="w-3.5 h-3.5 text-amber-600 dark:text-amber-500 flex-shrink-0"/>
+                              <div className="flex items-center gap-2">
+                                <Edit3 className="w-4 h-4 text-amber-600 dark:text-amber-500 flex-shrink-0"/>
                                 <span className="text-neutral-500 dark:text-neutral-400">Edition:</span>
                                 <span className="font-semibold text-neutral-900 dark:text-white">#042 / 178</span>
                               </div>
-                              <div className="flex items-center gap-1.5">
-                                <Tag className="w-3.5 h-3.5 text-amber-600 dark:text-amber-500 flex-shrink-0"/>
+                              <div className="flex items-center gap-2">
+                                <Tag className="w-4 h-4 text-amber-600 dark:text-amber-500 flex-shrink-0"/>
                                 <span className="text-neutral-500 dark:text-neutral-400">Serial:</span>
                                 <span className="font-mono font-semibold text-neutral-900 dark:text-white">LE-AS-2021-042</span>
                               </div>
-                              <div className="flex items-center gap-1.5">
-                                <Calendar className="w-3.5 h-3.5 text-amber-600 dark:text-amber-500 flex-shrink-0"/>
+                              <div className="flex items-center gap-2">
+                                <Calendar className="w-4 h-4 text-amber-600 dark:text-amber-500 flex-shrink-0"/>
                                 <span className="text-neutral-500 dark:text-neutral-400">Issued:</span>
                                 <span className="font-semibold text-neutral-900 dark:text-white">{formatDate(watchMintTimestamp)}</span>
                               </div>
                           </div>
                           {/* Watch Image */}
-                          <div className="w-24 h-auto flex-shrink-0 flex items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-neutral-50 to-neutral-100 dark:from-neutral-800 dark:to-neutral-900 p-1.5 border border-amber-200 dark:border-amber-800">
+                          <div className="w-28 h-auto flex-shrink-0 flex items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-neutral-50 to-neutral-100 dark:from-neutral-800 dark:to-neutral-900 p-2 border-2 border-amber-200 dark:border-amber-800 shadow-md">
                               <img
                                 src="https://img.chrono24.com/images/uhren/26746621-zpbgyrk9dwrlxwziwnej4dcs-Zoom.jpg"
                                 alt="Watch"
@@ -423,24 +423,24 @@ export default function NapkinStrategy() {
                       </div>
 
                       {/* Smart Rules Display */}
-                      <div className="pt-1.5 mt-1.5 border-t border-neutral-200 dark:border-neutral-700 space-y-1">
-                          <div className="flex items-center gap-1">
-                            <div className="w-0.5 h-2.5 bg-amber-500 dark:bg-amber-600 rounded-full"></div>
-                            <p className="text-xs text-neutral-900 dark:text-white uppercase tracking-wide font-bold">Smart Rules</p>
+                      <div className="pt-2 mt-2 border-t-2 border-neutral-200 dark:border-neutral-700 space-y-1.5">
+                          <div className="flex items-center gap-1.5">
+                            <div className="w-0.5 h-3 bg-amber-500 dark:bg-amber-600 rounded-full"></div>
+                            <p className="text-xs text-neutral-900 dark:text-white uppercase tracking-wider font-bold">Smart Rules</p>
                           </div>
                           
                           {/* Base Resale Price */}
-                          <div className="flex items-center justify-between p-1.5 bg-neutral-50 dark:bg-neutral-800/50 rounded border border-neutral-200 dark:border-neutral-700" title="Minimum price for royalty calculation">
-                              <div className="flex items-center gap-1">
-                                <Baseline className="w-3 h-3 text-amber-600 dark:text-amber-500 flex-shrink-0"/>
+                          <div className="flex items-center justify-between p-2 bg-neutral-50 dark:bg-neutral-800/50 rounded-lg border border-neutral-200 dark:border-neutral-700" title="Minimum price for royalty calculation">
+                              <div className="flex items-center gap-1.5">
+                                <Baseline className="w-3.5 h-3.5 text-amber-600 dark:text-amber-500 flex-shrink-0"/>
                                 <span className="text-xs text-neutral-600 dark:text-neutral-400">Base Resale Price</span>
                               </div>
                               <span className="font-mono text-xs tabular-nums font-bold text-neutral-900 dark:text-white">CHF {formatNumber(3000)}</span>
                           </div>
                            {/* Transfer Lock Rule Display */}
-                          <div className="flex items-center justify-between p-1.5 bg-neutral-50 dark:bg-neutral-800/50 rounded border border-neutral-200 dark:border-neutral-700" title={`Transfer lock active for first 6 months. Ends ${formatDate(transferLockEndDateTimestamp)}`}>
-                              <div className="flex items-center gap-1">
-                                <Clock className={`w-3 h-3 flex-shrink-0 ${isTransferLockActive ? 'text-red-600 dark:text-red-500' : 'text-amber-600 dark:text-amber-500'}`}/>
+                          <div className="flex items-center justify-between p-2 bg-neutral-50 dark:bg-neutral-800/50 rounded-lg border border-neutral-200 dark:border-neutral-700" title={`Transfer lock active for first 6 months. Ends ${formatDate(transferLockEndDateTimestamp)}`}>
+                              <div className="flex items-center gap-1.5">
+                                <Clock className={`w-3.5 h-3.5 flex-shrink-0 ${isTransferLockActive ? 'text-red-600 dark:text-red-500' : 'text-amber-600 dark:text-amber-500'}`}/>
                                 <span className="text-xs text-neutral-600 dark:text-neutral-400">Transfer Lock</span>
                               </div>
                               <span className={`text-xs font-bold ${isTransferLockActive ? 'text-red-600 dark:text-red-400' : 'text-neutral-900 dark:text-white'}`}>
@@ -449,24 +449,24 @@ export default function NapkinStrategy() {
                           </div>
                           
                           {/* Royalty Rules Display */}
-                          <div className="space-y-1">
-                              <div className="flex items-center justify-between p-1.5 bg-neutral-50 dark:bg-neutral-800/50 rounded border border-neutral-200 dark:border-neutral-700" title="Royalty within first year">
-                                  <div className="flex items-center gap-1">
-                                    <Percent className={`w-3 h-3 flex-shrink-0 ${activeRoyaltyTier === 'Year 1' ? 'text-amber-600 dark:text-amber-500' : 'text-neutral-500 dark:text-neutral-400'}`}/>
+                          <div className="space-y-1.5">
+                              <div className="flex items-center justify-between p-2 bg-neutral-50 dark:bg-neutral-800/50 rounded-lg border border-neutral-200 dark:border-neutral-700" title="Royalty within first year">
+                                  <div className="flex items-center gap-1.5">
+                                    <Percent className={`w-3.5 h-3.5 flex-shrink-0 ${activeRoyaltyTier === 'Year 1' ? 'text-amber-600 dark:text-amber-500' : 'text-neutral-500 dark:text-neutral-400'}`}/>
                                     <span className="text-xs text-neutral-600 dark:text-neutral-400">Year 1 Royalty</span>
                                   </div>
                                   <span className={`font-mono text-xs font-bold ${activeRoyaltyTier === 'Year 1' ? 'text-neutral-900 dark:text-white' : 'text-neutral-400 dark:text-neutral-600'}`}>90%</span>
                               </div>
-                              <div className="flex items-center justify-between p-1.5 bg-neutral-50 dark:bg-neutral-800/50 rounded border border-neutral-200 dark:border-neutral-700" title="Royalty during second year">
-                                  <div className="flex items-center gap-1">
-                                    <Percent className={`w-3 h-3 flex-shrink-0 ${activeRoyaltyTier === 'Year 2' ? 'text-amber-600 dark:text-amber-500' : 'text-neutral-500 dark:text-neutral-400'}`}/>
+                              <div className="flex items-center justify-between p-2 bg-neutral-50 dark:bg-neutral-800/50 rounded-lg border border-neutral-200 dark:border-neutral-700" title="Royalty during second year">
+                                  <div className="flex items-center gap-1.5">
+                                    <Percent className={`w-3.5 h-3.5 flex-shrink-0 ${activeRoyaltyTier === 'Year 2' ? 'text-amber-600 dark:text-amber-500' : 'text-neutral-500 dark:text-neutral-400'}`}/>
                                     <span className="text-xs text-neutral-600 dark:text-neutral-400">Year 2 Royalty</span>
                                   </div>
                                   <span className={`font-mono text-xs font-bold ${activeRoyaltyTier === 'Year 2' ? 'text-neutral-900 dark:text-white' : 'text-neutral-400 dark:text-neutral-600'}`}>60%</span>
                               </div>
-                              <div className="flex items-center justify-between p-1.5 bg-neutral-50 dark:bg-neutral-800/50 rounded border border-neutral-200 dark:border-neutral-700" title="Royalty after two years">
-                                  <div className="flex items-center gap-1">
-                                    <Percent className={`w-3 h-3 flex-shrink-0 ${activeRoyaltyTier === 'Year 3+' ? 'text-amber-600 dark:text-amber-500' : 'text-neutral-500 dark:text-neutral-400'}`}/>
+                              <div className="flex items-center justify-between p-2 bg-neutral-50 dark:bg-neutral-800/50 rounded-lg border border-neutral-200 dark:border-neutral-700" title="Royalty after two years">
+                                  <div className="flex items-center gap-1.5">
+                                    <Percent className={`w-3.5 h-3.5 flex-shrink-0 ${activeRoyaltyTier === 'Year 3+' ? 'text-amber-600 dark:text-amber-500' : 'text-neutral-500 dark:text-neutral-400'}`}/>
                                     <span className="text-xs text-neutral-600 dark:text-neutral-400">Year 3+ Royalty</span>
                                   </div>
                                   <span className={`font-mono text-xs font-bold ${activeRoyaltyTier === 'Year 3+' ? 'text-neutral-900 dark:text-white' : 'text-neutral-400 dark:text-neutral-600'}`}>15%</span>
@@ -474,18 +474,18 @@ export default function NapkinStrategy() {
                           </div>
                           
                           {/* Service Log Status */}
-                          <div className="flex items-center justify-between p-1.5 bg-neutral-50 dark:bg-neutral-800/50 rounded border border-neutral-200 dark:border-neutral-700" title="Service history verifiable">
-                              <div className="flex items-center gap-1">
-                                <Wrench className={`w-3 h-3 flex-shrink-0 ${serviceLogStatus === "Verified" ? 'text-green-600 dark:text-green-500' : 'text-amber-600 dark:text-amber-500'}`}/>
+                          <div className="flex items-center justify-between p-2 bg-neutral-50 dark:bg-neutral-800/50 rounded-lg border border-neutral-200 dark:border-neutral-700" title="Service history verifiable">
+                              <div className="flex items-center gap-1.5">
+                                <Wrench className={`w-3.5 h-3.5 flex-shrink-0 ${serviceLogStatus === "Verified" ? 'text-green-600 dark:text-green-500' : 'text-amber-600 dark:text-amber-500'}`}/>
                                 <span className="text-xs text-neutral-600 dark:text-neutral-400">Service Log</span>
                               </div>
                               <span className={`text-xs font-bold ${serviceLogStatus === "Verified" ? 'text-green-600 dark:text-green-400' : 'text-neutral-900 dark:text-white'}`}>{serviceLogStatus}</span>
                           </div>
                           
                           {/* Community Access Status */}
-                          <div className="flex items-center justify-between p-1.5 bg-neutral-50 dark:bg-neutral-800/50 rounded border border-neutral-200 dark:border-neutral-700" title="Access to owner community & perks">
-                              <div className="flex items-center gap-1">
-                                <Users className={`w-3 h-3 flex-shrink-0 ${communityAccessStatus === "Enabled" ? 'text-green-600 dark:text-green-500' : 'text-amber-600 dark:text-amber-500'}`}/>
+                          <div className="flex items-center justify-between p-2 bg-neutral-50 dark:bg-neutral-800/50 rounded-lg border border-neutral-200 dark:border-neutral-700" title="Access to owner community & perks">
+                              <div className="flex items-center gap-1.5">
+                                <Users className={`w-3.5 h-3.5 flex-shrink-0 ${communityAccessStatus === "Enabled" ? 'text-green-600 dark:text-green-500' : 'text-amber-600 dark:text-amber-500'}`}/>
                                 <span className="text-xs text-neutral-600 dark:text-neutral-400">Community Access</span>
                               </div>
                               <span className={`text-xs font-bold ${communityAccessStatus === "Enabled" ? 'text-green-600 dark:text-green-400' : 'text-neutral-900 dark:text-white'}`}>{communityAccessStatus}</span>
@@ -496,32 +496,32 @@ export default function NapkinStrategy() {
             </div> {/* End Passport Card */}
 
             {/* SECTION: Brand-Defined Rules & Benefits Tiles */}
-            <div className="space-y-2 pt-2 border-t border-neutral-200 dark:border-neutral-800">
-              <p className="text-xs text-neutral-500 dark:text-neutral-500 uppercase tracking-widest font-medium text-center">Smart Rules & Benefits</p>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-2 text-center">
+            <div className="space-y-4 pt-4 border-t border-neutral-200 dark:border-neutral-800">
+              <p className="text-sm text-neutral-500 dark:text-neutral-500 uppercase tracking-widest font-medium text-center">Smart Rules & Benefits</p>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
                 {/* Anti-Flipping Rules */}
-                 <div className="p-2.5 bg-neutral-100 dark:bg-neutral-800 rounded-lg border border-neutral-200 dark:border-neutral-700 h-full flex flex-col items-center">
-                  <Clock className="w-4 h-4 mx-auto mb-1.5 text-amber-600 dark:text-amber-500"/>
-                  <p className="text-xs font-medium mb-1">Anti-Flipping Rules</p>
-                  <p className="text-xs text-neutral-500 dark:text-neutral-400 flex-grow leading-tight">Implement transfer locks (e.g., first 6 months) to discourage immediate speculation.</p>
+                 <div className="p-4 bg-neutral-100 dark:bg-neutral-800 rounded-lg border border-neutral-200 dark:border-neutral-700 h-full flex flex-col items-center">
+                  <Clock className="w-6 h-6 mx-auto mb-2 text-amber-600 dark:text-amber-500"/>
+                  <p className="text-sm font-medium mb-2">Anti-Flipping Rules</p>
+                  <p className="text-sm text-neutral-500 dark:text-neutral-400 flex-grow">Implement transfer locks (e.g., first 6 months) to discourage immediate speculation.</p>
                 </div>
                 {/* Dynamic Royalties */}
-                <div className="p-2.5 bg-neutral-100 dark:bg-neutral-800 rounded-lg border border-neutral-200 dark:border-neutral-700 h-full flex flex-col items-center">
-                  <Percent className="w-4 h-4 mx-auto mb-1.5 text-amber-600 dark:text-amber-500"/>
-                  <p className="text-xs font-medium mb-1">Dynamic Royalties</p>
-                  <p className="text-xs text-neutral-500 dark:text-neutral-400 flex-grow leading-tight">Automated time-based royalties on every resale, ensuring perpetual revenue stream for the brand.</p>
+                <div className="p-4 bg-neutral-100 dark:bg-neutral-800 rounded-lg border border-neutral-200 dark:border-neutral-700 h-full flex flex-col items-center">
+                  <Percent className="w-6 h-6 mx-auto mb-2 text-amber-600 dark:text-amber-500"/>
+                  <p className="text-sm font-medium mb-2">Dynamic Royalties</p>
+                  <p className="text-sm text-neutral-500 dark:text-neutral-400 flex-grow">Automated time-based royalties on every resale, ensuring perpetual revenue stream for the brand.</p>
                 </div>
                  {/* Service History */}
-                 <div className="p-2.5 bg-neutral-100 dark:bg-neutral-800 rounded-lg border border-neutral-200 dark:border-neutral-700 h-full flex flex-col items-center">
-                  <Wrench className="w-4 h-4 mx-auto mb-1.5 text-amber-600 dark:text-amber-500"/>
-                  <p className="text-xs font-medium mb-1">Verified Service Log</p>
-                  <p className="text-xs text-neutral-500 dark:text-neutral-400 flex-grow leading-tight">Build trust & value: only official centers can update the immutable service history.</p>
+                 <div className="p-4 bg-neutral-100 dark:bg-neutral-800 rounded-lg border border-neutral-200 dark:border-neutral-700 h-full flex flex-col items-center">
+                  <Wrench className="w-6 h-6 mx-auto mb-2 text-amber-600 dark:text-amber-500"/>
+                  <p className="text-sm font-medium mb-2">Verified Service Log</p>
+                  <p className="text-sm text-neutral-500 dark:text-neutral-400 flex-grow">Build trust & value: only official centers can update the immutable service history.</p>
                 </div>
                  {/* Owner Perks & Community */}
-                 <div className="p-2.5 bg-neutral-100 dark:bg-neutral-800 rounded-lg border border-neutral-200 dark:border-neutral-700 h-full flex flex-col items-center">
-                  <Users className="w-4 h-4 mx-auto mb-1.5 text-amber-600 dark:text-amber-500"/>
-                  <p className="text-xs font-medium mb-1">Connected Community</p>
-                  <p className="text-xs text-neutral-500 dark:text-neutral-400 flex-grow leading-tight">Fulfill the 'dating site' vision: connect owners, offer perks, discounts & early access.</p>
+                 <div className="p-4 bg-neutral-100 dark:bg-neutral-800 rounded-lg border border-neutral-200 dark:border-neutral-700 h-full flex flex-col items-center">
+                  <Users className="w-6 h-6 mx-auto mb-2 text-amber-600 dark:text-amber-500"/>
+                  <p className="text-sm font-medium mb-2">Connected Community</p>
+                  <p className="text-sm text-neutral-500 dark:text-neutral-400 flex-grow">Fulfill the 'dating site' vision: connect owners, offer perks, discounts & early access.</p>
                 </div>
               </div>
             </div>
