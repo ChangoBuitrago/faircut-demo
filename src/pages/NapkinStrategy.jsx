@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
-import { FileText, Edit3, Tag, Calendar, Baseline, Clock, Percent, Wrench, Users, ArrowRight, CornerDownRight } from 'lucide-react';
+import { FileText, Edit3, Tag, Calendar, Baseline, Clock, Percent, Wrench, Users, ArrowRight, CornerDownRight, Building2, Store, Sparkles, Shield } from 'lucide-react';
 
 export default function NapkinStrategy() {
   const containerRef = useRef(null);
   const [currentSection, setCurrentSection] = useState(0);
   const isScrollingRef = useRef(false);
-  const totalSections = 4; // Current Strategy, New Strategy, Digital Passport, Transfer Flow
+  const totalSections = 5; // Current Strategy, New Strategy, Digital Passport, Transfer Flow, Why You
   
   // Digital Passport data
   const watchMintTimestamp = new Date('2025-06-15').getTime();
@@ -347,7 +347,7 @@ export default function NapkinStrategy() {
         </section>
 
         {/* --- SECTION 3: THE DIGITAL PASSPORT (Visual & Simplified) --- */}
-        <section className="h-screen snap-start snap-always flex flex-col items-center justify-center p-8 bg-neutral-50 dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 font-[Inter]">
+        <section className="h-screen snap-start snap-always flex flex-col items-center justify-center p-8 bg-gradient-to-br from-slate-50 via-stone-50 to-zinc-50 dark:from-slate-950 dark:via-slate-900 dark:to-neutral-950 relative overflow-hidden text-neutral-900 dark:text-neutral-100 font-[Inter]">
           {/* Content container */}
           <div className="w-full max-w-6xl mx-auto space-y-6">
 
@@ -611,26 +611,56 @@ export default function NapkinStrategy() {
                      </div>
                    </div>
                </div>
-
-               {/* Key Benefits */}
-               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-6">
-                 <div className="bg-amber-50/50 dark:bg-amber-900/10 rounded-xl p-4 border border-amber-200 dark:border-amber-800">
-                   <p className="text-sm font-semibold text-amber-900 dark:text-amber-300 mb-1">Zero Enforcement Cost</p>
-                   <p className="text-xs text-amber-700 dark:text-amber-400">Rules execute automatically—no manual oversight needed</p>
-                 </div>
-                 <div className="bg-amber-50/50 dark:bg-amber-900/10 rounded-xl p-4 border border-amber-200 dark:border-amber-800">
-                   <p className="text-sm font-semibold text-amber-900 dark:text-amber-300 mb-1">Perpetual Revenue</p>
-                   <p className="text-xs text-amber-700 dark:text-amber-400">Brand earns on every resale, forever</p>
-                 </div>
-                 <div className="bg-amber-50/50 dark:bg-amber-900/10 rounded-xl p-4 border border-amber-200 dark:border-amber-800">
-                   <p className="text-sm font-semibold text-amber-900 dark:text-amber-300 mb-1">Immutable History</p>
-                   <p className="text-xs text-amber-700 dark:text-amber-400">Complete provenance and ownership chain preserved</p>
-                 </div>
-               </div>
              </div>
 
            </div>
          </section> {/* End Section 4 */}
+
+         {/* --- SECTION 5: WHY YOU --- */}
+         <section className="h-screen snap-start snap-always flex flex-col items-center justify-center p-12 bg-gradient-to-br from-slate-50 via-stone-50 to-zinc-50 dark:from-slate-950 dark:via-slate-900 dark:to-neutral-950 relative overflow-hidden">
+           {/* Content container */}
+           <div className="w-full max-w-4xl mx-auto space-y-12 z-10">
+
+             {/* Title */}
+             <div className="text-center">
+               <h2 className="text-4xl md:text-5xl font-black tracking-tight text-gray-900 dark:text-white">Why You?</h2>
+             </div>
+
+             {/* Simple Facts */}
+             <div className="bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm rounded-2xl p-10 border-2 border-amber-400 dark:border-amber-600 shadow-xl">
+               <div className="space-y-6 text-lg text-gray-800 dark:text-gray-200">
+                 <div className="flex items-start gap-4">
+                   <span className="text-3xl text-amber-600 dark:text-amber-400 font-bold flex-shrink-0">•</span>
+                   <p>You were born and raised in the industry — watchmaking is in your DNA</p>
+                 </div>
+                 <div className="flex items-start gap-4">
+                   <span className="text-3xl text-amber-600 dark:text-amber-400 font-bold flex-shrink-0">•</span>
+                   <p>You prioritize strategy, engineering, design and art — not marketing hype</p>
+                 </div>
+                 <div className="flex items-start gap-4">
+                   <span className="text-3xl text-amber-600 dark:text-amber-400 font-bold flex-shrink-0">•</span>
+                   <p>You choose value over profit</p>
+                 </div>
+                 <div className="flex items-start gap-4">
+                   <span className="text-3xl text-amber-600 dark:text-amber-400 font-bold flex-shrink-0">•</span>
+                   <p>You choose people over business</p>
+                 </div>
+                 <div className="flex items-start gap-4">
+                   <span className="text-3xl text-amber-600 dark:text-amber-400 font-bold flex-shrink-0">•</span>
+                   <p>You choose community over everything else</p>
+                 </div>
+               </div>
+             </div>
+
+             {/* Bottom line */}
+             <div className="text-center">
+               <p className="text-2xl font-bold text-gray-900 dark:text-white">
+                 You already live the values this system enables
+               </p>
+             </div>
+
+           </div>
+         </section> {/* End Section 5 */}
 
       </div>
     </>
