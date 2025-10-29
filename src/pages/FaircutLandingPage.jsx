@@ -251,7 +251,7 @@ export default function FaircutLandingPage() {
             </h1>
             
             <p className="max-w-3xl mx-auto text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-16" style={{lineHeight: '1.6'}}>
-              resellers capture all of that profit. You're left out.<br /><span className="bg-gradient-to-r from-amber-600 to-orange-600 dark:from-amber-400 dark:to-orange-400 bg-clip-text text-transparent font-black">We're changing that.</span>
+              Resellers capture all of that profit. You're left out.<br /><span className="bg-gradient-to-r from-amber-600 to-orange-600 dark:from-amber-400 dark:to-orange-400 bg-clip-text text-transparent font-black">We're changing that.</span>
             </p>
           </div>
         </section>
@@ -296,7 +296,7 @@ export default function FaircutLandingPage() {
                           </svg>
                         </div>
                         <h3 className="font-bold text-lg">Resale & Royalty</h3>
-                        <p className="text-xs text-gray-500 dark:text-gray-400">resellers pay your royalty on every resale.</p>
+                        <p className="text-xs text-gray-500 dark:text-gray-400">Resellers pay your royalty on every resale.</p>
                     </div>
                 </div>
             </div>
@@ -536,7 +536,7 @@ export default function FaircutLandingPage() {
                 <div className="mt-6 bg-gradient-to-r from-amber-400 to-orange-500 p-1 rounded-2xl shadow-lg shadow-amber-500/20">
                     <div className="bg-white dark:bg-gray-900 rounded-xl p-8 text-center">
                         <h3 className="text-3xl font-black text-gray-900 dark:text-white">Our Term: A 50/50 Royalty Split</h3>
-                        <p className="text-amber-600 dark:text-amber-400 font-semibold mt-1">resellers pay the royalty. We split it 50/50. Perfect alignment.</p>
+                        <p className="text-amber-600 dark:text-amber-400 font-semibold mt-1">Resellers pay the royalty. We split it 50/50. Perfect alignment.</p>
                     </div>
                 </div>
             </div>
