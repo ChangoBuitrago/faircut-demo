@@ -3,6 +3,7 @@ import { DarkModeProvider } from './contexts/DarkModeContext';
 import DarkModeToggle from './components/DarkModeToggle';
 import Landing from './pages/Landing';
 import FaircutLandingPage from './pages/FaircutLandingPage';
+import FaircutLandingPageV2 from './pages/FaircutLandingPageV2';
 import NapkinStrategy from './pages/NapkinStrategy';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/faircut" element={<FaircutLandingPage />} />
+          <Route path="/faircut-v2" element={<FaircutLandingPageV2 />} />
           <Route path="/napkin" element={<NapkinStrategy />} />
         </Routes>
       </Router>
