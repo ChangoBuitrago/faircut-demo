@@ -623,7 +623,7 @@ export default function NapkinStrategy() {
 
              {/* Title */}
              <div className="text-center">
-               <h2 className="text-4xl md:text-5xl font-black tracking-tight text-gray-900 dark:text-white">Why You?</h2>
+               <h2 className="text-4xl md:text-5xl font-black tracking-tight text-gray-900 dark:text-white">Why Manuel Emch?</h2>
              </div>
 
              {/* Simple Facts */}
@@ -631,15 +631,15 @@ export default function NapkinStrategy() {
                <div className="space-y-6 text-lg text-gray-800 dark:text-gray-200">
                  <div className="flex items-start gap-4">
                    <span className="text-3xl text-amber-600 dark:text-amber-400 font-bold flex-shrink-0">•</span>
-                   <p>You were born and raised in the industry — watchmaking is in your DNA</p>
+                   <p>You were born and raised in the industry</p>
                  </div>
                  <div className="flex items-start gap-4">
                    <span className="text-3xl text-amber-600 dark:text-amber-400 font-bold flex-shrink-0">•</span>
-                   <p>You prioritize strategy, engineering, design and art — not marketing hype</p>
+                   <p>You prioritize strategy, design and art over marketing hype</p>
                  </div>
                  <div className="flex items-start gap-4">
                    <span className="text-3xl text-amber-600 dark:text-amber-400 font-bold flex-shrink-0">•</span>
-                   <p>You choose value over profit</p>
+                   <p>You choose perceived value over profit</p>
                  </div>
                  <div className="flex items-start gap-4">
                    <span className="text-3xl text-amber-600 dark:text-amber-400 font-bold flex-shrink-0">•</span>
@@ -655,7 +655,7 @@ export default function NapkinStrategy() {
              {/* Bottom line */}
              <div className="text-center">
                <p className="text-2xl font-bold text-gray-900 dark:text-white">
-                 You already live the values this system enables
+                 You breathe the values this system enables
                </p>
              </div>
 
