@@ -2,6 +2,11 @@
 
 A modern, interactive landing page showcasing how Faircut enables brands to earn royalties on secondary market sales through digital certificates and blockchain technology.
 
+## 🔗 Links
+
+- **🌐 Live Demo:** [https://changobuitrago.github.io/faircut-demo/](https://changobuitrago.github.io/faircut-demo/)
+- **📦 Repository:** [https://github.com/ChangoBuitrago/faircut-demo](https://github.com/ChangoBuitrago/faircut-demo)
+
 ## 🎯 What is This?
 
 A **scroll-based interactive experience** with 6 main sections that demonstrates Faircut's value proposition through storytelling, interactive calculators, and clear benefits.
